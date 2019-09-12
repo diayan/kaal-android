@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_events">
+
+    <fragment
+        android:id="@+id/navigation_events"
+        android:name="com.diayan.kaal.ui.home.EventsFragment"
+        android:label="@string/title_events"
+        tools:layout="@layout/fragment_events" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_places"
+            app:destination="@id/navigation_places" />
+        <action
+            android:id="@+id/action_navigation_home_to_augmented_reality"
+            app:destination="@id/augmented_reality" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_stores"
+            app:destination="@id/navigation_stores" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_places"
+        android:name="com.diayan.kaal.ui.places.PlacesFragment"
+        android:label="@string/title_places"
+        tools:layout="@layout/fragment_places" />
+
+    <fragment
+        android:id="@+id/navigation_stores"
+        android:name="com.diayan.kaal.ui.stores.StoresFragment"
+        android:label="@string/title_stores"
+        tools:layout="@layout/fragment_stores" />
+
+    <fragment
+        android:id="@+id/augmented_reality"
+        android:name="com.diayan.kaal.ui.ar.ArFragment"
+        android:label="@string/title_augmented_reality"
+        tools:layout="@layout/fragment_ar"/>
+</navigation>
