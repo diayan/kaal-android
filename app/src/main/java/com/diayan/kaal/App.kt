@@ -2,6 +2,7 @@ package com.diayan.kaal
 
 import android.app.Application
 import com.diayan.kaal.di.AppInjector
+import com.facebook.stetho.BuildConfig
 import com.facebook.stetho.Stetho
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
