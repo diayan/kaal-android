@@ -1,7 +1,10 @@
 package com.diayan.kaal.di
 
 import android.app.Application
+import com.diayan.kaal.api.ApiService
 import com.diayan.kaal.data.AppDatabase
+import com.diayan.kaal.data.datasource.EventsRemoteDataSource
+import com.diayan.kaal.data.datasource.PlacesRemoteDataSource
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -50,6 +53,11 @@ class AppModule {
     @Singleton
     @Provides
     fun provideEventDao(db: AppDatabase) = db.eventsDao()
+
+    @Singleton
+    @Provides
+    fun provideEventsRemoteDataSource(apiService: ApiService)
+            = EventsRemoteDataSource(apiService)
 
  /*   @CoroutineScropeIO
     @Provides

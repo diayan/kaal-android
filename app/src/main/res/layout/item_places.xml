@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<layout>
+
+    <data>
+
+        <variable
+            name="places"
+            type="com.diayan.kaal.data.model.Place" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/places_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="356dp"
+                android:background="@color/colorImagePlaceholder"
+                android:contentDescription="@string/travel_destination"
+                android:scaleType="centerCrop"
+                app:imageFromUrl="@{places.imageUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RatingBar
+                android:id="@+id/store_ratings_bar"
+                android:layout_width="242dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="@id/places_imageView"
+                app:layout_constraintStart_toStartOf="@id/places_imageView" />
+
+            <TextView
+                android:id="@+id/place_name_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_normal"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingEnd="@dimen/margin_normal"
+                android:text="@{places.name}"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/places_imageView"
+                tools:text="Mole National Park" />
+
+
+            <TextView
+                android:id="@+id/place_location_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/margin_normal"
+                android:paddingEnd="@dimen/margin_normal"
+                android:paddingBottom="@dimen/margin_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/place_name_textView"
+                tools:text="50km from the current location" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
