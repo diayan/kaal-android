@@ -23,7 +23,12 @@ class EventsAdapter : PagedListAdapter<Event, EventsAdapter.ViewHolder>(StoreDif
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val events = getItem(position)
+        events?.let {
+            holder.apply {
+                
+            }
+        }
     }
 
     class ViewHolder(private val binding: ItemEventsBinding) :

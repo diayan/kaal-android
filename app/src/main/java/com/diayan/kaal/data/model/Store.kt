@@ -13,7 +13,7 @@ data class Store(
     val ratings: Int,
     val comments: String,
     val location: String,
-    val imageUrl: List<String>,
+    //val imageUrl: List<String>,
     val externalLink: String,
     val type: String,
     val favorites: Boolean

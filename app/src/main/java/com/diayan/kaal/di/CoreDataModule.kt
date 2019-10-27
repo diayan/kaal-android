@@ -1,6 +1,8 @@
 package com.diayan.kaal.di
 
+import com.diayan.kaal.App
 import com.diayan.kaal.BuildConfig
+import com.diayan.kaal.api.MockInterceptor
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.Gson
 import dagger.Module
@@ -17,7 +19,8 @@ import javax.inject.Singleton
 class CoreDataModule {
     @Provides
     fun provideOkHttpClient(interceptor: HttpLoggingInterceptor): OkHttpClient =
-        OkHttpClient.Builder().addInterceptor(interceptor)
+        OkHttpClient.Builder()
+            .addInterceptor(interceptor)
             .addNetworkInterceptor(StethoInterceptor())
             .build()
 

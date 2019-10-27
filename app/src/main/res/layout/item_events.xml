@@ -26,7 +26,6 @@
                 android:background="@color/colorImagePlaceholder"
                 android:contentDescription="@string/event_cover_image"
                 android:scaleType="centerCrop"
-                app:imageFromUrl="@{events.imageUrl}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

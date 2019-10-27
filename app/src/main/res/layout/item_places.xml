@@ -26,10 +26,13 @@
                 android:background="@color/colorImagePlaceholder"
                 android:contentDescription="@string/travel_destination"
                 android:scaleType="centerCrop"
-                app:imageFromUrl="@{places.imageUrl}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <!--
+                            app:imageFromUrl="@{places.imageUrl}"
+            -->
 
             <RatingBar
                 android:id="@+id/store_ratings_bar"

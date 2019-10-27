@@ -13,6 +13,7 @@ import javax.inject.Singleton
         AppModule::class,
         ActivityModule::class]
 )
+
 interface AppComponent {
     @Component.Builder
     interface Builder {

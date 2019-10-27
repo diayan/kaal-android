@@ -12,7 +12,7 @@ data class Event (
     val rates: Int,
     val description: String,
     val location: String,
-    val imageUrl: List<String>,
+    //val imageUrl: List<String>,
     val externalLink: String,
     val type: String,
     val favorite: Boolean

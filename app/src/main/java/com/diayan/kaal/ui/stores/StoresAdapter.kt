@@ -23,7 +23,11 @@ class StoresAdapter : PagedListAdapter<Store, StoresAdapter.ViewHolder>(StoreDif
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val stores = getItem(position)
+        stores?.let {
+            holder.apply {
+            }
+        }
     }
 
     class ViewHolder(private val binding: ItemStoresBinding) :

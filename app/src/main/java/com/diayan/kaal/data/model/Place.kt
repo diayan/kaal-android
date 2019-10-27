@@ -13,6 +13,6 @@ data class Place(
     val description:String,
     val imageUrl: String?,
     val videoUrl: String?,
-    val rates: List<String?>,
+    //val rates: List<String?>,
     val externalLinkUrl: String?
 )

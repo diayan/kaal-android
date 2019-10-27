@@ -11,9 +11,9 @@ class MockInterceptor(private val context: Context) : Interceptor {
         if (BuildConfig.DEBUG) {
             val uri = chain.request().url().uri().toString()
             val res = when {
-                uri.endsWith("events") ->readJsonFromSampleData(context, uri)
-                uri.endsWith("places") ->readJsonFromSampleData(context, uri)
-                uri.endsWith("stores") ->readJsonFromSampleData(context, uri)
+                uri.endsWith("kaal/events") ->readJsonFromSampleData(context, uri)
+                uri.endsWith("kaal/places") ->readJsonFromSampleData(context, uri)
+                uri.endsWith("kaal/stores") ->readJsonFromSampleData(context, uri)
 
                 else -> ""
             }

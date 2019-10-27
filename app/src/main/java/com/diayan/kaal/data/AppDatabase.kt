@@ -6,15 +6,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
 import com.diayan.kaal.data.dao.EventDao
 import com.diayan.kaal.data.dao.PlaceDao
 import com.diayan.kaal.data.dao.StoreDao
 import com.diayan.kaal.data.model.Event
 import com.diayan.kaal.data.model.Place
 import com.diayan.kaal.data.model.Store
-import com.diayan.kaal.worker.SeedDatabaseWorker
 
 /**
  * The Room database for this app

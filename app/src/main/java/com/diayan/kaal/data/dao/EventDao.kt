@@ -11,11 +11,14 @@ import com.diayan.kaal.data.model.Event
 @Dao
 interface EventDao {
 
-    @Query("SELECT * FROM events WHERE id = id")
+    @Query("SELECT * FROM events WHERE id = :id")
     fun getPagedEventsById(id: Int): DataSource.Factory<Int, Event>
 
     @Query("SELECT * FROM events WHERE id = :id")
     fun getEvents(id: String): LiveData<Event>
+
+    @Query("SELECT * FROM events ORDER BY type DESC")
+    fun getPagedEvents(): DataSource.Factory<Int, Event>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(events: List<Event>)

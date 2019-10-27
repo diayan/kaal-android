@@ -1,5 +1,37 @@
 [
   {
-
+    "id": 1,
+    "placeName": "Mole National Park",
+    "placePhoto": "mole"
+  },
+  {
+    "id": 2,
+    "placeName": "Kakum National Park",
+    "placePhoto": "kakum"
+  },
+  {
+    "id": 3,
+    "placeName": "Boti falls",
+    "placePhoto": "boti"
+  },
+  {
+    "id": 4,
+    "placeName": "Akosombo Dam",
+    "placePhoto": "akosombo"
+  },
+  {
+    "id": 5,
+    "placeName": "Whale Watching Sanctuary",
+    "placePhoto": "whale"
+  },
+  {
+    "id": 6,
+    "placeName": "Golgotha Station",
+    "placePhoto": "station"
+  },
+  {
+    "id": 7,
+    "placeName": "Accra Zoo",
+    "placePhoto": "zoo"
   }
 ]

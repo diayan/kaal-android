@@ -7,11 +7,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.diayan.kaal.R
+import com.diayan.kaal.di.Injectable
+import com.diayan.kaal.di.injectViewModel
+import javax.inject.Inject
 
-class EventsFragment : Fragment() {
+class EventsFragment : Fragment(), Injectable {
 
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var eventsViewModel: EventsViewModel
 
     override fun onCreateView(
@@ -19,8 +24,9 @@ class EventsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        eventsViewModel =
-            ViewModelProviders.of(this).get(EventsViewModel::class.java)
+
+        eventsViewModel = injectViewModel(viewModelFactory)
+
         val root = inflater.inflate(R.layout.fragment_events, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
         eventsViewModel.text.observe(this, Observer {

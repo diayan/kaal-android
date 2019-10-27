@@ -11,23 +11,22 @@ import retrofit2.http.Query
 
 interface ApiService {
     companion object {
-        const val ENDPOINT = "https://rebrickable.com/api/v3/"
+        const val ENDPOINT = "http://demo8398315.mockable.io/"
     }
 
-    @GET("kaal/events/")
+    @GET("events")
     suspend fun getEvents(@Query("page") page: Int? = null,
                           @Query("page_size") pageSize: Int? = null,
                           @Query("ordering") order: String? = null): Response<ResultsResponse<Event>>
 
-    @GET("kaal/stores/")
+    @GET("stores")
     suspend fun getStores(@Query("page") page: Int? = null,
                         @Query("page_size") pageSize: Int? = null,
-                        @Query("theme_id") themeId: Int? = null,
                         @Query("ordering") order: String? = null): Response<ResultsResponse<Store>>
 
 
 
-    @GET("kaal/places/")
+    @GET("places")
     suspend fun getPlaces(@Query("page") page: Int? = null,
                         @Query("page_size") pageSize: Int? = null,
                         @Query("theme_id") themeId: Int? = null,

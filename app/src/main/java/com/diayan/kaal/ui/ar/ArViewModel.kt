@@ -1,8 +1,9 @@
 package com.diayan.kaal.ui.ar
 
 import androidx.lifecycle.ViewModel
+import javax.inject.Inject
 
-class ArViewModel : ViewModel() {
+class ArViewModel @Inject constructor(): ViewModel() {
     // TODO: Implement the ViewModel
 
  /*   private val _text = MutableLiveData<String>().apply {
