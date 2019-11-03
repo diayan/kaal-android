@@ -11,7 +11,7 @@ import retrofit2.http.Query
 
 interface ApiService {
     companion object {
-        const val ENDPOINT = "http://demo8398315.mockable.io/"
+        const val ENDPOINT = "https://devbytes.udacity.com/"
     }
 
     @GET("events")

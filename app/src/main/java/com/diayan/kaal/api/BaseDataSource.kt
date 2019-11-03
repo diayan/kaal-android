@@ -1,8 +1,6 @@
 package com.diayan.kaal.api
 
-import android.util.Log
 import com.diayan.kaal.data.Result
-import com.google.gson.Gson
 import retrofit2.Response
 import timber.log.Timber
 
@@ -16,8 +14,6 @@ abstract class BaseDataSource {
             if (response.isSuccessful) {
                 val body = response.body()
                 if (body != null) return Result.success(body)
-
-                Log.d("events response ", Gson().toJson(body) )
 
             }
             return error(" ${response.code()} ${response.message()}")

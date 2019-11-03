@@ -12,6 +12,8 @@ import com.diayan.kaal.data.dao.StoreDao
 import com.diayan.kaal.data.model.Event
 import com.diayan.kaal.data.model.Place
 import com.diayan.kaal.data.model.Store
+import kotlinx.coroutines.InternalCoroutinesApi
+import kotlinx.coroutines.internal.synchronized
 
 /**
  * The Room database for this app
@@ -37,6 +39,7 @@ abstract class AppDatabase : RoomDatabase() {
         @Volatile
         private var instance: AppDatabase? = null
 
+        @InternalCoroutinesApi
         fun getInstance(context: Context): AppDatabase {
             return instance ?: synchronized(this) {
                 instance ?: buildDatabase(context).also { instance = it }

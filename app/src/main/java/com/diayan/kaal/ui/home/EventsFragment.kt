@@ -29,9 +29,7 @@ class EventsFragment : Fragment(), Injectable {
 
         val root = inflater.inflate(R.layout.fragment_events, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
-        eventsViewModel.text.observe(this, Observer {
-            textView.text = it
-        })
+
         return root
     }
 }

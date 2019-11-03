@@ -5,9 +5,6 @@ import com.diayan.kaal.BuildConfig
 import com.diayan.kaal.api.ApiService
 import com.diayan.kaal.api.AuthIntercepter
 import com.diayan.kaal.data.AppDatabase
-import com.diayan.kaal.data.datasource.EventsRemoteDataSource
-import com.diayan.kaal.data.datasource.PlacesRemoteDataSource
-import com.diayan.kaal.data.datasource.StoresRemoteDataSource
 import dagger.Module
 import dagger.Provides
 import kotlinx.coroutines.CoroutineScope
@@ -54,18 +51,6 @@ class AppModule {
     @Singleton
     @Provides
     fun provideEventDao(db: AppDatabase) = db.eventsDao()
-
-    @Singleton
-    @Provides
-    fun provideEventsRemoteDataSource(apiService: ApiService) = EventsRemoteDataSource(apiService)
-
-    @Singleton
-    @Provides
-    fun provideStoresRemoteDataSource(apiService: ApiService) = StoresRemoteDataSource(apiService)
-
-    @Singleton
-    @Provides
-    fun providesPlacesRemoteDataSource(apiService: ApiService) = PlacesRemoteDataSource(apiService)
 
     @CoroutineScopeIO
     @Provides

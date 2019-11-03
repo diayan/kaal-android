@@ -1,7 +1,6 @@
 package com.diayan.kaal
 
 import android.app.Application
-import android.content.Context
 import com.diayan.kaal.di.AppInjector
 import com.facebook.stetho.BuildConfig
 import com.facebook.stetho.Stetho

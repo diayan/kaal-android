@@ -28,9 +28,7 @@ class StoresFragment : Fragment(), Injectable {
         storesViewModel = injectViewModel(viewModelFactory)
         val root = inflater.inflate(R.layout.fragment_stores, container, false)
         val textView: TextView = root.findViewById(R.id.text_notifications)
-        storesViewModel.text.observe(this, Observer {
-            textView.text = it
-        })
+
         return root
     }
 }

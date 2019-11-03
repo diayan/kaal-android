@@ -27,9 +27,7 @@ class PlacesFragment : Fragment(), Injectable {
         placesViewModel = injectViewModel(viewModelFactory)
         val root = inflater.inflate(R.layout.fragment_places, container, false)
         val textView: TextView = root.findViewById(R.id.text_dashboard)
-        placesViewModel.text.observe(this, Observer {
-            textView.text = it
-        })
+
         return root
     }
 }

@@ -17,9 +17,6 @@ interface PlaceDao {
     @Query("SELECT * FROM places WHERE id = :id")
     fun getPlaces(id: String): LiveData<Place>
 
-    @Query("SELECT * FROM places")
-    fun getPagedPlaces(): DataSource.Factory<Int, Place>
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(places: List<Place>)
 

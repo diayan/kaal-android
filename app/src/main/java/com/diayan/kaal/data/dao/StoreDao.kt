@@ -20,9 +20,6 @@ interface StoreDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(stores: List<Store>)
 
-    @Query("SELECT * FROM stores ORDER BY type DESC")
-    fun getPagedStores(): DataSource.Factory<Int, Store>
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(stores: Store)
 }

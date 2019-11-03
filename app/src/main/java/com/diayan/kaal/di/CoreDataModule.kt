@@ -1,8 +1,6 @@
 package com.diayan.kaal.di
 
-import com.diayan.kaal.App
 import com.diayan.kaal.BuildConfig
-import com.diayan.kaal.api.MockInterceptor
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.Gson
 import dagger.Module
@@ -23,10 +21,6 @@ class CoreDataModule {
             .addInterceptor(interceptor)
             .addNetworkInterceptor(StethoInterceptor())
             .build()
-
-    @Provides
-    fun provideLoggingInterceptor() =
-        HttpLoggingInterceptor().apply { level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE }
 
     @Provides
     @Singleton

@@ -56,7 +56,8 @@
         app:layout_constraintTop_toBottomOf="@id/name_wrapper_layout"
         app:layout_constraintBottom_toTopOf="@id/name_wrapper_layout">
 
-       <Button
+   <!--  rates button should now move to the toolbar and be displayed for each one
+     <Button
            android:layout_width="wrap_content"
            android:layout_height="24dp"
            tools:text="Rates"
@@ -64,7 +65,13 @@
            android:background="@drawable/border_button"
            android:fontFamily="sans-serif-medium"
            android:layout_marginEnd="@dimen/margin_small"
-           android:textColor="@android:color/holo_red_light" />
+           android:textColor="@android:color/holo_red_light" />-->
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_location"
+            android:layout_marginEnd="@dimen/margin_small"/>
 
         <ImageView
             android:layout_width="wrap_content"
