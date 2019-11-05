@@ -3,7 +3,6 @@ package com.diayan.kaal.ui.places
 import androidx.lifecycle.ViewModel
 import com.diayan.kaal.data.repository.PlaceRepository
 import com.diayan.kaal.di.CoroutineScopeIO
-import dagger.internal.DoubleCheck.lazy
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.cancel
 import javax.inject.Inject

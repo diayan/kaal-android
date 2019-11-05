@@ -9,10 +9,10 @@ import androidx.lifecycle.ViewModelProviders
 
 import com.diayan.kaal.R
 
-class OnBoarding : Fragment() {
+class OnBoardingFragment : Fragment() {
 
     companion object {
-        fun newInstance() = OnBoarding()
+        fun newInstance() = OnBoardingFragment()
     }
 
     private lateinit var viewModel: OnBoardingViewModel
@@ -25,7 +25,6 @@ class OnBoarding : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(OnBoardingViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

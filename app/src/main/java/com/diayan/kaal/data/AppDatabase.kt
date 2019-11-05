@@ -19,10 +19,9 @@ import kotlinx.coroutines.internal.synchronized
  * The Room database for this app
  */
 @Database(
-    entities = [Place::class,
-        Event::class, Store::class],
-    version = 1, exportSchema = false
-)
+        entities = [Place::class, Event::class, Store::class],
+        version = 1, exportSchema = false)
+
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
@@ -30,7 +29,7 @@ abstract class AppDatabase : RoomDatabase() {
 
     abstract fun eventsDao(): EventDao
 
-    abstract fun StoresDao(): StoreDao
+    abstract fun storesDao(): StoreDao
 
 
     companion object {
@@ -46,18 +45,16 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
-        // Create and pre-populate the database. See this article for more details:
-        // https://medium.com/google-developers/7-pro-tips-for-room-fbadea4bfbd1#4785
         private fun buildDatabase(context: Context): AppDatabase {
-            return Room.databaseBuilder(context, AppDatabase::class.java, "legocatalog-db")
-                .addCallback(object : RoomDatabase.Callback() {
-                    override fun onCreate(db: SupportSQLiteDatabase) {
-                        super.onCreate(db)
-                       // val request = OneTimeWorkRequestBuilder<SeedDatabaseWorker>().build()
-                        //WorkManager.getInstance(context).enqueue(request)
-                    }
-                })
-                .build()
+            return Room.databaseBuilder(context, AppDatabase::class.java, "kaal-db")
+                    .addCallback(object : RoomDatabase.Callback() {
+                        override fun onCreate(db: SupportSQLiteDatabase) {
+                            super.onCreate(db)
+                            // val request = OneTimeWorkRequestBuilder<SeedDatabaseWorker>().build()
+                            //WorkManager.getInstance(context).enqueue(request)
+                        }
+                    })
+                    .build()
         }
     }
 }
