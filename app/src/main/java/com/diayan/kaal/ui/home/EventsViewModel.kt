@@ -9,7 +9,8 @@ import javax.inject.Inject
 
 class EventsViewModel @Inject constructor(
     private val repository: EventRepository,
-    @CoroutineScopeIO private val  coroutineScope: CoroutineScope
+    @CoroutineScopeIO
+    private val  coroutineScope: CoroutineScope
 ) : ViewModel() {
 
     var connectivityAvailable: Boolean = false

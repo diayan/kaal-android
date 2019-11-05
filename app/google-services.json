@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "771543615306",
+    "firebase_url": "https://kaal-tour-guide.firebaseio.com",
+    "project_id": "kaal-tour-guide",
+    "storage_bucket": "kaal-tour-guide.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771543615306:android:2cd3cd191ffac7ccfb23b3",
+        "android_client_info": {
+          "package_name": "com.diayan.kaal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "771543615306-mjmei8i4j229pv52mbh8lons7figgcf5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.diayan.kaal",
+            "certificate_hash": "0929553121da75a68125a847be41d7151a58c353"
+          }
+        },
+        {
+          "client_id": "771543615306-jt93rve5ou7oi35ro4trcafgmlfvpbfi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3yHnuwCaaU1Tq5aKBFLo2OMv34GOrcjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "771543615306-jt93rve5ou7oi35ro4trcafgmlfvpbfi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
