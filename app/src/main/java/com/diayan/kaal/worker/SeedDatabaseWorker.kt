@@ -13,7 +13,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withContext
-import timber.log.Timber
 
 class SeedDatabaseWorker(
     context: Context,
@@ -36,7 +35,6 @@ class SeedDatabaseWorker(
                     }
                 }
             } catch (e: Exception) {
-                Timber.e(e, "Error seeding database")
                 Result.failure()
             }
         }

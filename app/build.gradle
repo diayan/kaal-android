@@ -14,6 +14,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true  // added this
     }
     buildTypes {
         release {
@@ -33,6 +34,9 @@ android {
 }
 
 dependencies {
+
+    implementation 'com.android.support:multidex:1.0.3'// or 2.0.1
+
     implementation 'com.android.support:support-v4:29.+'
     implementation 'android.arch.lifecycle:extensions:1.1.1'
 
@@ -70,19 +74,12 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.1"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.1"
 
-    // Tools
-    implementation "com.jakewharton.timber:timber:4.7.1"
-    implementation "com.facebook.stetho:stetho:1.5.1"
-    implementation "com.facebook.stetho:stetho-okhttp3:1.5.1"
-
     //Networking
     implementation "com.google.code.gson:gson:2.8.5"
-    implementation "com.squareup.retrofit2:retrofit:2.6.0"
-    implementation "com.squareup.retrofit2:converter-gson:2.6.0"
     implementation "com.squareup.okhttp3:okhttp:3.10.0"
     implementation "com.squareup.okhttp3:logging-interceptor:3.10.0"
 
-    // Daggerijji,,,,,mmu9..
+    // Dagger
     kapt "com.google.dagger:dagger-compiler:2.24"
     kapt "com.google.dagger:dagger-android-processor:2.24"
     implementation "com.google.dagger:dagger:2.24"
@@ -90,11 +87,14 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:2.24"
 
     //firebase analytics
-    implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    implementation 'com.google.firebase:firebase-analytics:17.2.1'
+
+    //firebase realtime database
+    implementation 'com.google.firebase:firebase-database:19.2.0'
+
 
     //Testing
     testImplementation "junit:junit:4.12"
-    testImplementation "com.squareup.okhttp3:mockwebserver:3.8.1"
     testImplementation "androidx.arch.core:core-testing:2.1.0"
     testImplementation "org.mockito:mockito-core:2.25.0"
 
