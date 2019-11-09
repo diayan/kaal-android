@@ -13,7 +13,7 @@ data class Event (
     val description: String,
     val location: String,
     //val imageUrl: List<String>,
-    val externalLink: String,
+    val link: String,
     val type: String,
     val favorite: Boolean
 )

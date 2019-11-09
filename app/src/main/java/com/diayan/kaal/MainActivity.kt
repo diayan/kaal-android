@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), HasAndroidInjector  {
 
-    @Inject
+    @set:Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
     override fun androidInjector(): AndroidInjector<Any>  = dispatchingAndroidInjector
 
@@ -35,4 +35,6 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector  {
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
     }
+
+
 }
