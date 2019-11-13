@@ -31,8 +31,8 @@ class EventsFragment : Fragment(), Injectable {
 
         eventsViewModel = injectViewModel(viewModelFactory)
 
-        val eventsLivedData = eventsViewModel.getEventsLiveData()
-        Log.d("event value: ", Gson().toJson(eventsLivedData))
+        //val eventsLivedData = eventsViewModel.getEventsLiveData()
+        //Log.d("event value: ", Gson().toJson(eventsLivedData))
 
        /* eventsLivedData.observe(this, object:Observer() {
 
@@ -40,7 +40,7 @@ class EventsFragment : Fragment(), Injectable {
 
         /*myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val value = dataSnapshot.getValue(EventsEntity::class.java)
+                val value = dataSnapshot.getValue(FirebaseEvents::class.java)
                 Log.d( "Value is: ", Gson().toJson( value))
             }
 

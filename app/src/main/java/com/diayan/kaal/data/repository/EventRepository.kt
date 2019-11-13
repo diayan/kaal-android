@@ -1,20 +1,24 @@
 package com.diayan.kaal.data.repository
 
 import com.diayan.kaal.data.dao.EventDao
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class EventRepository @Inject constructor(
-         val dao: EventDao) {
-
-        val database: FirebaseDatabase = FirebaseDatabase.getInstance()
-        val myRef: DatabaseReference = database.getReference("events")
+         val dao: EventDao,
+         private val firebaseFirestore: FirebaseFirestore) {
 
     fun getEvents(){
 
+    }
+
+    fun getEventByType(){
+
+    }
+
+    fun getEventById(){
 
     }
 }

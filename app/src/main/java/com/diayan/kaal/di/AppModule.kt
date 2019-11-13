@@ -2,6 +2,8 @@ package com.diayan.kaal.di
 
 import android.app.Application
 import com.diayan.kaal.data.AppDatabase
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
 import kotlinx.coroutines.CoroutineScope
@@ -33,4 +35,8 @@ class AppModule {
     @CoroutineScopeIO
     @Provides
     fun provideCoroutineScopeIO() = CoroutineScope(Dispatchers.IO)
+
+    @Singleton
+    @Provides
+    fun provideFirebaseFirestore() = FirebaseFirestore.getInstance()
 }

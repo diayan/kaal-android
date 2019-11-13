@@ -1,4 +1,4 @@
-package com.diayan.kaal.ui
+package com.diayan.kaal.ui.onBoarding
 
 import androidx.lifecycle.ViewModel
 
