@@ -93,6 +93,9 @@ dependencies {
     //firebase realtime database
     implementation 'com.google.firebase:firebase-database:19.2.0'
 
+    //motionlayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta3'
+
 
     //Testing
     testImplementation "junit:junit:4.12"
