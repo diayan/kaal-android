@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.diayan.kaal.ui.boarding.OnBoardingView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/on_boarding_View"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.boarding.OnBoardingActivity">
+
+</com.diayan.kaal.ui.boarding.OnBoardingView>

@@ -96,6 +96,9 @@ dependencies {
     //motionlayout
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta3'
 
+    //page scroll indicator library
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+
 
     //Testing
     testImplementation "junit:junit:4.12"
