@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:text="@string/previous"
+        android:textAllCaps="true"
         android:translationY="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -57,6 +58,7 @@
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:text="@string/next"
+        android:textAllCaps="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -66,6 +68,7 @@
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:text="@string/finish"
+        android:textAllCaps="true"
         android:translationX="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

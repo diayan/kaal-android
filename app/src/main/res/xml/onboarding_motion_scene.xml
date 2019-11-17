@@ -6,6 +6,89 @@
         app:constraintSetEnd="@id/end"
         app:constraintSetStart="@id/start">
 
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="0"
+                app:motionTarget="@id/previous_button" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="20"
+                app:motionTarget="@id/previous_button" />
+
+            <KeyAttribute
+                android:translationY="0dp"
+                app:framePosition="75"
+                app:motionTarget="@id/next_button" />
+
+            <KeyAttribute
+                android:translationY="50dp"
+                app:framePosition="100"
+                app:motionTarget="@id/next_button" />
+
+            <KeyAttribute
+                android:translationX="70dp"
+                app:framePosition="75"
+                app:motionTarget="@id/finish_button" />
+
+            <KeyAttribute
+                android:translationX="0dp"
+                app:framePosition="100"
+                app:motionTarget="@id/finish_button" />
+        </KeyFrameSet>
+
+
+        <!--
+                the next keyframset is responsible for changing background color of pages as you swipe
+        -->
+        <KeyFrameSet>
+
+            <KeyAttribute
+                app:framePosition="20"
+                app:motionTarget="@id/background"
+                app:transitionEasing="accelerate">
+                <CustomAttribute
+                    app:attributeName="backgroundColor"
+                    app:customColorValue="#C66B3A" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="40"
+                app:motionTarget="@id/background"
+                app:transitionEasing="accelerate">
+                <CustomAttribute
+                    app:attributeName="backgroundColor"
+                    app:customColorValue="#C3E6E6" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="60"
+                app:motionTarget="@id/background"
+                app:transitionEasing="accelerate">
+                <CustomAttribute
+                    app:attributeName="backgroundColor"
+                    app:customColorValue="#F44336" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="80"
+                app:motionTarget="@id/background"
+                app:transitionEasing="accelerate">
+                <CustomAttribute
+                    app:attributeName="backgroundColor"
+                    app:customColorValue="#AF6DA2" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@id/background"
+                app:transitionEasing="accelerate">
+                <CustomAttribute
+                    app:attributeName="backgroundColor"
+                    app:customColorValue="#FBBF1D" />
+            </KeyAttribute>
+        </KeyFrameSet>
 
     </Transition>
 
@@ -28,6 +111,7 @@
             android:id="@id/next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:translationY="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -35,6 +119,7 @@
             android:id="@id/finish_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:translationX="70dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </ConstraintSet>
@@ -58,6 +143,7 @@
             android:id="@id/next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:translationY="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -65,6 +151,7 @@
             android:id="@id/finish_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:translationX="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </ConstraintSet>
