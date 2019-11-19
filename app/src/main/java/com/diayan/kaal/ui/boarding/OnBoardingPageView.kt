@@ -22,10 +22,6 @@ class OnBoardingPageView : FrameLayout {
     )
 
     init {
-        initUi()
-    }
-
-    private fun initUi() {
         LayoutInflater.from(context).inflate(R.layout.item_on_boarding, this, true)
     }
 

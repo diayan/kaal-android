@@ -38,7 +38,6 @@
                 app:motionTarget="@id/finish_button" />
         </KeyFrameSet>
 
-
         <!--
                 the next keyframset is responsible for changing background color of pages as you swipe
         -->
@@ -50,7 +49,7 @@
                 app:transitionEasing="accelerate">
                 <CustomAttribute
                     app:attributeName="backgroundColor"
-                    app:customColorValue="#C66B3A" />
+                    app:customColorValue="#ffcc0000" />
             </KeyAttribute>
 
             <KeyAttribute
@@ -59,7 +58,7 @@
                 app:transitionEasing="accelerate">
                 <CustomAttribute
                     app:attributeName="backgroundColor"
-                    app:customColorValue="#C3E6E6" />
+                    app:customColorValue="#9397A0" />
             </KeyAttribute>
 
             <KeyAttribute
@@ -68,7 +67,7 @@
                 app:transitionEasing="accelerate">
                 <CustomAttribute
                     app:attributeName="backgroundColor"
-                    app:customColorValue="#F44336" />
+                    app:customColorValue="#E55E2D" />
             </KeyAttribute>
 
             <KeyAttribute
@@ -77,17 +76,9 @@
                 app:transitionEasing="accelerate">
                 <CustomAttribute
                     app:attributeName="backgroundColor"
-                    app:customColorValue="#AF6DA2" />
+                    app:customColorValue="#8AB153" />
             </KeyAttribute>
 
-            <KeyAttribute
-                app:framePosition="100"
-                app:motionTarget="@id/background"
-                app:transitionEasing="accelerate">
-                <CustomAttribute
-                    app:attributeName="backgroundColor"
-                    app:customColorValue="#FBBF1D" />
-            </KeyAttribute>
         </KeyFrameSet>
 
     </Transition>

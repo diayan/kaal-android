@@ -10,13 +10,12 @@ enum class OnBoardingPage(
     @DrawableRes val logoResource: Int
 ) {
 
-    ANDROID(
+    WELCOME(
         R.string.first_title,
         R.string.first_description,
-        R.drawable.ic_chat_bubble_black_24dp
+        R.drawable.ic_welcome
     ),
-    IOS(R.string.second_title, R.string.second_description, R.drawable.ic_dashboard_black_24dp),
-    UNITY(R.string.third_title, R.string.third_description, R.drawable.ic_location),
-    KOTLIN(R.string.fourth_title, R.string.fourth_description, R.drawable.ic_event_24dp),
-    SWIFT(R.string.fifth_title, R.string.fifth_description, R.drawable.ic_launcher_foreground)
+    EXPLORE(R.string.second_title, R.string.second_description, R.drawable.ic_mole_national),
+    EVENTS(R.string.third_title, R.string.third_description, R.drawable.ic_events_onboarding),
+    LOCALSTORES(R.string.fourth_title, R.string.fourth_description, R.drawable.ic_stores_onboarding),
 }

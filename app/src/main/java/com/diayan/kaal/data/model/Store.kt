@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class Store(
 
     @PrimaryKey
-    val id: String,
+    val id: Int,
     val name: String,
     val description: String,
     val ratings: Int,

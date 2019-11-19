@@ -7,7 +7,9 @@ import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.diayan.kaal.MainActivity
 import com.diayan.kaal.R
+import com.diayan.kaal.util.IntentUtil
 import kotlinx.android.synthetic.main.onboarding_view.view.*
 
 class OnBoardingView : FrameLayout, ViewPager.OnPageChangeListener {
@@ -54,6 +56,7 @@ class OnBoardingView : FrameLayout, ViewPager.OnPageChangeListener {
         }
         finish_button.setOnClickListener {
             Toast.makeText(context, R.string.finish, Toast.LENGTH_SHORT).show()
+            IntentUtil.start(context, MainActivity::class.java)
         }
     }
 

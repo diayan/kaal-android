@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.boarding.OnBoardingActivity">
+        <activity android:name=".ui.boarding.OnBoardingActivity"
+            android:theme="@style/Kaal.SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

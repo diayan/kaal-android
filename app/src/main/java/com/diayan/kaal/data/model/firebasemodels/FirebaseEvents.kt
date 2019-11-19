@@ -9,8 +9,9 @@ data class FirebaseEvents(
         val rates: Int = 0,
         val description: String ="",
         val location: String ="",
-        //val imageUrl: List<String>,
         val link: String ="",
         val type: String ="",
-        val favorite: Boolean = false
-)
+        val favorite: Boolean = false,
+        val imageUrl:String
+
+        )

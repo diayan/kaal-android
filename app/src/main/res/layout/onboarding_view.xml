@@ -34,7 +34,11 @@
         android:background="?attr/selectableItemBackground"
         android:text="@string/previous"
         android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
         android:translationY="50dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp"
+        android:textAlignment="textStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -59,6 +63,11 @@
         android:background="?attr/selectableItemBackground"
         android:text="@string/next"
         android:textAllCaps="true"
+        android:paddingEnd="16dp"
+        android:paddingStart="0dp"
+        android:textSize="16sp"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -68,8 +77,12 @@
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:text="@string/finish"
+        android:textColor="@color/colorWhite"
         android:textAllCaps="true"
         android:translationX="70dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="0dp"
+        android:textAlignment="textEnd"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.motion.widget.MotionLayout>

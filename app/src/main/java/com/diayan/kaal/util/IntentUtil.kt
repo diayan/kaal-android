@@ -7,7 +7,7 @@ import android.content.Intent
 
 object IntentUtil {
 
-    fun start(context: Context?, cls: Class<out Any>) {
+    fun start(context: Context?, cls: Class<out Any>)  {
         val intent = Intent(context, cls)
         context?.startActivity(intent)
     }
