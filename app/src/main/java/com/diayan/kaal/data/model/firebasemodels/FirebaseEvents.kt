@@ -1,10 +1,10 @@
 package com.diayan.kaal.data.model.firebasemodels
 
-import com.google.firebase.database.IgnoreExtraProperties
+import com.google.firebase.firestore.IgnoreExtraProperties
 
 @IgnoreExtraProperties
 data class FirebaseEvents(
-        val id: Int = 0,
+        val id: String = "z",
         val name: String = "",
         val rates: Int = 0,
         val description: String ="",
@@ -12,6 +12,6 @@ data class FirebaseEvents(
         val link: String ="",
         val type: String ="",
         val favorite: Boolean = false,
-        val imageUrl:String
+        val imageUrl:String = ""
 
         )

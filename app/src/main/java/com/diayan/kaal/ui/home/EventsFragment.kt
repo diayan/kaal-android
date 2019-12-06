@@ -12,8 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.diayan.kaal.R
 import com.diayan.kaal.di.Injectable
 import com.diayan.kaal.di.injectViewModel
-import com.google.firebase.database.*
-import com.google.gson.Gson
 import javax.inject.Inject
 
 class EventsFragment : Fragment(), Injectable {
@@ -21,8 +19,6 @@ class EventsFragment : Fragment(), Injectable {
     @set:Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var eventsViewModel: EventsViewModel
-    val database: FirebaseDatabase = FirebaseDatabase.getInstance()
-    val myRef: DatabaseReference = database.getReference("events")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,24 +27,19 @@ class EventsFragment : Fragment(), Injectable {
 
         eventsViewModel = injectViewModel(viewModelFactory)
 
+        with(eventsViewModel) {
+            getEvents()
+            eventsLiveData.observe(this@EventsFragment, Observer {
+                Log.e("Firebase Event:::", it.toString())
+            })
+
+        }
         //val eventsLivedData = eventsViewModel.getEventsLiveData()
         //Log.d("event value: ", Gson().toJson(eventsLivedData))
 
        /* eventsLivedData.observe(this, object:Observer() {
 
         })*/
-
-        /*myRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val value = dataSnapshot.getValue(FirebaseEvents::class.java)
-                Log.d( "Value is: ", Gson().toJson( value))
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Log.w("Failed to read value.", error.toException())
-            }
-        })*/
-
         return inflater.inflate(R.layout.fragment_events, container, false)
     }
 

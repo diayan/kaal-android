@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class Event (
 
     @PrimaryKey
-    val id: Int,
+    val id: String,
     val name: String,
     val rates: Int,
     val description: String,
