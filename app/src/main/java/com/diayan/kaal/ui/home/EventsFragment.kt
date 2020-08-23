@@ -32,14 +32,7 @@ class EventsFragment : Fragment(), Injectable {
             eventsLiveData.observe(this@EventsFragment, Observer {
                 Log.e("Firebase Event:::", it.toString())
             })
-
         }
-        //val eventsLivedData = eventsViewModel.getEventsLiveData()
-        //Log.d("event value: ", Gson().toJson(eventsLivedData))
-
-       /* eventsLivedData.observe(this, object:Observer() {
-
-        })*/
         return inflater.inflate(R.layout.fragment_events, container, false)
     }
 
