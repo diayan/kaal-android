@@ -9,9 +9,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.diayan.kaal.R
 import com.diayan.kaal.di.Injectable
 import com.diayan.kaal.di.injectViewModel
+import kotlinx.android.synthetic.main.fragment_events.*
 import javax.inject.Inject
 
 class EventsFragment : Fragment(), Injectable {
@@ -31,15 +34,13 @@ class EventsFragment : Fragment(), Injectable {
             getEvents()
             eventsLiveData.observe(this@EventsFragment, Observer {
                 Log.e("Firebase Event:::", it.toString())
+
+                val linearLayoutManager = LinearLayoutManager(context)
+                events_recyclerView.layoutManager = GridLayoutManager(context, 2)
+                val adapter = ExperimentalAdapter(it)
+                events_recyclerView.adapter = adapter
             })
-
         }
-        //val eventsLivedData = eventsViewModel.getEventsLiveData()
-        //Log.d("event value: ", Gson().toJson(eventsLivedData))
-
-       /* eventsLivedData.observe(this, object:Observer() {
-
-        })*/
         return inflater.inflate(R.layout.fragment_events, container, false)
     }
 

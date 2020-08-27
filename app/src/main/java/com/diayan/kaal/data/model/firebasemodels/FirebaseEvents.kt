@@ -5,7 +5,7 @@ import com.google.firebase.firestore.IgnoreExtraProperties
 @IgnoreExtraProperties
 data class FirebaseEvents(
         val id: String = "z",
-        val name: String = "",
+        val name: String ="",
         val rates: Int = 0,
         val description: String ="",
         val location: String ="",
@@ -13,5 +13,4 @@ data class FirebaseEvents(
         val type: String ="",
         val favorite: Boolean = false,
         val imageUrl:String = ""
-
-        )
+)
