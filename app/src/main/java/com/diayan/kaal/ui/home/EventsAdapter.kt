@@ -3,20 +3,26 @@ package com.diayan.kaal.ui.home
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.paging.PagedList
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.diayan.kaal.R
 import com.diayan.kaal.data.model.Event
 import com.diayan.kaal.databinding.ItemEventsBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
 private val ITEM_VIEW_TYPE_HEADER = 0
 private val ITEM_VIEW_TYPE_ITEM = 1
 
-class EventsAdapter(clickListener: EventClickListener) :
+class EventsAdapter(val clickListener: EventClickListener) :
     PagedListAdapter<DataItem, RecyclerView.ViewHolder>(EventsDiffCallback()) {
 
+    private val adapterScope = CoroutineScope(Dispatchers.Default)
     private lateinit var recyclerView: RecyclerView
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -27,10 +33,24 @@ class EventsAdapter(clickListener: EventClickListener) :
         }
     }
 
+    fun addHeaderAndSubmitList(list: PagedList<Event>?) {
+        adapterScope.launch {
+            val items = when (list) {
+                null -> listOf(DataItem.Header)
+                else -> listOf(DataItem.Header) + list.map { DataItem.EventsDataItem(it) }
+            } as PagedList //note this!
+
+            withContext(Dispatchers.Main) {
+                submitList(items)
+            }
+        }
+    }
+
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val events = getItem(position)
-        events?.let {
-            holder.apply {
+        when (holder) {
+            is ViewHolder -> {
+                val eventItem = getItem(position) as DataItem.EventsDataItem
+                holder.bind(clickListener, eventItem.event)
             }
         }
     }
@@ -48,6 +68,11 @@ class HeaderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
 class ViewHolder private constructor(private val binding: ItemEventsBinding) :
     RecyclerView.ViewHolder(binding.root) {
+
+    fun bind(clickListener: EventClickListener, eventItem: Event) {
+        binding.events = eventItem
+        binding.executePendingBindings()
+    }
 
     companion object {
         fun from(parent: ViewGroup): ViewHolder {
