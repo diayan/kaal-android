@@ -1,6 +1,5 @@
 package com.diayan.kaal.ui.home
 
-import android.animation.LayoutTransition
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.diayan.kaal.R
 import com.diayan.kaal.data.model.Event
 import com.diayan.kaal.databinding.ItemEventsBinding
-import java.lang.ClassCastException
 
 
 private val ITEM_VIEW_TYPE_HEADER = 0
@@ -27,21 +25,12 @@ class EventsAdapter(clickListener: EventClickListener) :
             ITEM_VIEW_TYPE_ITEM -> ViewHolder.from(parent)
             else -> throw ClassCastException("Unknown viewType ${viewType}")
         }
-        /*         ViewHolder(
-                     ItemEventsBinding.inflate(
-                         LayoutInflater.from(parent.context),
-                         parent,
-                         false
-                     )
-                 )*/
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-
         val events = getItem(position)
         events?.let {
             holder.apply {
-
             }
         }
     }
@@ -97,5 +86,4 @@ sealed class DataItem {
     }
 
     abstract val id: Long
-}
 }
