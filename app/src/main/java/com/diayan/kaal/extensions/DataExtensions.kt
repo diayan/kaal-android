@@ -34,7 +34,7 @@ internal val FirebasePlaces.toPlaces: Place
 
 internal val FirebaseEvents.toEvents: Event
     get() = Event(
-        this.id ?: 0,
+        this.id ?: "",
         this.name ?: "",
         this.rates ?: 0,
         this.description ?: "",

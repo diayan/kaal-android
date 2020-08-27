@@ -8,6 +8,7 @@ import com.diayan.kaal.extensions.awaitTaskResult
 import com.diayan.kaal.extensions.toEvents
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -20,7 +21,7 @@ class EventRepository @Inject constructor(
     suspend fun getAllEvents(): Result<Exception, List<Event>> {
         return try {
             val task = awaitTaskResult(
-                firebaseFirestore.collection("events")
+                firebaseFirestore.collection("regions")
                     .get()
             )
             resultToPlacesList(task)
@@ -29,9 +30,7 @@ class EventRepository @Inject constructor(
         }
     }
 
-    fun getEventByType() {}
-
-    fun getEventById() {}
+    suspend fun getEvents() = firebaseFirestore.collection("regions").get().await().documents
 
     private fun resultToPlacesList(result: QuerySnapshot?): Result<Exception, List<Event>> {
         val eventList = mutableListOf<Event>()

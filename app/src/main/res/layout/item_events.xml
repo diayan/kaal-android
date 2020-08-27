@@ -13,55 +13,44 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="4dp">
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/event_imageView"
+                android:id="@+id/region_cover_imageView"
                 android:layout_width="match_parent"
-                android:layout_height="356dp"
+                android:layout_height="240dp"
                 android:background="@color/colorImagePlaceholder"
                 android:contentDescription="@string/event_cover_image"
                 android:scaleType="centerCrop"
+                android:src="@drawable/ic_mole_national"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <RatingBar
-                android:id="@+id/event_ratings_bar"
-                android:layout_width="242dp"
-                android:layout_height="40dp"
-                app:layout_constraintBottom_toBottomOf="@id/event_imageView"
-                app:layout_constraintStart_toStartOf="@id/event_imageView" />
-
             <TextView
-                android:id="@+id/event_name_textView"
-                android:layout_width="match_parent"
+                android:id="@+id/region_name_textView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:paddingStart="@dimen/margin_normal"
                 android:paddingTop="@dimen/margin_small"
                 android:paddingEnd="@dimen/margin_normal"
                 android:text="@{events.name}"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/event_imageView"
+                android:elevation="4dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/region_cover_imageView"
+                app:layout_constraintEnd_toEndOf="@id/region_cover_imageView"
+                app:layout_constraintStart_toStartOf="@id/region_cover_imageView"
                 tools:text="Afro Nation 2019" />
-
-            <TextView
-                android:id="@+id/event_date_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/margin_normal"
-                android:paddingEnd="@dimen/margin_normal"
-                android:paddingBottom="@dimen/margin_small"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/event_name_textView"
-                tools:text="15:00GMT 28th Sept, Accra Ghana" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>

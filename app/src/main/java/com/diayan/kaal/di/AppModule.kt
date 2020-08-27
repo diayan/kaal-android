@@ -2,7 +2,6 @@ package com.diayan.kaal.di
 
 import android.app.Application
 import com.diayan.kaal.data.AppDatabase
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
