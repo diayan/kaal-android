@@ -18,7 +18,7 @@ class ExperimentalAdapter(private val eventList: List<FirebaseEvents>) :
 
         fun bindEvents(event: FirebaseEvents) {
             this.event = event
-            itemView.region_name_textView.text = event.name
+            //itemView.region_name_textView.text = event.name
             if (event.imageUrl.isNotEmpty()) {
                 Picasso.get().load(event.imageUrl).into(itemView.region_cover_imageView)
             }

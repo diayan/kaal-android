@@ -16,6 +16,7 @@
     <string name="next">Next</string>
     <string name="finish">Finish</string>
 
+    <string name="emoji">&#128522; Northern Region</string>
 
     <string name="first_title">Travel The Continent </string>
     <string name="first_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea></string>
@@ -27,4 +28,5 @@
     <string name="fourth_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</string>
     <string name="fifth_title">Find Cheap Hotels</string>
     <string name="fifth_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</string>
+    <string name="elephant">🐘 Northern Region</string>
 </resources>
