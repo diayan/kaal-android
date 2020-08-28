@@ -8,8 +8,57 @@
     app:layoutDescription="@xml/activity_on_boarding_scene"
     tools:context=".ui.boarding.OnBoardingActivity">
 
+    <View
+        android:id="@+id/backgroundViewFirst"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/background_orange_rounded" />
 
-    <androidx.appcompat.widget.AppCompatImageView
+
+    <ImageView
+        android:id="@+id/independenceImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/indepence_arc" />
+
+    <TextView
+        android:id="@+id/titleViewFirst"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Welcome"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/subtitleViewFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lorem_ipsum" />
+
+    <View
+        android:id="@+id/backgroundViewSecond"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/background_orange_rounded" />
+
+    <ImageView
+        android:id="@+id/cultureImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_culture" />
+
+    <TextView
+        android:id="@+id/titleViewSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feel the culture, music, the food"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/subTitleViewSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lorem_ipsum" />
+
 </androidx.constraintlayout.motion.widget.MotionLayout>

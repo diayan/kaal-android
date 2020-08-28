@@ -5,4 +5,5 @@
 
     <dimen name="margin_normal">16dp</dimen>
     <dimen name="margin_small">8dp</dimen>
+    <dimen name="radius_largest">48dp</dimen>
 </resources>
