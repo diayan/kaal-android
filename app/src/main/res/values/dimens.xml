@@ -11,6 +11,7 @@
     <dimen name="tiny_size">4dp</dimen>
     <dimen name="small_icon_size">40dp</dimen>
     <dimen name="main_icon_size">100dp</dimen>
+    <dimen name="background_size">250dp</dimen>
 
     <!-- Radius -->
     <dimen name="radius_largest">48dp</dimen>
