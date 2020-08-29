@@ -35,7 +35,7 @@
         android:id="@+id/subtitleViewFirst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lorem_ipsum" />
+        android:text="this is the first scene" />
 
     <View
         android:id="@+id/backgroundViewSecond"
@@ -59,7 +59,7 @@
         android:id="@+id/subTitleViewSecond"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lorem_ipsum" />
+        android:text="and here is the second scene" />
 
     <View
         android:id="@+id/backgroundViewThird"
@@ -83,7 +83,7 @@
         android:id="@+id/subTitleViewThird"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lorem_ipsum" />
+        android:text="and hey here I am, the last man standing!" />
 
     <View
         android:id="@+id/indicatorViewFirst"
