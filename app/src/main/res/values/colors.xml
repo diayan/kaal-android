@@ -6,5 +6,8 @@
     <color name="colorImagePlaceholder">#D3D3D3</color>
     <color name="colorTransparent">@android:color/transparent</color>
     <color name="colorWhite">#F0F0F0</color>
+
+    <color name="orange">#FFC107</color>
+    <color name="orangeLight">#F8C171</color>
 </resources>
 
