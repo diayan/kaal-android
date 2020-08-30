@@ -19,7 +19,9 @@
         android:id="@+id/independenceImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/indepence_arc" />
+        app:srcCompat="@drawable/ic_map_africa"
+        tools:layout_editor_absoluteX="182dp"
+        tools:layout_editor_absoluteY="391dp" />
 
     <TextView
         android:id="@+id/titleViewFirst"
@@ -53,7 +55,7 @@
         android:id="@+id/cultureImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/ic_culture" />
+        app:srcCompat="@drawable/ic_african_mask" />
 
     <TextView
         android:id="@+id/titleViewSecond"
@@ -83,7 +85,7 @@
         android:id="@+id/flagImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/ic_ghana_flag" />
+        app:srcCompat="@drawable/ic_explore_map" />
 
     <TextView
         android:id="@+id/titleViewThird"
@@ -141,17 +143,17 @@
         android:id="@+id/diskView"
         android:layout_width="@dimen/small_icon_size"
         android:layout_height="@dimen/small_icon_size"
-        app:srcCompat="@drawable/elephant" />
+        app:srcCompat="@drawable/ic_animal_elephant" />
 
     <ImageView
         android:id="@+id/shockAbsorberView"
         android:layout_width="@dimen/small_icon_size"
         android:layout_height="@dimen/small_icon_size"
-        app:srcCompat="@drawable/kakum" />
+        app:srcCompat="@drawable/ic_castle" />
 
     <ImageView
         android:id="@+id/headlightsView"
         android:layout_width="@dimen/small_icon_size"
         android:layout_height="@dimen/small_icon_size"
-        app:srcCompat="@drawable/slave_market" />
+        app:srcCompat="@drawable/ic_mountain" />
 </androidx.constraintlayout.motion.widget.MotionLayout>
