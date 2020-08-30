@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/authentication_navigation"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/signInFragment">
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.diayan.kaal.ui.authentication.RegistrationFragment"
+        android:label="registration_fragment"
+        tools:layout="@layout/registration_fragment" />
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.diayan.kaal.ui.authentication.SignInFragment"
+        android:label="sign_in_fragment"
+        tools:layout="@layout/sign_in_fragment" />
+</navigation>
