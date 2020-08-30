@@ -5,7 +5,7 @@
     android:id="@+id/on_boarding_View"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F8F8"
+    android:background="@color/colorWhiteGrey"
     app:layoutDescription="@xml/activity_on_boarding_scene"
     tools:context=".ui.boarding.OnBoardingActivity">
 
@@ -19,9 +19,7 @@
         android:id="@+id/independenceImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/ic_map_africa"
-        tools:layout_editor_absoluteX="182dp"
-        tools:layout_editor_absoluteY="391dp" />
+        app:srcCompat="@drawable/ic_map_africa"/>
 
     <TextView
         android:id="@+id/titleViewFirst"
@@ -33,9 +31,7 @@
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/subtitleViewFirst"
