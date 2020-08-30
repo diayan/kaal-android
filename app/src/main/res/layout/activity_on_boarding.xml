@@ -27,13 +27,13 @@
         android:id="@+id/titleViewFirst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="casual"
         android:padding="8dp"
         android:text="Welcome To Ghana"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:fontFamily="casual"
         android:textAlignment="center"
         android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -41,9 +41,9 @@
         android:id="@+id/subtitleViewFirst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
         android:fontFamily="casual"
-        android:text="@string/lorem_ipsum" />
+        android:text="@string/lorem_ipsum"
+        android:textAlignment="center" />
 
     <View
         android:id="@+id/backgroundViewSecond"
@@ -61,19 +61,19 @@
         android:id="@+id/titleViewSecond"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:textSize="18sp"
         android:fontFamily="casual"
-        android:text="Feel the culture, music, the food" />
+        android:text="Feel the culture, music, the food"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/subTitleViewSecond"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
         android:fontFamily="casual"
-        android:text="@string/lorem_ipsum" />
+        android:text="@string/lorem_ipsum"
+        android:textAlignment="center" />
 
     <View
         android:id="@+id/backgroundViewThird"
@@ -91,19 +91,19 @@
         android:id="@+id/titleViewThird"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:textSize="18sp"
         android:fontFamily="casual"
-        android:text="Explore the country" />
+        android:text="Explore the country"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/subTitleViewThird"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
         android:fontFamily="casual"
-        android:text="@string/lorem_ipsum" />
+        android:text="@string/lorem_ipsum"
+        android:textAlignment="center" />
 
     <View
         android:id="@+id/indicatorViewFirst"
