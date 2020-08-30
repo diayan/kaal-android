@@ -53,7 +53,7 @@
         android:id="@+id/cultureImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_culture" />
+        app:srcCompat="@drawable/ic_culture" />
 
     <TextView
         android:id="@+id/titleViewSecond"
@@ -75,15 +75,15 @@
 
     <View
         android:id="@+id/backgroundViewThird"
-        android:layout_width="@dimen/background_size"
-        android:layout_height="@dimen/background_size"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:background="@drawable/background_orange_rounded" />
 
     <ImageView
         android:id="@+id/flagImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_ghana_flag" />
+        app:srcCompat="@drawable/ic_ghana_flag" />
 
     <TextView
         android:id="@+id/titleViewThird"
@@ -141,17 +141,17 @@
         android:id="@+id/diskView"
         android:layout_width="@dimen/small_icon_size"
         android:layout_height="@dimen/small_icon_size"
-        android:src="@drawable/elephant" />
+        app:srcCompat="@drawable/elephant" />
 
     <ImageView
         android:id="@+id/shockAbsorberView"
         android:layout_width="@dimen/small_icon_size"
         android:layout_height="@dimen/small_icon_size"
-        android:src="@drawable/kakum" />
+        app:srcCompat="@drawable/kakum" />
 
     <ImageView
         android:id="@+id/headlightsView"
         android:layout_width="@dimen/small_icon_size"
         android:layout_height="@dimen/small_icon_size"
-        android:src="@drawable/slave_market" />
+        app:srcCompat="@drawable/slave_market" />
 </androidx.constraintlayout.motion.widget.MotionLayout>
