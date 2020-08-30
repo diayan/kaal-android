@@ -5,28 +5,34 @@
     android:id="@+id/on_boarding_View"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f1f3f8"
+    android:background="#F8F8F8"
     app:layoutDescription="@xml/activity_on_boarding_scene"
     tools:context=".ui.boarding.OnBoardingActivity">
 
     <View
         android:id="@+id/backgroundViewFirst"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/background_size"
+        android:layout_height="@dimen/background_size"
         android:background="@drawable/background_orange_rounded" />
 
     <ImageView
         android:id="@+id/independenceImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/indepence_arc" />
+        app:srcCompat="@drawable/ic_map_africa"
+        tools:layout_editor_absoluteX="182dp"
+        tools:layout_editor_absoluteY="391dp" />
 
     <TextView
         android:id="@+id/titleViewFirst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Welcome"
+        android:text="Welcome To Ghana"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:fontFamily="casual"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -35,30 +41,38 @@
         android:id="@+id/subtitleViewFirst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="casual"
         android:text="@string/lorem_ipsum" />
 
     <View
         android:id="@+id/backgroundViewSecond"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/background_size"
+        android:layout_height="@dimen/background_size"
         android:background="@drawable/background_orange_rounded" />
 
     <ImageView
         android:id="@+id/cultureImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_culture" />
+        app:srcCompat="@drawable/ic_african_mask" />
 
     <TextView
         android:id="@+id/titleViewSecond"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:fontFamily="casual"
         android:text="Feel the culture, music, the food" />
 
     <TextView
         android:id="@+id/subTitleViewSecond"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="casual"
         android:text="@string/lorem_ipsum" />
 
     <View
@@ -71,18 +85,24 @@
         android:id="@+id/flagImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_ghana_flag" />
+        app:srcCompat="@drawable/ic_explore_map" />
 
     <TextView
         android:id="@+id/titleViewThird"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Explore the beauty" />
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:fontFamily="casual"
+        android:text="Explore the country" />
 
     <TextView
         android:id="@+id/subTitleViewThird"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="casual"
         android:text="@string/lorem_ipsum" />
 
     <View
@@ -123,17 +143,17 @@
         android:id="@+id/diskView"
         android:layout_width="@dimen/small_icon_size"
         android:layout_height="@dimen/small_icon_size"
-        android:src="@drawable/elephant" />
+        app:srcCompat="@drawable/ic_animal_elephant" />
 
     <ImageView
         android:id="@+id/shockAbsorberView"
         android:layout_width="@dimen/small_icon_size"
         android:layout_height="@dimen/small_icon_size"
-        android:src="@drawable/kakum" />
+        app:srcCompat="@drawable/ic_castle" />
 
     <ImageView
         android:id="@+id/headlightsView"
         android:layout_width="@dimen/small_icon_size"
         android:layout_height="@dimen/small_icon_size"
-        android:src="@drawable/slave_market" />
+        app:srcCompat="@drawable/ic_mountain" />
 </androidx.constraintlayout.motion.widget.MotionLayout>

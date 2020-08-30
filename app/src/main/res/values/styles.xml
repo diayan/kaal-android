@@ -43,7 +43,6 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
-
     <style name="TextStyle" parent="@android:style/Widget.TextView">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:gravity">center</item>
@@ -52,12 +51,11 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-
     <style name="ButtonColored" parent="Widget.AppCompat.Button.Borderless">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingStart">@dimen/medium_size</item>
-        <item name="android:paddingEnd">@dimen/medium_size</item>
+        <item name="android:paddingStart">@dimen/large_size</item>
+        <item name="android:paddingEnd">@dimen/larger_size</item>
         <item name="android:background">@drawable/background_button</item>
         <item name="android:text">@string/title_button</item>
         <item name="android:textColor">@color/colorWhite</item>
