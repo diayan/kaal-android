@@ -9,9 +9,11 @@
     <dimen name="small_size">8dp</dimen>
     <dimen name="medium_size">20dp</dimen>
     <dimen name="tiny_size">4dp</dimen>
+    <dimen name="margin_large">64</dimen>
     <dimen name="small_icon_size">40dp</dimen>
     <dimen name="main_icon_size">100dp</dimen>
     <dimen name="background_size">250dp</dimen>
+    <dimen name="twelve_size">12dp</dimen>
 
     <!-- Radius -->
     <dimen name="radius_largest">48dp</dimen>

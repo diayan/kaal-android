@@ -28,18 +28,22 @@
         <item name="android:textColorHint">@color/colorAccent</item>
     </style>
 
-    <style name="OnBoardingBorderButton" parent="Base.Widget.AppCompat.Button.Borderless">
-        <item name="android:minWidth">0dp</item>
-        <item name="android:textColor">@color/colorAccent</item>
-    </style>
 
-
-    <style name="Kaal.SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Kaal.SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Kaal.AuthenticationGeneralTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">false</item>
+        <item name="windowActionBar">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
 
@@ -51,13 +55,47 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="ButtonColored" parent="Widget.AppCompat.Button.Borderless">
-        <item name="android:layout_width">wrap_content</item>
+    <style name="ButtonColored" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingStart">@dimen/large_size</item>
+        <item name="android:paddingStart">@dimen/larger_size</item>
         <item name="android:paddingEnd">@dimen/larger_size</item>
-        <item name="android:background">@drawable/background_button</item>
+        <item name="android:paddingTop">@dimen/twelve_size</item>
+        <item name="android:paddingBottom">@dimen/twelve_size</item>
+        <item name="backgroundTint">@color/greenLight</item>
         <item name="android:text">@string/title_button</item>
+        <item name="cornerRadius">30dp</item>
         <item name="android:textColor">@color/colorWhite</item>
     </style>
+
+    <style name="Kaal.MaterialButton.Authentication" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/radius_small</item>
+        <item name="android:paddingEnd">@dimen/margin_small</item>
+        <item name="android:paddingTop">@dimen/margin_small</item>
+        <item name="android:paddingBottom">@dimen/radius_medium</item>
+        <item name="android:text">@string/title_button</item>
+        <item name="cornerRadius">30dp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_marginStart">@dimen/margin_normal</item>
+        <item name="android:layout_marginEnd">@dimen/margin_normal</item>
+    </style>
+
+    <style name="Kaal.MaterialButton.AuthPreview" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/radius_small</item>
+        <item name="android:paddingEnd">@dimen/radius_small</item>
+        <item name="android:paddingTop">@dimen/twelve_size</item>
+        <item name="android:paddingBottom">@dimen/twelve_size</item>
+        <item name="backgroundTint">@color/colorWhiteGrey</item>
+        <item name="android:text">@string/title_button</item>
+        <item name="cornerRadius">30dp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_marginStart">@dimen/margin_normal</item>
+        <item name="android:layout_marginEnd">@dimen/margin_normal</item>
+    </style>
+
+
 </resources>
