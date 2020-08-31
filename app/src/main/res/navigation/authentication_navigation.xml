@@ -15,4 +15,16 @@
         android:name="com.diayan.kaal.ui.authentication.SignInFragment"
         android:label="sign_in_fragment"
         tools:layout="@layout/sign_in_fragment" />
+    <fragment
+        android:id="@+id/authPreviewFragment"
+        android:name="com.diayan.kaal.ui.authentication.AuthPreviewFragment"
+        android:label="auth_preview_fragment"
+        tools:layout="@layout/auth_preview_fragment" >
+        <action
+            android:id="@+id/action_authPreviewFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_authPreviewFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
 </navigation>

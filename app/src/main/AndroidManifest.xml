@@ -19,8 +19,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ui.authentication.AuthenticationActivity"
-            android:theme="@style/Kaal.SplashTheme">
-
+            android:theme="@style/Kaal.AuthenticationGeneralTheme">
         </activity>
         <activity
             android:name=".ui.boarding.OnBoardingActivity"

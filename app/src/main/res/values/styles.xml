@@ -38,6 +38,15 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="Kaal.AuthenticationGeneralTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">false</item>
+        <item name="windowActionBar">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
     <style name="TextStyle" parent="@android:style/Widget.TextView">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:gravity">center</item>
@@ -51,27 +60,42 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingStart">@dimen/larger_size</item>
         <item name="android:paddingEnd">@dimen/larger_size</item>
-        <item name="android:paddingTop">@dimen/radius_common</item>
-        <item name="android:paddingBottom">@dimen/radius_medium</item>
+        <item name="android:paddingTop">@dimen/twelve_size</item>
+        <item name="android:paddingBottom">@dimen/twelve_size</item>
         <item name="backgroundTint">@color/greenLight</item>
         <item name="android:text">@string/title_button</item>
-        <item name="cornerRadius">32dp</item>
+        <item name="cornerRadius">30dp</item>
         <item name="android:textColor">@color/colorWhite</item>
     </style>
 
-    <style name="Kaal.MaterialButton.Authentication" parent="Widget.MaterialComponents.Button">
+    <style name="Kaal.MaterialButton.Authentication" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/radius_small</item>
+        <item name="android:paddingEnd">@dimen/margin_small</item>
+        <item name="android:paddingTop">@dimen/margin_small</item>
+        <item name="android:paddingBottom">@dimen/radius_medium</item>
+        <item name="android:text">@string/title_button</item>
+        <item name="cornerRadius">30dp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_marginStart">@dimen/margin_normal</item>
+        <item name="android:layout_marginEnd">@dimen/margin_normal</item>
+    </style>
+
+    <style name="Kaal.MaterialButton.AuthPreview" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingStart">@dimen/radius_small</item>
         <item name="android:paddingEnd">@dimen/radius_small</item>
-        <item name="android:paddingTop">@dimen/radius_common</item>
-        <item name="android:paddingBottom">@dimen/radius_medium</item>
-        <item name="backgroundTint">@color/greenLight</item>
+        <item name="android:paddingTop">@dimen/twelve_size</item>
+        <item name="android:paddingBottom">@dimen/twelve_size</item>
+        <item name="backgroundTint">@color/colorWhiteGrey</item>
         <item name="android:text">@string/title_button</item>
-        <item name="cornerRadius">32dp</item>
-        <item name="android:textColor">@color/colorWhite</item>
+        <item name="cornerRadius">30dp</item>
+        <item name="android:textColor">@color/colorBlack</item>
         <item name="android:layout_marginStart">@dimen/margin_normal</item>
         <item name="android:layout_marginEnd">@dimen/margin_normal</item>
-        <item name="android:layout_marginTop">@dimen/small_size</item>
     </style>
+
+
 </resources>

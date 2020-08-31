@@ -22,5 +22,9 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="register">Register</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="google_signin">Continue with google</string>
+    <string name="twitter_sign_up">continue with twitter</string>
+    <string name="sign_in">Sign In</string>
 
 </resources>
