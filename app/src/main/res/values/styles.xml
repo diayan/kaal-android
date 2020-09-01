@@ -58,8 +58,7 @@
     <style name="ButtonColored" parent="Widget.MaterialComponents.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingStart">@dimen/larger_size</item>
-        <item name="android:paddingEnd">@dimen/larger_size</item>
+
         <item name="android:paddingTop">@dimen/twelve_size</item>
         <item name="android:paddingBottom">@dimen/twelve_size</item>
         <item name="backgroundTint">@color/greenLight</item>
@@ -85,8 +84,6 @@
     <style name="Kaal.MaterialButton.AuthPreview" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingStart">@dimen/radius_small</item>
-        <item name="android:paddingEnd">@dimen/radius_small</item>
         <item name="android:paddingTop">@dimen/twelve_size</item>
         <item name="android:paddingBottom">@dimen/twelve_size</item>
         <item name="backgroundTint">@color/colorWhiteGrey</item>
