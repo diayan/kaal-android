@@ -1,34 +1,43 @@
 package com.diayan.kaal.ui.authentication
 
-import android.content.Intent
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import com.diayan.kaal.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
+import com.diayan.kaal.databinding.AuthPreviewFragmentBinding
 
 class AuthPreviewFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = AuthPreviewFragment()
-    }
-
     private lateinit var viewModel: AuthPreviewViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.auth_preview_fragment, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        //TODO: how to add drawables to material buttons
+
+        val binding = AuthPreviewFragmentBinding.inflate(inflater)
+
+        binding.previewLogin.setOnClickListener { view: View? ->
+            view?.findNavController()?.navigate(
+                AuthPreviewFragmentDirections.actionAuthPreviewFragmentToSignInFragment()
+            )
+        }
+
+        binding.previewSignUpButton.setOnClickListener { view: View? ->
+            view?.findNavController()?.navigate(
+                AuthPreviewFragmentDirections.actionAuthPreviewFragmentToRegistrationFragment()
+            )
+        }
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(AuthPreviewViewModel::class.java)
-        // TODO: Use the ViewModel
+
     }
 
     override fun onResume() {

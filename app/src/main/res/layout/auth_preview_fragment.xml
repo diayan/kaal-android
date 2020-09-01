@@ -1,66 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorWhiteGrey"
-    tools:context=".ui.authentication.AuthPreviewFragment">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:gravity="bottom"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteGrey"
+        tools:context=".ui.authentication.AuthPreviewFragment">
 
-        <com.google.android.material.button.MaterialButton
-            style="@style/Widget.MaterialComponents.Button"
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="@dimen/small_size"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="casual"
-            android:paddingStart="64dp"
-            android:paddingTop="@dimen/twelve_size"
-            android:paddingEnd="64dp"
-            android:paddingBottom="@dimen/twelve_size"
-            android:text="@string/sign_up"
-            android:textAllCaps="false"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:backgroundTint="@color/greenLight"
-            app:cornerRadius="24dp" />
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-        <com.google.android.material.button.MaterialButton
-            style="@style/Kaal.MaterialButton.AuthPreview"
-            android:fontFamily="casual"
-            android:text="@string/google_signin" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/previewSignUpButton"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/small_size"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="casual"
+                android:paddingStart="64dp"
+                android:paddingTop="@dimen/twelve_size"
+                android:paddingEnd="64dp"
+                android:paddingBottom="@dimen/twelve_size"
+                android:text="@string/sign_up"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/greenLight"
+                app:cornerRadius="24dp" />
 
-        <com.google.android.material.button.MaterialButton
-            style="@style/Kaal.MaterialButton.AuthPreview"
-            android:fontFamily="casual"
-            android:text="@string/twitter_sign_up"
-            android:textStyle="normal" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/previewGoogleSignUp"
+                style="@style/Kaal.MaterialButton.AuthPreview"
+                android:fontFamily="casual"
+                android:text="@string/google_signin" />
 
-        <com.google.android.material.button.MaterialButton
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:fontFamily="casual"
-            android:text="Log In"
-            android:textColor="@color/colorBlack"
-            android:textStyle="bold"
-            app:backgroundTint="@color/colorWhiteGrey" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/previewTwitterSignUp"
+                style="@style/Kaal.MaterialButton.AuthPreview"
+                android:fontFamily="casual"
+                android:text="@string/twitter_sign_up"
+                android:textStyle="normal" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/previewLogin"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="casual"
+                android:text="Log In"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorWhiteGrey" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

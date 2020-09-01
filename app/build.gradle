@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
 
 android {
     compileSdkVersion 29
@@ -36,6 +37,10 @@ android {
     dataBinding {
         enabled = true
     }
+
+    packagingOptions {
+        exclude 'META-INF/navigation-runtime-ktx_release.kotlin_module'
+    }
 }
 
 dependencies {
@@ -59,8 +64,12 @@ dependencies {
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0-alpha01"
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.0.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.0.0'
+
+    //Navigation component
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
+
+
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
     implementation "androidx.recyclerview:recyclerview:1.0.0"
