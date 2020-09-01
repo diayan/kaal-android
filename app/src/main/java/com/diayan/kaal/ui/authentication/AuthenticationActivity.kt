@@ -15,12 +15,15 @@ class AuthenticationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_authentication)
 
+        //TODO: Remember to use databinding in here
+        //val binding = DataBindingUtil.setContentView<ActivityAuthenticationBinding>(this, R.layout.activity_authentication)
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
         val navController = this.findNavController(R.id.auth_nav_host_fragment)
         NavigationUI.setupActionBarWithNavController(this, navController)
 
         appBarConfiguration = AppBarConfiguration(navController.graph)
+            //AppBarConfiguration(navController.graph, )
 
     }
 

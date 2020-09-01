@@ -14,9 +14,10 @@ class AuthPreviewFragment : Fragment() {
 
     private lateinit var viewModel: AuthPreviewViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        //TODO: how to add drawables to material buttons
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         val binding = AuthPreviewFragmentBinding.inflate(inflater)
         binding.previewLogin.setOnClickListener { view: View? ->
