@@ -19,7 +19,6 @@ class AuthPreviewFragment : Fragment() {
         //TODO: how to add drawables to material buttons
 
         val binding = AuthPreviewFragmentBinding.inflate(inflater)
-
         binding.previewLogin.setOnClickListener { view: View? ->
             view?.findNavController()?.navigate(
                 AuthPreviewFragmentDirections.actionAuthPreviewFragmentToSignInFragment()
