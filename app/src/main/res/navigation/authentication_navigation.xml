@@ -12,7 +12,9 @@
         tools:layout="@layout/registration_fragment" >
         <action
             android:id="@+id/action_registrationFragment_to_authPreviewFragment"
-            app:destination="@id/authPreviewFragment" />
+            app:destination="@id/authPreviewFragment"
+            app:popUpTo="@id/authPreviewFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
@@ -21,7 +23,9 @@
         tools:layout="@layout/sign_in_fragment" >
         <action
             android:id="@+id/action_signInFragment_to_authPreviewFragment"
-            app:destination="@id/authPreviewFragment" />
+            app:destination="@id/authPreviewFragment"
+            app:popUpTo="@id/authPreviewFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/authPreviewFragment"
