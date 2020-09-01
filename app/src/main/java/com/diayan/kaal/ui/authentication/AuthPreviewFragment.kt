@@ -48,5 +48,6 @@ class AuthPreviewFragment : Fragment() {
     override fun onStop() {
         super.onStop()
         (activity as AppCompatActivity).supportActionBar?.show()
+        (activity as AppCompatActivity).supportActionBar?.elevation = 0f
     }
 }
