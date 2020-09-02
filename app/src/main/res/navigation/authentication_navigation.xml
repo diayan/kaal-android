@@ -13,6 +13,8 @@
         <action
             android:id="@+id/action_registrationFragment_to_authPreviewFragment"
             app:destination="@id/authPreviewFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
             app:popUpTo="@id/authPreviewFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -24,6 +26,8 @@
         <action
             android:id="@+id/action_signInFragment_to_authPreviewFragment"
             app:destination="@id/authPreviewFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
             app:popUpTo="@id/authPreviewFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -34,9 +38,17 @@
         tools:layout="@layout/auth_preview_fragment" >
         <action
             android:id="@+id/action_authPreviewFragment_to_registrationFragment"
-            app:destination="@id/registrationFragment" />
+            app:destination="@id/registrationFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_in_top" />
         <action
             android:id="@+id/action_authPreviewFragment_to_signInFragment"
-            app:destination="@id/signInFragment" />
+            app:destination="@id/signInFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_in_top" />
     </fragment>
 </navigation>
