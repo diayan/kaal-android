@@ -9,8 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.diayan.kaal.databinding.AuthPreviewFragmentBinding
+import com.diayan.kaal.di.Injectable
 
-class AuthPreviewFragment : Fragment() {
+class AuthPreviewFragment : Fragment(), Injectable {
 
     private lateinit var viewModel: AuthPreviewViewModel
 
