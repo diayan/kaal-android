@@ -8,8 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.diayan.kaal.databinding.RegistrationFragmentBinding
+import com.diayan.kaal.di.Injectable
 
-class RegistrationFragment : Fragment() {
+class RegistrationFragment : Fragment(), Injectable {
 
     private lateinit var viewModel: RegistrationViewModel
 
