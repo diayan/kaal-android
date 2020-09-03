@@ -2,6 +2,7 @@ package com.diayan.kaal.di
 
 import android.app.Application
 import com.diayan.kaal.data.AppDatabase
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
@@ -38,4 +39,8 @@ class AppModule {
     @Singleton
     @Provides
     fun provideFirebaseFirestore() = FirebaseFirestore.getInstance()
+
+    @Singleton
+    @Provides
+    fun funFirebaseAuthentication() = FirebaseAuth.getInstance()
 }
