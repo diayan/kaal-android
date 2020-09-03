@@ -113,7 +113,9 @@ dependencies {
     //firebase realtime database
     implementation 'com.google.firebase:firebase-firestore-ktx:21.3.0'
 
-
+    //firebase authentication dependency
+    implementation 'com.google.firebase:firebase-auth:19.3.2'
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
 
     //motionlayout
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta3'
