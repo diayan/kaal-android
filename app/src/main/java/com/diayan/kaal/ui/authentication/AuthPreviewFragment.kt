@@ -23,6 +23,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.GoogleAuthProvider
+import kotlinx.android.synthetic.main.auth_preview_fragment.*
 import javax.inject.Inject
 
 class AuthPreviewFragment : Fragment(), Injectable {
@@ -75,6 +76,7 @@ class AuthPreviewFragment : Fragment(), Injectable {
     }
 
     fun signIn() {
+        loaderImageView.visibility = View.VISIBLE
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
@@ -90,6 +92,7 @@ class AuthPreviewFragment : Fragment(), Injectable {
                 val account = task.getResult(ApiException::class.java)!!
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
                 Log.d(TAG, "success!!" + account.displayName + account.email)
+                loaderImageView.visibility = View.GONE
 
                 val intent = Intent(context, MainActivity::class.java)
                 startActivity(intent)
@@ -99,6 +102,8 @@ class AuthPreviewFragment : Fragment(), Injectable {
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e)
+                loaderImageView.visibility = View.GONE
+
                 // ...
             }
         }
