@@ -16,6 +16,7 @@ class AuthPreviewViewModel @Inject constructor(
     private var _authenticatedUserLiveData = MutableLiveData<User>()
     val authenticatedUserLiveData: LiveData<User> = _authenticatedUserLiveData
 
+
     fun signInWithGoogle(authCredential: AuthCredential) {
         _authenticatedUserLiveData = googleAuthRepository.firebaseSignInWithGoogle(authCredential)
     }

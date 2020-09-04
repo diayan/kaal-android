@@ -4,16 +4,18 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FirebaseAuth
+import com.diayan.kaal.data.model.User
+
 import javax.inject.Inject
 
-class GoogleAuthRepository @Inject constructor(val firebaseAuth: FirebaseAuth) {
+class GoogleAuthRepository @Inject constructor(private val firebaseAuth: FirebaseAuth) {
 
 
     val TAG = "AuthRepository"
 
-    fun firebaseSignInWithGoogle(googleAuthCredential: AuthCredential): MutableLiveData<com.diayan.kaal.data.model.User> {
+    fun firebaseSignInWithGoogle(googleAuthCredential: AuthCredential): MutableLiveData<User> {
 
-        val authenticatedUserMutableLiveData: MutableLiveData<com.diayan.kaal.data.model.User> = MutableLiveData()
+        val authenticatedUserMutableLiveData: MutableLiveData<User> = MutableLiveData()
 
         firebaseAuth.signInWithCredential(googleAuthCredential)
             .addOnCompleteListener { task ->
@@ -26,7 +28,7 @@ class GoogleAuthRepository @Inject constructor(val firebaseAuth: FirebaseAuth) {
                         val uid = firebaseUser.uid
                         val name = firebaseUser.displayName!!
                         val email = firebaseUser.email!!
-                        val user = com.diayan.kaal.data.model.User(uid, name, email,
+                        val user = User(uid, name, email,
                             isAuthenticated = false,
                             isNew = false,
                             isCreated = false
