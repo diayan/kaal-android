@@ -8,8 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.fragment.findNavController
 import com.diayan.kaal.databinding.RegistrationFragmentBinding
 import com.diayan.kaal.di.Injectable
 import com.diayan.kaal.di.injectViewModel
@@ -29,20 +27,12 @@ class RegistrationFragment : Fragment(), Injectable {
         viewModel = injectViewModel(viewModelFactory)
         val binding = RegistrationFragmentBinding.inflate(inflater)
 
-        val email = binding.emailEditText.text.toString()
-        val password = binding.passwordEditText.toString()
-
         viewModel.authenticatedUserLiveData.observe(viewLifecycleOwner, Observer {
 
         })
 
-      /*binding.signUpButton.setOnClickListener { view: View? ->
-          viewModel.signInWithEmailAndPassword(email, password)
-      }*/
-
         return binding.root
     }
-
 
     override fun onResume() {
         super.onResume()

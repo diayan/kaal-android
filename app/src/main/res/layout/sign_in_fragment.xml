@@ -6,7 +6,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorWhiteGrey"
+        android:layout_margin="16dp"
         android:orientation="vertical"
         tools:context=".ui.authentication.SignInFragment">
 
@@ -14,14 +14,13 @@
             android:id="@+id/email_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/tiny_size"
             android:hint="@string/email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
                 android:inputType="textEmailAddress"
                 android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -30,7 +29,7 @@
             android:id="@+id/password_container"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/tiny_size"
             android:hint="@string/password"
             app:layout_constraintEnd_toEndOf="@id/email_layout"
@@ -40,7 +39,6 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
                 android:inputType="textPassword"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -51,8 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/small_size"
-            android:fontFamily="casual"
+            android:layout_margin="4dp"
             android:paddingStart="32dp"
             android:paddingTop="@dimen/small_size"
             android:paddingEnd="32dp"

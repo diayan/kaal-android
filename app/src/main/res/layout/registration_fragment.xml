@@ -4,31 +4,71 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+<!--
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.diayan.kaal.ui.authentication.RegistrationViewModel" />
+    </data>
+-->
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorWhiteGrey"
+        android:layout_margin="16dp"
         android:orientation="vertical"
+        android:clipToPadding="false"
         tools:context=".ui.authentication.RegistrationFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/firstName_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/tiny_size"
+            android:hint="@string/first_name"
+            app:layout_constraintVertical_bias="0.75">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/firstNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lastName_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/tiny_size"
+            android:hint="@string/last_name"
+            app:layout_constraintVertical_bias="0.75">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/LastNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textSize="18sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/tiny_size"
             android:hint="@string/email"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.75">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
                 android:inputType="textEmailAddress"
                 android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -37,18 +77,14 @@
             android:id="@+id/password_container"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/tiny_size"
-            android:hint="@string/password"
-            app:layout_constraintEnd_toEndOf="@id/email_layout"
-            app:layout_constraintStart_toStartOf="@id/email_layout"
-            app:layout_constraintTop_toBottomOf="@id/email_layout">
+            android:hint="@string/password">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
                 android:inputType="textPassword"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -61,7 +97,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/small_size"
-            android:fontFamily="casual"
             android:paddingStart="32dp"
             android:paddingTop="@dimen/small_size"
             android:paddingEnd="32dp"
@@ -72,10 +107,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             app:backgroundTint="@color/greenLight"
-            app:cornerRadius="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/password_container" />
+            app:cornerRadius="24dp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>
