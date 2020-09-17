@@ -17,6 +17,12 @@ class RegistrationViewModel @Inject constructor(
 
     private var _authenticatedUserMutableLiveData = MutableLiveData<User>()
 
+    private val _email = MutableLiveData<String>()
+    val email: LiveData<String> get() = _email
+
+    private val _password = MutableLiveData<String>()
+    val password: LiveData<String> get() = _password
+
     val authenticatedUserLiveData: LiveData<User>
         get() = _authenticatedUserMutableLiveData
 
