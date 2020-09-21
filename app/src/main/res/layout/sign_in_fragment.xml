@@ -12,7 +12,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email_layout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/tiny_size"
@@ -27,7 +27,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_container"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/tiny_size"
@@ -46,11 +46,12 @@
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="4dp"
             android:paddingStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:paddingTop="@dimen/small_size"
             android:paddingEnd="32dp"
             android:paddingBottom="@dimen/small_size"
@@ -58,7 +59,6 @@
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
-            android:textStyle="bold"
             app:backgroundTint="@color/greenLight"
             app:cornerRadius="24dp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
