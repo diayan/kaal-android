@@ -1,15 +1,27 @@
 package com.diayan.kaal.data.repository
 
 import android.util.Log
-import com.diayan.kaal.data.model.User
+import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import javax.inject.Inject
 
-class EmailRegistrationRepository @Inject constructor(private val firebaseAuth: FirebaseAuth) {
 
+class EmailRegistrationRepository @Inject constructor(
+    private val firebaseAuth: FirebaseAuth
+) {
     val TAG = "EmailPasswordRepository"
 
-    fun emailAndPasswordRegistration(email: String?, password: String?){
+    private val loggedOutLiveData = MutableLiveData<Boolean>()
+
+    private val userLiveData = MutableLiveData<FirebaseUser>()
+
+    init {
+        userLiveData
+    }
+
+/*    fun emailAndPasswordRegistration(email: String?, password: String?): MutableLiveData<User> {
+        val newUserMutableLiveData = MutableLiveData<User>()
 
         firebaseAuth.createUserWithEmailAndPassword(email!!, password!!)
             .addOnCompleteListener() { task ->
@@ -30,9 +42,46 @@ class EmailRegistrationRepository @Inject constructor(private val firebaseAuth: 
                     Log.w(TAG, "Unable to register user: ", task.exception)
                 }
             }
+    }*/
+
+    fun login(email: String?, password: String?) {
+        firebaseAuth.signInWithEmailAndPassword(email!!, password!!)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    userLiveData.postValue(firebaseAuth.currentUser)
+                } else {
+                    Log.w(TAG, "Login failure", task.exception)
+                }
+            }
     }
 
-    suspend fun getUser(user: String): User {
-        return User("user", "user", "email", false, true, true)
+    fun register(email: String, password: String) {
+        firebaseAuth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    userLiveData.postValue(firebaseAuth.currentUser)
+                    //Log.w(TAG, "Current user: " + firebaseAuth.currentUser!!.displayName)
+
+                } else {
+                    Log.w(TAG, "Registration failed: ", task.exception)
+                }
+            }
     }
+
+    fun logOut() {
+        firebaseAuth.signOut()
+        loggedOutLiveData.postValue(true)
+    }
+
+    fun getUserLiveData(): MutableLiveData<FirebaseUser> {
+        return userLiveData
+    }
+
+    fun getLoggedOutLiveData(): MutableLiveData<Boolean> {
+        return loggedOutLiveData
+    }
+
+    /* suspend fun getUser(user: String): User {
+         return User("user", "user", "email", false, true, true)
+     }*/
 }

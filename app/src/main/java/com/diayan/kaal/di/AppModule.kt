@@ -43,4 +43,5 @@ class AppModule {
     @Singleton
     @Provides
     fun funFirebaseAuthentication() = FirebaseAuth.getInstance()
+
 }
