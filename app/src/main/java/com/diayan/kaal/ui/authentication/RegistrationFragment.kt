@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.diayan.kaal.databinding.RegistrationFragmentBinding
 import com.diayan.kaal.di.Injectable
@@ -14,10 +13,11 @@ import com.diayan.kaal.di.injectViewModel
 import javax.inject.Inject
 
 class RegistrationFragment : Fragment(), Injectable {
+    val TAG = "RegistrationFragment"
 
     @set:Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private lateinit var viewModel: RegistrationViewModel
+    private lateinit var viewModel: AuthViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,9 +27,10 @@ class RegistrationFragment : Fragment(), Injectable {
         viewModel = injectViewModel(viewModelFactory)
         val binding = RegistrationFragmentBinding.inflate(inflater)
 
-        viewModel.authenticatedUserLiveData.observe(viewLifecycleOwner, Observer {
 
-        })
+        binding.signUpButton.setOnClickListener {
+
+        }
 
         return binding.root
     }
@@ -39,5 +40,4 @@ class RegistrationFragment : Fragment(), Injectable {
         (activity as AppCompatActivity).supportActionBar?.title = "Sign Up"
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
-
 }

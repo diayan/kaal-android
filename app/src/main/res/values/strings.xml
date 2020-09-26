@@ -28,5 +28,6 @@
     <string name="sign_in">Sign In</string>
     <string name="last_name">Last Name</string>
     <string name="first_name">First Name</string>
+    <string name="log_in">Log In</string>
 
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="colorPrimary">#1ED760</color>
-    <color name="colorPrimaryDark">#1ED760</color>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#000</color>
+    <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">#145374</color>
     <color name="colorImagePlaceholder">#D3D3D3</color>
     <color name="colorTransparent">@android:color/transparent</color>
@@ -13,5 +13,11 @@
     <color name="greenLight">#1ED760</color>
     <color name="teaGreenColor">#e1ffc2</color>
     <color name="colorBlack">#222326</color>
+
+<!--
+    this line overrides the default auto filled background color
+-->
+    <color name="mtrl_textinput_filled_box_default_background_color" tools:override="true">#FFFFFF</color>
+
 </resources>
 

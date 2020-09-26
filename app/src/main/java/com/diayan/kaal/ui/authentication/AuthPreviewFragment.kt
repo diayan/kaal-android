@@ -32,7 +32,7 @@ class AuthPreviewFragment : Fragment(), Injectable {
 
     @set:Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private lateinit var viewModel: AuthPreviewViewModel
+    private lateinit var viewModel: AuthViewModel
 
     lateinit var googleSignInClient: GoogleSignInClient
 
@@ -47,7 +47,7 @@ class AuthPreviewFragment : Fragment(), Injectable {
 
         val binding = AuthPreviewFragmentBinding.inflate(inflater)
 
-        binding.previewGoogleSignUp.setOnClickListener {view: View?->
+        binding.previewGoogleSignUp.setOnClickListener { view: View? ->
             signIn()
         }
 
@@ -104,7 +104,6 @@ class AuthPreviewFragment : Fragment(), Injectable {
                 Log.w(TAG, "Google sign in failed", e)
                 loaderImageView.visibility = View.GONE
 
-                // ...
             }
         }
     }
@@ -115,7 +114,7 @@ class AuthPreviewFragment : Fragment(), Injectable {
         signInWithGoogleAuthCredential(googleSignInCredential)
     }
 
-    private fun signInWithGoogleAuthCredential(googleAuthCredential: AuthCredential){
+    private fun signInWithGoogleAuthCredential(googleAuthCredential: AuthCredential) {
         viewModel.signInWithGoogle(googleAuthCredential)
     }
 
