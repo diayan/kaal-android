@@ -3,9 +3,7 @@ package com.diayan.kaal.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.diayan.kaal.ui.ar.ArViewModel
-import com.diayan.kaal.ui.authentication.AuthPreviewViewModel
-import com.diayan.kaal.ui.authentication.RegistrationViewModel
-import com.diayan.kaal.ui.authentication.SignInViewModel
+import com.diayan.kaal.ui.authentication.AuthViewModel
 import com.diayan.kaal.ui.home.EventsViewModel
 import com.diayan.kaal.ui.places.PlacesViewModel
 import com.diayan.kaal.ui.stores.StoresViewModel
@@ -38,18 +36,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(RegistrationViewModel::class)
-    abstract fun bindRegistrationViewModel(viewModel: RegistrationViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(SignInViewModel::class)
-    abstract fun bindSignInViewModel(viewModel: SignInViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(AuthPreviewViewModel::class)
-    abstract fun bindsAuthPreviewViewModel(viewModel: AuthPreviewViewModel): ViewModel
+    @ViewModelKey(AuthViewModel::class)
+    abstract fun bindsAuthPreviewViewModel(viewModel: AuthViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

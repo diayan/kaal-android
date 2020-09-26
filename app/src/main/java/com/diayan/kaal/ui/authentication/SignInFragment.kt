@@ -12,7 +12,7 @@ import com.diayan.kaal.di.Injectable
 
 class SignInFragment : Fragment(), Injectable {
 
-    private lateinit var viewModel: SignInViewModel
+    private lateinit var viewModel: AuthViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +25,7 @@ class SignInFragment : Fragment(), Injectable {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(SignInViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(AuthViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
