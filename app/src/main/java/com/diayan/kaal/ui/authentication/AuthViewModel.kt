@@ -10,7 +10,7 @@ import com.diayan.kaal.R
 import com.diayan.kaal.data.model.FormResult
 import com.diayan.kaal.data.model.FormState
 import com.diayan.kaal.data.repository.GoogleAuthRepository
-import com.diayan.kaal.util.FirebaseAuthHelper
+import com.diayan.kaal.helper.FirebaseAuthHelper
 import com.diayan.kaal.util.ValidationUtil
 import com.google.firebase.auth.FirebaseAuthException
 import kotlinx.coroutines.Job

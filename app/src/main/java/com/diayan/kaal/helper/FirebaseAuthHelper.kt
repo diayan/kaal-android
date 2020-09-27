@@ -1,4 +1,4 @@
-package com.diayan.kaal.util
+package com.diayan.kaal.helper
 
 import com.google.firebase.auth.*
 import kotlinx.coroutines.Deferred

@@ -2,7 +2,7 @@ package com.diayan.kaal.di
 
 import android.app.Application
 import com.diayan.kaal.data.AppDatabase
-import com.diayan.kaal.util.FirebaseAuthHelper
+import com.diayan.kaal.helper.FirebaseAuthHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
