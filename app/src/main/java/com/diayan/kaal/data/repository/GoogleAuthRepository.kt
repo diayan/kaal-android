@@ -10,7 +10,6 @@ import javax.inject.Inject
 
 class GoogleAuthRepository @Inject constructor(private val firebaseAuth: FirebaseAuth) {
 
-
     val TAG = "AuthRepository"
 
     fun firebaseSignInWithGoogle(googleAuthCredential: AuthCredential): MutableLiveData<User> {

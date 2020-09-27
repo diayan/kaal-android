@@ -96,7 +96,6 @@ class AuthPreviewFragment : Fragment(), Injectable {
 
                 val intent = Intent(context, MainActivity::class.java)
                 startActivity(intent)
-                getGoogleAuthCredentials(account)
 
                 //firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
@@ -106,16 +105,6 @@ class AuthPreviewFragment : Fragment(), Injectable {
 
             }
         }
-    }
-
-    private fun getGoogleAuthCredentials(googleSignInAccount: GoogleSignInAccount) {
-        val googleTokenId = googleSignInAccount.idToken
-        val googleSignInCredential = GoogleAuthProvider.getCredential(googleTokenId, null)
-        signInWithGoogleAuthCredential(googleSignInCredential)
-    }
-
-    private fun signInWithGoogleAuthCredential(googleAuthCredential: AuthCredential) {
-        viewModel.signInWithGoogle(googleAuthCredential)
     }
 
     override fun onResume() {
