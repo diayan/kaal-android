@@ -42,7 +42,8 @@ class FirebaseAuthHelper {
         return currentUser() ?: throw FirebaseAuthException("", "")
     }*/
 
-    fun sendPasswordResetEmailAsync(email: String): Deferred<Void> = firebaseAuth.sendPasswordResetEmail(email).asDeferred()
+    fun sendPasswordResetEmailAsync(email: String): Deferred<Void> =
+        firebaseAuth.sendPasswordResetEmail(email).asDeferred()
 
     fun logout() = firebaseAuth.signOut()
 }

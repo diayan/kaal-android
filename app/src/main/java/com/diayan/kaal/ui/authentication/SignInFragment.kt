@@ -6,12 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.diayan.kaal.databinding.SignInFragmentBinding
 import com.diayan.kaal.di.Injectable
+import com.diayan.kaal.di.injectViewModel
+import javax.inject.Inject
 
 class SignInFragment : Fragment(), Injectable {
 
+    @set:Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var viewModel: AuthViewModel
 
     override fun onCreateView(
@@ -19,14 +23,10 @@ class SignInFragment : Fragment(), Injectable {
         savedInstanceState: Bundle?
     ): View? {
 
+        viewModel = injectViewModel(viewModelFactory)
+
         val binding = SignInFragmentBinding.inflate(inflater)
         return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(AuthViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
     override fun onResume() {

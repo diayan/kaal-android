@@ -4,51 +4,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<!--
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.diayan.kaal.ui.authentication.RegistrationViewModel" />
-    </data>
--->
-
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp"
-        android:orientation="vertical"
         android:clipToPadding="false"
+        android:orientation="vertical"
         tools:context=".ui.authentication.RegistrationFragment">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/firstName_layout"
+            android:id="@+id/name_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/tiny_size"
-            android:hint="@string/first_name"
+            android:hint="@string/name"
             app:layout_constraintVertical_bias="0.75">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/firstNameEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:textSize="18sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/lastName_layout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/tiny_size"
-            android:hint="@string/last_name"
-            app:layout_constraintVertical_bias="0.75">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/lastNameEditText"
+                android:id="@+id/nameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -107,6 +81,16 @@
             android:textSize="18sp"
             app:backgroundTint="@color/greenLight"
             app:cornerRadius="24dp" />
+
+        <ImageView
+            android:id="@+id/loader"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:background="@drawable/loading_animation"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

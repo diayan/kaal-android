@@ -26,8 +26,12 @@
     <string name="google_signin">Continue with google</string>
     <string name="twitter_sign_up">continue with twitter</string>
     <string name="sign_in">Sign In</string>
-    <string name="last_name">Last Name</string>
+    <string name="name">Name</string>
     <string name="first_name">First Name</string>
     <string name="log_in">Log In</string>
+    <string name="invalid_email">Email is not valid</string>
+    <string name="invalid_password">Password must be greater than 5 letters</string>
+    <string name="prompt_empty_field">Field cannot be empty</string>
+
 
 </resources>
