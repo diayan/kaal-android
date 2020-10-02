@@ -118,4 +118,11 @@ class AuthViewModel @Inject constructor(
             firebaseAuthHelper.sendPasswordResetEmailAsync(email).await()
         }
     }
+
+//
+//    private suspend fun checkStatus(uid: String) {
+//        onBoardingRepository.checkOnBoardingStatus(uid).let {
+//            isOnBoardedMutable.postValue(it)
+//        }
+//    }
 }

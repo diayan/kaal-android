@@ -1,14 +1,12 @@
 package com.diayan.kaal.ui.authentication
 
 import android.app.Activity
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
@@ -48,7 +46,7 @@ class SignInFragment : Fragment(), Injectable {
             val formState = it ?: return@Observer
 
             // disable login button unless both username / password is valid
-            binding.signInButton.isEnabled = formState.isDataValid
+          //  binding.signInButton.isEnabled = formState.isDataValid
 
             if (formState.emailError != null) {
                 binding.emailEditText.error = getString(formState.emailError)
@@ -77,7 +75,7 @@ class SignInFragment : Fragment(), Injectable {
                 )
             }
 
-            binding.emailEditText.apply {
+            binding.passwordEditText.apply {
 
                 doAfterTextChanged {
                     viewModel.loginDataChanged(
@@ -96,16 +94,17 @@ class SignInFragment : Fragment(), Injectable {
                     }
                     false
                 }
+            }
 
-                binding.signInButton.setOnClickListener {
-                    binding.loader.visibility = View.VISIBLE
-                    Utils.hideKeyboard(activity as MainActivity)
+            binding.signInButton.setOnClickListener {
+                binding.loader.visibility = View.VISIBLE
+                Utils.hideKeyboard(activity as MainActivity)
 
-                    viewModel.loginWith(
-                        binding.emailEditText.text.toString(),
-                        binding.passwordEditText.text.toString()
-                    )
-                }
+                Log.d("SignInFragment: ", "sign in button clicked")
+                viewModel.loginWith(
+                    binding.emailEditText.text.toString(),
+                    binding.passwordEditText.text.toString()
+                )
             }
 
             //forgot password button comes here
