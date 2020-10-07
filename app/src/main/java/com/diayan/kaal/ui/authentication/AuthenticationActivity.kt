@@ -1,11 +1,12 @@
 package com.diayan.kaal.ui.authentication
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.diayan.kaal.R
+import com.diayan.kaal.helper.SharedPrefManager
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
@@ -16,6 +17,10 @@ class AuthenticationActivity : AppCompatActivity(), HasAndroidInjector {
     @set:Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
     override fun androidInjector(): AndroidInjector<Any> = dispatchingAndroidInjector
+
+    private val sharedPreferences: SharedPrefManager by lazy {
+        sharedPreferences
+    }
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
@@ -39,5 +44,9 @@ class AuthenticationActivity : AppCompatActivity(), HasAndroidInjector {
         val navController = this.findNavController(R.id.auth_nav_host_fragment)
         return NavigationUI.navigateUp(navController, appBarConfiguration)
 
+    }
+
+    private fun createLoginSessionAndStartActivity() {
+        sharedPreferences.createLogInSession()
     }
 }

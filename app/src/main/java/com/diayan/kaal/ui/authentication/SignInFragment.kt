@@ -20,6 +20,7 @@ import com.diayan.kaal.di.injectViewModel
 import com.diayan.kaal.helper.SharedPrefManager
 import com.diayan.kaal.util.IntentUtil
 import com.diayan.kaal.util.Utils
+import com.diayan.kaal.util.launchActivity
 import javax.inject.Inject
 
 class SignInFragment : Fragment(), Injectable {
@@ -27,26 +28,28 @@ class SignInFragment : Fragment(), Injectable {
     @set:Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
+    private val TAG = SignInFragment::class.java.simpleName
     private lateinit var viewModel: AuthViewModel
 
-    private val sharedPreferencesManager: SharedPrefManager by lazy {
-        sharedPreferencesManager
-    }
+    private lateinit var sharedPrefManager: SharedPrefManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
+        sharedPrefManager = SharedPrefManager(requireContext())
+
         viewModel = injectViewModel(viewModelFactory)
         val binding = SignInFragmentBinding.inflate(inflater)
 
+        //Log.d(TAG, sharedPrefManager.isLoggedIn().toString())
 
         viewModel.formState.observe(viewLifecycleOwner, Observer {
             val formState = it ?: return@Observer
 
             // disable login button unless both username / password is valid
-          //  binding.signInButton.isEnabled = formState.isDataValid
+            binding.signInButton.isEnabled = formState.isDataValid
 
             if (formState.emailError != null) {
                 binding.emailEditText.error = getString(formState.emailError)
@@ -55,61 +58,61 @@ class SignInFragment : Fragment(), Injectable {
             if (formState.passwordError != null) {
                 binding.passwordEditText.error = getString(formState.passwordError)
             }
+        })
 
-            viewModel.formResult.observe(viewLifecycleOwner, Observer {
-                Log.e("FormResult", it.toString())
-                val formResult = it ?: return@Observer
-                binding.loader.visibility = View.GONE
-                if (formResult.error != null) {
-                    showLoginFailure(formResult.error)
-                }
-                if (formResult.success != null) {
-                    openNextActivity()
-                }
-            })
+        viewModel.formResult.observe(viewLifecycleOwner, Observer {
+            Log.e("FormResult", it.toString())
+            val formResult = it ?: return@Observer
+            binding.loader.visibility = View.GONE
+            if (formResult.error != null) {
+                showLoginFailure(formResult.error)
+            }
+            if (formResult.success != null) {
+                openNextActivity()
+            }
+        })
 
-            binding.emailEditText.doAfterTextChanged {
+        binding.emailEditText.doAfterTextChanged {
+            viewModel.loginDataChanged(
+                binding.emailEditText.text.toString(),
+                binding.passwordEditText.text.toString()
+            )
+        }
+
+        binding.passwordEditText.apply {
+
+            doAfterTextChanged {
                 viewModel.loginDataChanged(
                     binding.emailEditText.text.toString(),
                     binding.passwordEditText.text.toString()
                 )
             }
 
-            binding.passwordEditText.apply {
-
-                doAfterTextChanged {
-                    viewModel.loginDataChanged(
-                        binding.emailEditText.text.toString(),
-                        binding.passwordEditText.text.toString()
-                    )
+            setOnEditorActionListener { textView, i, keyEvent ->
+                when (i) {
+                    EditorInfo.IME_ACTION_DONE ->
+                        viewModel.loginWith(
+                            binding.emailEditText.text.toString(),
+                            binding.passwordEditText.text.toString()
+                        )
                 }
-
-                setOnEditorActionListener { textView, i, keyEvent ->
-                    when (i) {
-                        EditorInfo.IME_ACTION_DONE ->
-                            viewModel.loginWith(
-                                binding.emailEditText.text.toString(),
-                                binding.passwordEditText.text.toString()
-                            )
-                    }
-                    false
-                }
+                false
             }
+        }
 
-            binding.signInButton.setOnClickListener {
-                binding.loader.visibility = View.VISIBLE
-                Utils.hideKeyboard(activity as MainActivity)
+        binding.signInButton.setOnClickListener {
 
-                Log.d("SignInFragment: ", "sign in button clicked")
-                viewModel.loginWith(
-                    binding.emailEditText.text.toString(),
-                    binding.passwordEditText.text.toString()
-                )
-            }
+            binding.loader.visibility = View.VISIBLE
+            Utils.hideKeyboard(activity as AuthenticationActivity)
 
-            //forgot password button comes here
-            //forgot_password_textView.setOnClickListener { launchActivity<ForgotPasswordActivity> {} }
-        })
+            Log.d("SignInFragment: ", "SignIn Triggered")
+            viewModel.loginWith(
+                binding.emailEditText.text.toString(),
+                binding.passwordEditText.text.toString()
+            )
+        }
+        //forgot password button comes here
+        //forgot_password_textView.setOnClickListener { launchActivity<ForgotPasswordActivity> {} }
 
         return binding.root
     }
@@ -121,6 +124,7 @@ class SignInFragment : Fragment(), Injectable {
     }
 
     private fun openNextActivity() {
+        sharedPrefManager.createLogInSession()
         IntentUtil.start(context, MainActivity::class.java)
         activity?.setResult(Activity.RESULT_OK)
         activity?.finish()

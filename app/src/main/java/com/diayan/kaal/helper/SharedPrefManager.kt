@@ -28,12 +28,12 @@ class SharedPrefManager(val context: Context) {
 
     fun isLoggedIn(): Boolean = sharedPreferences.getBoolean(IS_LOGGEDIN, false)
     
-    fun setIsOnboarded() {
+    fun setIsOnBoarded() {
         editor.putBoolean(IS_OnBoarded, true)
         editor.apply()
     }
 
-    fun isOnboarded(): Boolean = sharedPreferences.getBoolean(IS_OnBoarded, false)
+    fun isOnBoarded(): Boolean = sharedPreferences.getBoolean(IS_OnBoarded, false)
 
     fun clearSharedPreferences() {
         editor.clear()

@@ -18,11 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.authentication.AuthenticationActivity"
-            android:theme="@style/Kaal.AuthenticationGeneralTheme">
-        </activity>
-        <activity
-            android:name=".ui.boarding.OnBoardingActivity"
+        <activity android:name=".ui.splash.SplashscreenActivity"
             android:theme="@style/Kaal.SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,10 +26,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.authentication.AuthenticationActivity"
+            android:theme="@style/Kaal.AuthenticationGeneralTheme"/>
+        <activity
+            android:name=".ui.boarding.OnBoardingActivity"
+            android:theme="@style/Kaal.SplashTheme"/>
         <activity android:name=".ui.detail.DetailActivity" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"/>
+            android:theme="@style/Kaal.AuthenticationGeneralTheme"
+            android:label="@string/app_name" />
     </application>
 
 </manifest>
