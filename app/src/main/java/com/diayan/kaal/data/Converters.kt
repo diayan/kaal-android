@@ -10,4 +10,10 @@ class Converters {
     @TypeConverter
     fun datestampToCalendar(value: Long): Calendar =
         Calendar.getInstance().apply { timeInMillis = value }
+
+    @TypeConverter
+    fun toDate(value: Long?) = value?.let { Date(value) }
+
+    @TypeConverter
+    fun toLong(value: Date?) = value?.time
 }

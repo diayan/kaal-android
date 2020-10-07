@@ -14,7 +14,6 @@ object IntentUtil {
         val intent = Intent(context, cls)
         context?.startActivity(intent)
     }
-
 }
 
 inline fun <reified T : Any> Activity.launchActivity(

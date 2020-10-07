@@ -17,12 +17,9 @@ import com.diayan.kaal.di.Injectable
 import com.diayan.kaal.di.injectViewModel
 import com.diayan.kaal.util.RC_SIGN_IN
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.firebase.auth.AuthCredential
-import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.auth_preview_fragment.*
 import javax.inject.Inject
 

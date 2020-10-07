@@ -1,4 +1,4 @@
-package com.diayan.kaal
+package com.diayan.kaal.app
 
 import android.app.Application
 import com.diayan.kaal.di.AppInjector

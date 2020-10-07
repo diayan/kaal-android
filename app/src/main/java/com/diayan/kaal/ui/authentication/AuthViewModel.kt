@@ -83,6 +83,16 @@ class AuthViewModel @Inject constructor(
 
     }
 
+    fun loginDataChanged(email: String, password: String) {
+        if (!ValidationUtil.isEmailValid(email)) {
+            _formState.value = FormState(emailError = R.string.invalid_email)
+        } else if (!ValidationUtil.isPasswordValid(password)) {
+            _formState.value = FormState(passwordError = R.string.invalid_password)
+        } else {
+            _formState.value = FormState(isDataValid = true)
+        }
+    }
+
     fun registrationDataChanged(name: String, email: String, password: String) {
         if (TextUtils.isEmpty(name)) {
             _formState.value = FormState(nameError = R.string.prompt_empty_field)
@@ -108,4 +118,11 @@ class AuthViewModel @Inject constructor(
             firebaseAuthHelper.sendPasswordResetEmailAsync(email).await()
         }
     }
+
+//
+//    private suspend fun checkStatus(uid: String) {
+//        onBoardingRepository.checkOnBoardingStatus(uid).let {
+//            isOnBoardedMutable.postValue(it)
+//        }
+//    }
 }
