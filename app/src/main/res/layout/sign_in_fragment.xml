@@ -3,12 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp"
         android:orientation="vertical"
         tools:context=".ui.authentication.SignInFragment">
+
+        <com.diayan.kaal.lib.KaalProgress
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:translationZ="2dp"
+            app:progressTitle="SETTING UP.." />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email_layout"
@@ -16,7 +22,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/tiny_size"
-            android:hint="@string/email">
+            android:hint="@string/email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailEditText"
@@ -51,10 +60,10 @@
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="32dp"
-            android:layout_marginTop="16dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
+            android:paddingStart="32dp"
             android:paddingTop="@dimen/small_size"
             android:paddingEnd="32dp"
             android:paddingBottom="@dimen/small_size"
@@ -63,16 +72,10 @@
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
             app:backgroundTint="@color/greenLight"
-            app:cornerRadius="24dp" />
+            app:cornerRadius="24dp"
+            app:layout_constraintEnd_toEndOf="@id/password_container"
+            app:layout_constraintStart_toStartOf="@id/password_container"
+            app:layout_constraintTop_toBottomOf="@id/password_container" />
 
-        <ImageView
-            android:id="@+id/loader"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:adjustViewBounds="true"
-            android:background="@drawable/loading_animation"
-            android:scaleType="centerCrop"
-            android:visibility="gone" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
