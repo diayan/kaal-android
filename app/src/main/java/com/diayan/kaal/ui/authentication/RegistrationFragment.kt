@@ -55,7 +55,7 @@ class RegistrationFragment : Fragment(), Injectable {
         viewModel.formResult.observe(viewLifecycleOwner, Observer {
             val formResult = it ?: return@Observer
 
-            binding.loader.visibility = View.GONE
+            binding.progress.visibility = View.GONE
 
             if (formResult.error != null) {
                 showLoginFailure(formResult.error)
@@ -104,7 +104,7 @@ class RegistrationFragment : Fragment(), Injectable {
             }
 
             binding.signUpButton.setOnClickListener {
-                binding.loader.visibility = View.VISIBLE
+                binding.progress.visibility = View.VISIBLE
                 viewModel.createUser(
                     binding.nameEditText.text.toString(),
                     binding.emailEditText.text.toString(),

@@ -14,10 +14,14 @@
     <color name="greenLight">#1ED760</color>
     <color name="teaGreenColor">#e1ffc2</color>
     <color name="colorBlack">#222326</color>
+    <color name="white">#ffffff</color>
+    <color name="progress_textView">#ffffff</color>
+    <color name="transparent_progress">#7904040f</color>
 
-<!--
-    this line overrides the default auto filled background color
--->
+
+    <!--
+        this line overrides the default auto filled background color
+    -->
     <color name="mtrl_textinput_filled_box_default_background_color" tools:override="true">#FFFFFF</color>
 
 </resources>

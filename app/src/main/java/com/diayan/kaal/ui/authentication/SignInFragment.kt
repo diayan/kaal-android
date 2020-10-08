@@ -20,7 +20,6 @@ import com.diayan.kaal.di.injectViewModel
 import com.diayan.kaal.helper.SharedPrefManager
 import com.diayan.kaal.util.IntentUtil
 import com.diayan.kaal.util.Utils
-import com.diayan.kaal.util.launchActivity
 import javax.inject.Inject
 
 class SignInFragment : Fragment(), Injectable {
@@ -63,7 +62,7 @@ class SignInFragment : Fragment(), Injectable {
         viewModel.formResult.observe(viewLifecycleOwner, Observer {
             Log.e("FormResult", it.toString())
             val formResult = it ?: return@Observer
-            binding.loader.visibility = View.GONE
+            binding.progress.visibility = View.GONE
             if (formResult.error != null) {
                 showLoginFailure(formResult.error)
             }
@@ -102,7 +101,7 @@ class SignInFragment : Fragment(), Injectable {
 
         binding.signInButton.setOnClickListener {
 
-            binding.loader.visibility = View.VISIBLE
+            binding.progress.visibility = View.VISIBLE
             Utils.hideKeyboard(activity as AuthenticationActivity)
 
             Log.d("SignInFragment: ", "SignIn Triggered")
