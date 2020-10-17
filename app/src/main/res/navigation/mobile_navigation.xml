@@ -27,5 +27,5 @@
         android:id="@+id/augmented_reality"
         android:name="com.diayan.kaal.ui.ar.ArFragment"
         android:label="@string/title_augmented_reality"
-        tools:layout="@layout/fragment_ar"/>
+        tools:layout="@layout/fragment_ar" />
 </navigation>

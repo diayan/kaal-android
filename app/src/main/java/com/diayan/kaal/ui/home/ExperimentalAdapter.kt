@@ -4,8 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.diayan.kaal.R
 import com.diayan.kaal.data.model.firebasemodels.FirebaseEvents
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_events.view.*
 
 class ExperimentalAdapter(private val eventList: List<FirebaseEvents>) :
@@ -16,9 +18,13 @@ class ExperimentalAdapter(private val eventList: List<FirebaseEvents>) :
 
         fun bindEvents(event: FirebaseEvents) {
             this.event = event
-            itemView.region_name_textView.text = event.description
-
+            //itemView.region_name_textView.text = event.name
+            if (event.imageUrl.isNotEmpty()) {
+                Picasso.get().load(event.imageUrl).into(itemView.region_cover_imageView)
+            }
             //itemView.description_textView.text = event.description
+            //Picasso.get().load(photoUrl).placeholder(R.color.gray78).into(holder.roomImageView)
+
         }
 
         companion object {

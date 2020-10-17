@@ -3,6 +3,7 @@ package com.diayan.kaal.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.diayan.kaal.ui.ar.ArViewModel
+import com.diayan.kaal.ui.authentication.AuthViewModel
 import com.diayan.kaal.ui.home.EventsViewModel
 import com.diayan.kaal.ui.places.PlacesViewModel
 import com.diayan.kaal.ui.stores.StoresViewModel
@@ -32,6 +33,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ArViewModel::class)
     abstract fun bindArViewModel(viewModel: ArViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AuthViewModel::class)
+    abstract fun bindsAuthPreviewViewModel(viewModel: AuthViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

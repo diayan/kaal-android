@@ -15,16 +15,23 @@
     <string name="previous">Previous</string>
     <string name="next">Next</string>
     <string name="finish">Finish</string>
+    <string name="emoji">&#128522; Northern Region</string>
+    <string name="elephant">🐘 Northern Region</string>
+    <string name="lorem_ipsum">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</string>
+    <string name="title_button">Get started</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="google_signin">Continue with google</string>
+    <string name="twitter_sign_up">continue with twitter</string>
+    <string name="sign_in">Sign In</string>
+    <string name="name">Name</string>
+    <string name="first_name">First Name</string>
+    <string name="log_in">Log In</string>
+    <string name="invalid_email">Email is not valid</string>
+    <string name="invalid_password">Password must be greater than 5 letters</string>
+    <string name="prompt_empty_field">Field cannot be empty</string>
 
 
-    <string name="first_title">Travel The Continent </string>
-    <string name="first_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea></string>
-    <string name="second_title">Discover Ghana</string>
-    <string name="second_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</string>
-    <string name="third_title">Find Events</string>
-    <string name="third_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea!</string>
-    <string name="fourth_title">Buy Local Craft</string>
-    <string name="fourth_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</string>
-    <string name="fifth_title">Find Cheap Hotels</string>
-    <string name="fifth_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</string>
 </resources>

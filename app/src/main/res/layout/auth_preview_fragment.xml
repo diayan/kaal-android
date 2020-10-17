@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.authentication.AuthPreviewFragment">
+
+        <ImageView
+            android:id="@+id/loaderImageView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:adjustViewBounds="true"
+            android:background="@drawable/loading_animation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/previewSignUpButton"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/small_size"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingTop="@dimen/twelve_size"
+                android:paddingBottom="@dimen/twelve_size"
+                android:text="@string/sign_up"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                app:backgroundTint="@color/greenLight"
+                app:cornerRadius="24dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/previewGoogleSignUp"
+                style="@style/Kaal.MaterialButton.AuthPreview"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/google_signin"
+                app:icon="@drawable/ic_google_logo"
+                app:iconSize="24dp"
+                app:iconTint="@null" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/previewTwitterSignUp"
+                style="@style/Kaal.MaterialButton.AuthPreview"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/twitter_sign_up"
+                android:textStyle="normal"
+                app:icon="@drawable/ic_twitter_logo"
+                app:iconSize="24dp"
+                app:iconTint="@null" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/previewLogin"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/log_in"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                app:backgroundTint="@android:color/white" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,7 +1,7 @@
 package com.diayan.kaal.di
 
 import android.app.Application
-import com.diayan.kaal.App
+import com.diayan.kaal.app.App
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule

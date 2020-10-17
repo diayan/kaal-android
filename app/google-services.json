@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "771543615306-mjmei8i4j229pv52mbh8lons7figgcf5.apps.googleusercontent.com",
+          "client_id": "771543615306-vidribtdhf91b96hnuj63rr6iukkskmg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.diayan.kaal",
-            "certificate_hash": "0929553121da75a68125a847be41d7151a58c353"
+            "certificate_hash": "9ea2a9da649e537236450c7b1a66a6738d05b952"
           }
         },
         {

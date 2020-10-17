@@ -32,7 +32,7 @@ class EventsFragment : Fragment(), Injectable {
 
         with(eventsViewModel) {
             getEvents()
-            eventsLiveData.observe(this@EventsFragment, Observer {
+            eventsLiveData.observe(viewLifecycleOwner, Observer {
                 Log.e("Firebase Event:::", it.toString())
 
                 val linearLayoutManager = LinearLayoutManager(context)

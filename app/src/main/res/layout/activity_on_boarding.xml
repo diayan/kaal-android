@@ -1,9 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.diayan.kaal.ui.boarding.OnBoardingView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/on_boarding_View"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhiteGrey"
+    app:layoutDescription="@xml/activity_on_boarding_scene"
     tools:context=".ui.boarding.OnBoardingActivity">
 
-</com.diayan.kaal.ui.boarding.OnBoardingView>
+    <View
+        android:id="@+id/backgroundViewFirst"
+        android:layout_width="@dimen/background_size"
+        android:layout_height="@dimen/background_size"
+        android:background="@drawable/background_orange_rounded" />
+
+    <ImageView
+        android:id="@+id/independenceImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/ic_map_africa"/>
+
+    <TextView
+        android:id="@+id/titleViewFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Welcome To Ghana"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/subtitleViewFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/lorem_ipsum"
+        android:textAlignment="center" />
+
+    <View
+        android:id="@+id/backgroundViewSecond"
+        android:layout_width="@dimen/background_size"
+        android:layout_height="@dimen/background_size"
+        android:background="@drawable/background_orange_rounded" />
+
+    <ImageView
+        android:id="@+id/cultureImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/ic_african_mask" />
+
+    <TextView
+        android:id="@+id/titleViewSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Feel the culture, music, the food"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/subTitleViewSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/lorem_ipsum"
+        android:textAlignment="center" />
+
+    <View
+        android:id="@+id/backgroundViewThird"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/background_orange_rounded" />
+
+    <ImageView
+        android:id="@+id/flagImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/ic_explore_map" />
+
+    <TextView
+        android:id="@+id/titleViewThird"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Explore the country"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/subTitleViewThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/lorem_ipsum"
+        android:textAlignment="center" />
+
+    <View
+        android:id="@+id/indicatorViewFirst"
+        android:layout_width="@dimen/common_size"
+        android:layout_height="@dimen/small_size"
+        android:background="@drawable/background_indicator_disabled" />
+
+    <View
+        android:id="@+id/indicatorViewSecond"
+        android:layout_width="@dimen/common_size"
+        android:layout_height="@dimen/small_size"
+        android:background="@drawable/background_indicator_disabled" />
+
+    <View
+        android:id="@+id/indicatorViewThird"
+        android:layout_width="@dimen/common_size"
+        android:layout_height="@dimen/small_size"
+        android:background="@drawable/background_indicator_disabled" />
+
+    <View
+        android:id="@+id/indicatorViewActiveTop"
+        android:layout_width="@dimen/common_size"
+        android:layout_height="@dimen/tiny_size"
+        android:background="@drawable/background_indicator_enabled_top" />
+
+    <View
+        android:id="@+id/indicatorViewActiveBottom"
+        android:layout_width="@dimen/common_size"
+        android:layout_height="@dimen/tiny_size"
+        android:background="@drawable/background_indicator_enabled_bottom" />
+
+    <Button
+        android:id="@+id/finishButton"
+        style="@style/ButtonColored" />
+
+    <ImageView
+        android:id="@+id/diskView"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        app:srcCompat="@drawable/ic_animal_elephant" />
+
+    <ImageView
+        android:id="@+id/shockAbsorberView"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        app:srcCompat="@drawable/ic_castle" />
+
+    <ImageView
+        android:id="@+id/headlightsView"
+        android:layout_width="@dimen/small_icon_size"
+        android:layout_height="@dimen/small_icon_size"
+        app:srcCompat="@drawable/ic_mountain" />
+</androidx.constraintlayout.motion.widget.MotionLayout>

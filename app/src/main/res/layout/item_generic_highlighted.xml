@@ -24,7 +24,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:background="@drawable/gradient_hightlighted_item"
+            android:background="@drawable/gradient_highlighted_item"
             app:layout_constraintBottom_toBottomOf="@id/places_imageView"
             app:layout_constraintEnd_toEndOf="@id/places_imageView"
             app:layout_constraintStart_toStartOf="@id/places_imageView"

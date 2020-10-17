@@ -16,20 +16,19 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
-private val ITEM_VIEW_TYPE_HEADER = 0
-private val ITEM_VIEW_TYPE_ITEM = 1
+private const val ITEM_VIEW_TYPE_HEADER = 0
+private const val ITEM_VIEW_TYPE_ITEM = 1
 
-class EventsAdapter(val clickListener: EventClickListener) :
+class EventsAdapter(private val clickListener: EventClickListener) :
     PagedListAdapter<DataItem, RecyclerView.ViewHolder>(EventsDiffCallback()) {
 
     private val adapterScope = CoroutineScope(Dispatchers.Default)
-    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
             ITEM_VIEW_TYPE_HEADER -> HeaderViewHolder.from(parent)
             ITEM_VIEW_TYPE_ITEM -> ViewHolder.from(parent)
-            else -> throw ClassCastException("Unknown viewType ${viewType}")
+            else -> throw ClassCastException("Unknown viewType $viewType")
         }
     }
 

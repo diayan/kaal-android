@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import androidx.sqlite.db.SupportSQLiteDatabase
+import com.diayan.kaal.app.AppConfig.DATABASE_NAME
 import com.diayan.kaal.data.dao.EventDao
 import com.diayan.kaal.data.dao.PlaceDao
 import com.diayan.kaal.data.dao.StoreDao
@@ -19,8 +19,9 @@ import kotlinx.coroutines.internal.synchronized
  * The Room database for this app
  */
 @Database(
-        entities = [Place::class, Event::class, Store::class],
-        version = 1, exportSchema = false)
+    entities = [Place::class, Event::class, Store::class],
+    version = 1, exportSchema = false
+)
 
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
@@ -30,7 +31,6 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun eventsDao(): EventDao
 
     abstract fun storesDao(): StoreDao
-
 
     companion object {
 
@@ -46,15 +46,10 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
         private fun buildDatabase(context: Context): AppDatabase {
-            return Room.databaseBuilder(context, AppDatabase::class.java, "kaal-db")
-                    .addCallback(object : RoomDatabase.Callback() {
-                        override fun onCreate(db: SupportSQLiteDatabase) {
-                            super.onCreate(db)
-                            // val request = OneTimeWorkRequestBuilder<SeedDatabaseWorker>().build()
-                            //WorkManager.getInstance(context).enqueue(request)
-                        }
-                    })
-                    .build()
+            return Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME)
+                .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build()
         }
     }
 }
