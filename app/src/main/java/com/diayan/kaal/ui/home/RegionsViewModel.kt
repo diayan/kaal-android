@@ -22,8 +22,8 @@ class EventsViewModel @Inject constructor(
     private val _eventsLiveData = MutableLiveData<List<FirebaseEvents>>()
     val eventsLiveData: LiveData<List<FirebaseEvents>> get() = _eventsLiveData
 
-    var connectivityAvailable: Boolean = false
-    var eventId: Int? = null
+//    var connectivityAvailable: Boolean = false
+//    var eventId: Int? = null
 
     fun getEvents() {
         viewModelScope.launch {

@@ -4,7 +4,7 @@ import com.google.firebase.firestore.IgnoreExtraProperties
 
 @IgnoreExtraProperties
 data class FirebaseEvents(
-        val id: String = "z",
+        val id: Int = 1,
         val name: String ="",
         val rates: Int = 0,
         val description: String ="",
