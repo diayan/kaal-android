@@ -8,7 +8,7 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.diayan.kaal.R
-import com.diayan.kaal.data.model.Event
+import com.diayan.kaal.data.model.firebasemodels.FirebaseEvents
 import com.diayan.kaal.databinding.ItemEventsBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -32,7 +32,7 @@ class EventsAdapter(private val clickListener: EventClickListener) :
         }
     }
 
-    fun addHeaderAndSubmitList(list: PagedList<Event>?) {
+    fun addHeaderAndSubmitList(list: PagedList<FirebaseEvents>?) {
         adapterScope.launch {
             val items = when (list) {
                 null -> listOf(DataItem.Header)
@@ -68,7 +68,7 @@ class HeaderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 class ViewHolder private constructor(private val binding: ItemEventsBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(clickListener: EventClickListener, eventItem: Event) {
+    fun bind(clickListener: EventClickListener, eventItem: FirebaseEvents) {
         binding.events = eventItem
         binding.executePendingBindings()
     }
@@ -94,12 +94,12 @@ private class EventsDiffCallback : DiffUtil.ItemCallback<DataItem>() {
     }
 }
 
-class EventClickListener(val clickListener: (event: Event) -> Unit) {
-    fun onClick(event: Event) = clickListener(event)
+class EventClickListener(val clickListener: (event: FirebaseEvents) -> Unit) {
+    fun onClick(event: FirebaseEvents) = clickListener(event)
 }
 
 sealed class DataItem {
-    data class EventsDataItem(val event: Event) : DataItem() {
+    data class EventsDataItem(val event: FirebaseEvents) : DataItem() {
         override val id = event.id.toLong()
     }
 
