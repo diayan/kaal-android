@@ -12,11 +12,11 @@ import com.diayan.kaal.di.Injectable
 import com.diayan.kaal.di.injectViewModel
 import javax.inject.Inject
 
-class PlacesFragment : Fragment(), Injectable {
+class SchedulesFragment : Fragment(), Injectable {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private lateinit var placesViewModel: PlacesViewModel
+    private lateinit var placesViewModel: SchedulesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,

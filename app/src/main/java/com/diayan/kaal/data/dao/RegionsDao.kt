@@ -6,20 +6,20 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.diayan.kaal.data.model.Event
+import com.diayan.kaal.data.model.Regions
 
 @Dao
-interface EventDao {
+interface RegionsDao {
 
     @Query("SELECT * FROM events WHERE id = :id")
-    fun getPagedEventsById(id: Int): DataSource.Factory<Int, Event>
+    fun getPagedEventsById(id: Int): DataSource.Factory<Int, Regions>
 
     @Query("SELECT * FROM events WHERE id = :id")
-    fun getEvents(id: String): LiveData<Event>
+    fun getEvents(id: String): LiveData<Regions>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(events: List<Event>)
+    suspend fun insertAll(regions: List<Regions>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(events: Event)
+    suspend fun insert(events: Regions)
 }

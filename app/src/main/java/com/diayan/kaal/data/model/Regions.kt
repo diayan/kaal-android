@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "events")
-data class Event (
+data class Regions (
 
     @PrimaryKey
     val id: Int,

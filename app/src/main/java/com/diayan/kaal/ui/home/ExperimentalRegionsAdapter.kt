@@ -5,12 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.diayan.kaal.R
-import com.diayan.kaal.data.model.firebasemodels.FirebaseEvents
+import com.diayan.kaal.data.model.firebasemodels.FirebaseRegions
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item_events.view.*
+import kotlinx.android.synthetic.main.item_regions.view.*
 
-class ExperimentalAdapter(private val eventList: List<FirebaseEvents>, private val header: View) :
-    RecyclerView.Adapter<ExperimentalAdapter.EventsViewHolder>() {
+class RegionsAdapter(private val eventList: List<FirebaseRegions>, private val header: View) :
+    RecyclerView.Adapter<RegionsAdapter.EventsViewHolder>() {
     private val ITEM_VIEW_TYPE_HEADER = 0
     private val ITEM_VIEW_TYPE_ITEM = 1
 
@@ -19,9 +19,9 @@ class ExperimentalAdapter(private val eventList: List<FirebaseEvents>, private v
     }
 
     class EventsViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
-        var event: FirebaseEvents? = null
+        var event: FirebaseRegions? = null
 
-        fun bindEvents(event: FirebaseEvents) {
+        fun bindEvents(event: FirebaseRegions) {
             this.event = event
             itemView.region_name_textView.text = event.name
             if (event.imageUrl.isNotEmpty()) {
@@ -34,7 +34,7 @@ class ExperimentalAdapter(private val eventList: List<FirebaseEvents>, private v
         if (viewType == ITEM_VIEW_TYPE_HEADER) {
             return EventsViewHolder(header)
         }
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_events, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_regions, parent, false)
         return EventsViewHolder(view)
     }
 
@@ -42,7 +42,7 @@ class ExperimentalAdapter(private val eventList: List<FirebaseEvents>, private v
         if (isHeader(position)) {
             return
         }
-        val event = eventList[position - 1] //subtract one for the header
+        val event = eventList[position - 1] //subtract one for the item_regions_header
         holder.bindEvents(event)
     }
 

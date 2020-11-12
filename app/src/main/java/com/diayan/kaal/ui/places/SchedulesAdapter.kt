@@ -5,16 +5,16 @@ import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.diayan.kaal.data.model.Place
-import com.diayan.kaal.databinding.ItemPlacesBinding
+import com.diayan.kaal.data.model.Schedules
+import com.diayan.kaal.databinding.ItemSchedulesBinding
 
-class PlacesAdapter : PagedListAdapter<Place, PlacesAdapter.ViewHolder>(StoreDiffCallback()) {
+class SchedulesAdapter : PagedListAdapter<Schedules, SchedulesAdapter.ViewHolder>(StoreDiffCallback()) {
 
     private lateinit var recyclerView: RecyclerView
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            ItemPlacesBinding.inflate(
+            ItemSchedulesBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -31,7 +31,7 @@ class PlacesAdapter : PagedListAdapter<Place, PlacesAdapter.ViewHolder>(StoreDif
         }
     }
 
-    class ViewHolder(private val binding: ItemPlacesBinding) :
+    class ViewHolder(private val binding: ItemSchedulesBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
     }
@@ -41,13 +41,13 @@ class PlacesAdapter : PagedListAdapter<Place, PlacesAdapter.ViewHolder>(StoreDif
         this.recyclerView = recyclerView
     }
 
-    private class StoreDiffCallback : DiffUtil.ItemCallback<Place>() {
+    private class StoreDiffCallback : DiffUtil.ItemCallback<Schedules>() {
 
-        override fun areItemsTheSame(oldItem: Place, newItem: Place): Boolean {
+        override fun areItemsTheSame(oldItem: Schedules, newItem: Schedules): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Place, newItem: Place): Boolean {
+        override fun areContentsTheSame(oldItem: Schedules, newItem: Schedules): Boolean {
             return oldItem == newItem
         }
     }

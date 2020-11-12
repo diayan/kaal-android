@@ -1,10 +1,10 @@
 package com.diayan.kaal.extensions
 
-import com.diayan.kaal.data.model.Event
-import com.diayan.kaal.data.model.Place
+import com.diayan.kaal.data.model.Regions
+import com.diayan.kaal.data.model.Schedules
 import com.diayan.kaal.data.model.Store
-import com.diayan.kaal.data.model.firebasemodels.FirebaseEvents
-import com.diayan.kaal.data.model.firebasemodels.FirebasePlaces
+import com.diayan.kaal.data.model.firebasemodels.FirebaseRegions
+import com.diayan.kaal.data.model.firebasemodels.FirebaseSchedules
 import com.diayan.kaal.data.model.firebasemodels.FirebaseStores
 import com.google.android.gms.tasks.Task
 import kotlin.coroutines.resume
@@ -21,8 +21,8 @@ internal suspend fun <T> awaitTaskResult(task: Task<T>): T = suspendCoroutine { 
     }
 }
 
-internal val FirebasePlaces.toPlaces: Place
-    get() = Place(
+internal val FirebaseSchedules.toPlaces: Schedules
+    get() = Schedules(
         this.id ?: 0,
         this.name ?: "",
         this.ratings ?: 0,
@@ -32,9 +32,9 @@ internal val FirebasePlaces.toPlaces: Place
         this.externalLinkUrl ?: ""
     )
 
-internal val FirebaseEvents.toEvents: Event
-    get() = Event(
-        this.id ?: "",
+internal val FirebaseRegions.toEvents: Regions
+    get() = Regions(
+        this.id ?: 1,
         this.name ?: "",
         this.rates ?: 0,
         this.description ?: "",

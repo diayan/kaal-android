@@ -4,8 +4,8 @@
     <data>
 
         <variable
-            name="events"
-            type="com.diayan.kaal.data.model.firebasemodels.FirebaseEvents" />
+            name="regions"
+            type="com.diayan.kaal.data.model.firebasemodels.FirebaseRegions" />
 
         <variable
             name="clickListener"
@@ -32,7 +32,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:onClick="@{() -> clickListener.onClick(events)}">
+            android:onClick="@{() -> clickListener.onClick(regions)}">
 
             <ImageView
                 android:id="@+id/region_cover_imageView"
@@ -40,7 +40,7 @@
                 android:layout_height="160dp"
                 android:background="@color/colorImagePlaceholder"
                 android:contentDescription="@string/event_cover_image"
-                imageFromUrl="@{events.imageUrl}"
+                imageFromUrl="@{regions.imageUrl}"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_mole_national" />
         </com.google.android.material.card.MaterialCardView>
@@ -53,7 +53,7 @@
             android:paddingStart="4dp"
             android:paddingTop="@dimen/margin_small"
             android:paddingEnd="4dp"
-            android:text="@{events.name.toString()}"
+            android:text="@{regions.name.toString()}"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"
