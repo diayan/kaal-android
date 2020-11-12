@@ -5,7 +5,7 @@
 
         <variable
             name="event"
-            type="com.diayan.kaal.data.model.firebasemodels.FirebaseEvents" />
+            type="com.diayan.kaal.data.model.firebasemodels.FirebaseRegions" />
 
         <variable
             name="clickListener"

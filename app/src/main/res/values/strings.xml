@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Kaal</string>
     <string name="title_events">Events</string>
-    <string name="title_places">Places</string>
+    <string name="title_places">places</string>
     <string name="title_stores">Stores</string>
     <string name="title_augmented_reality">AR</string>
     <string name="travel_destination">image of a travel destination</string>

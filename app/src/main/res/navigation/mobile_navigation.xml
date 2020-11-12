@@ -7,15 +7,15 @@
 
     <fragment
         android:id="@+id/navigation_events"
-        android:name="com.diayan.kaal.ui.home.EventsFragment"
+        android:name="com.diayan.kaal.ui.home.RegionsFragment"
         android:label="@string/title_events"
-        tools:layout="@layout/fragment_events" />
+        tools:layout="@layout/fragment_regions" />
 
     <fragment
         android:id="@+id/navigation_places"
-        android:name="com.diayan.kaal.ui.places.PlacesFragment"
+        android:name="com.diayan.kaal.ui.schedules.SchedulesFragment"
         android:label="@string/title_places"
-        tools:layout="@layout/fragment_places" />
+        tools:layout="@layout/fragment_schedules" />
 
     <fragment
         android:id="@+id/navigation_stores"

@@ -5,7 +5,7 @@
 
     <variable
         name="viewModel"
-        type="com.diayan.kaal.ui.home.EventsViewModel" />
+        type="com.diayan.kaal.ui.home.RegionsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,6 +25,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_events"/>
+        tools:listitem="@layout/item_regions"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

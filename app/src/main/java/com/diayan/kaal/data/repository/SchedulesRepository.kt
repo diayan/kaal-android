@@ -1,9 +1,9 @@
 package com.diayan.kaal.data.repository
 
 import com.diayan.kaal.common.Result
-import com.diayan.kaal.data.dao.PlaceDao
-import com.diayan.kaal.data.model.Place
-import com.diayan.kaal.data.model.firebasemodels.FirebasePlaces
+import com.diayan.kaal.data.dao.SchedulesDao
+import com.diayan.kaal.data.model.Schedules
+import com.diayan.kaal.data.model.firebasemodels.FirebaseSchedules
 import com.diayan.kaal.extensions.awaitTaskResult
 import com.diayan.kaal.extensions.toPlaces
 import com.google.firebase.firestore.FirebaseFirestore
@@ -12,12 +12,12 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class PlaceRepository @Inject constructor(
-    private val dao: PlaceDao,
+class SchedulesRepository @Inject constructor(
+    private val dao: SchedulesDao,
     private val firebaseFirestore: FirebaseFirestore
 ) {
 
-    suspend fun getAllPlaces(): Result<Exception, List<Place>> {
+    suspend fun getAllPlaces(): Result<Exception, List<Schedules>> {
         return try {
             val task = awaitTaskResult(
                 firebaseFirestore.collection("places")
@@ -33,11 +33,11 @@ class PlaceRepository @Inject constructor(
 
     fun getPlaceById() {}
 
-    private fun resultToPlacesList(result: QuerySnapshot?): Result<Exception, List<Place>> {
-        val placeList = mutableListOf<Place>()
+    private fun resultToPlacesList(result: QuerySnapshot?): Result<Exception, List<Schedules>> {
+        val placeList = mutableListOf<Schedules>()
 
         result?.forEach { documentSnapshot ->
-            placeList.add(documentSnapshot.toObject(FirebasePlaces::class.java).toPlaces)
+            placeList.add(documentSnapshot.toObject(FirebaseSchedules::class.java).toPlaces)
         }
 
         return Result.build {

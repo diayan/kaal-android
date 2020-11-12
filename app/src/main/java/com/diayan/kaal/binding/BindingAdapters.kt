@@ -6,7 +6,6 @@ import androidx.paging.PagedList
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.diayan.kaal.data.model.Event
 import com.diayan.kaal.ui.home.DataItem
 import com.diayan.kaal.ui.home.EventsAdapter
 

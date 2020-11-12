@@ -8,8 +8,8 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.diayan.kaal.R
-import com.diayan.kaal.data.model.firebasemodels.FirebaseEvents
-import com.diayan.kaal.databinding.ItemEventsBinding
+import com.diayan.kaal.data.model.firebasemodels.FirebaseRegions
+import com.diayan.kaal.databinding.ItemRegionsBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -32,7 +32,7 @@ class EventsAdapter(private val clickListener: EventClickListener) :
         }
     }
 
-    fun addHeaderAndSubmitList(list: PagedList<FirebaseEvents>?) {
+    fun addHeaderAndSubmitList(list: PagedList<FirebaseRegions>?) {
         adapterScope.launch {
             val items = when (list) {
                 null -> listOf(DataItem.Header)
@@ -59,24 +59,24 @@ class HeaderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     companion object {
         fun from(parent: ViewGroup): HeaderViewHolder {
             val layoutInflater = LayoutInflater.from(parent.context)
-            val view = layoutInflater.inflate(R.layout.header, parent, false)
+            val view = layoutInflater.inflate(R.layout.item_regions_header, parent, false)
             return HeaderViewHolder(view)
         }
     }
 }
 
-class ViewHolder private constructor(private val binding: ItemEventsBinding) :
+class ViewHolder private constructor(private val binding: ItemRegionsBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(clickListener: EventClickListener, eventItem: FirebaseEvents) {
-        binding.events = eventItem
+    fun bind(clickListener: EventClickListener, eventItem: FirebaseRegions) {
+        binding.regions = eventItem
         binding.executePendingBindings()
     }
 
     companion object {
         fun from(parent: ViewGroup): ViewHolder {
             val layoutInflater = LayoutInflater.from(parent.context)
-            val binding = ItemEventsBinding.inflate(layoutInflater, parent, false)
+            val binding = ItemRegionsBinding.inflate(layoutInflater, parent, false)
 
             return ViewHolder(binding)
         }
@@ -94,12 +94,12 @@ private class EventsDiffCallback : DiffUtil.ItemCallback<DataItem>() {
     }
 }
 
-class EventClickListener(val clickListener: (event: FirebaseEvents) -> Unit) {
-    fun onClick(event: FirebaseEvents) = clickListener(event)
+class EventClickListener(val clickListener: (event: FirebaseRegions) -> Unit) {
+    fun onClick(event: FirebaseRegions) = clickListener(event)
 }
 
 sealed class DataItem {
-    data class EventsDataItem(val event: FirebaseEvents) : DataItem() {
+    data class EventsDataItem(val event: FirebaseRegions) : DataItem() {
         override val id = event.id.toLong()
     }
 

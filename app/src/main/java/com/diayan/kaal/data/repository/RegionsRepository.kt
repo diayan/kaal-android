@@ -1,21 +1,21 @@
 package com.diayan.kaal.data.repository
 
-import com.diayan.kaal.data.dao.EventDao
+import com.diayan.kaal.data.dao.RegionsDao
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class EventRepository @Inject constructor(
-    val dao: EventDao,
+class RegionsRepository @Inject constructor(
+    val dao: RegionsDao,
     private val firebaseFirestore: FirebaseFirestore
 ) {
 
     suspend fun getEvents() = firebaseFirestore.collection("regions").get().await().documents
 
 
-//    suspend fun getAllEvents(): Result<Exception, List<Event>> {
+//    suspend fun getAllEvents(): Result<Exception, List<Regions>> {
 //        return try {
 //            val task = awaitTaskResult(
 //                firebaseFirestore.collection("regions")
@@ -26,11 +26,11 @@ class EventRepository @Inject constructor(
 //            Result.build { throw exception }
 //        }
 //    }
-//    private fun resultToPlacesList(result: QuerySnapshot?): Result<Exception, List<Event>> {
-//        val eventList = mutableListOf<Event>()
+//    private fun resultToPlacesList(result: QuerySnapshot?): Result<Exception, List<Regions>> {
+//        val eventList = mutableListOf<Regions>()
 //
 //        result?.forEach { documentSnapshot ->
-//            eventList.add(documentSnapshot.toObject(FirebaseEvents::class.java).toEvents)
+//            eventList.add(documentSnapshot.toObject(FirebaseRegions::class.java).toEvents)
 //        }
 //
 //        return Result.build {

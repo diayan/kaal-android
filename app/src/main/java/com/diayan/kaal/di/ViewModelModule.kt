@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.diayan.kaal.ui.ar.ArViewModel
 import com.diayan.kaal.ui.authentication.AuthViewModel
-import com.diayan.kaal.ui.home.EventsViewModel
-import com.diayan.kaal.ui.places.PlacesViewModel
+import com.diayan.kaal.ui.home.RegionsViewModel
+import com.diayan.kaal.ui.places.SchedulesViewModel
 import com.diayan.kaal.ui.stores.StoresViewModel
 import dagger.Binds
 import dagger.Module
@@ -16,13 +16,13 @@ import dagger.multibindings.IntoMap
 abstract class ViewModelModule {
     @Binds
     @IntoMap
-    @ViewModelKey(EventsViewModel::class)
-    abstract fun bindHomeViewModel(viewModel: EventsViewModel): ViewModel
+    @ViewModelKey(RegionsViewModel::class)
+    abstract fun bindHomeViewModel(viewModel: RegionsViewModel): ViewModel
 
     @Binds
     @IntoMap
-    @ViewModelKey(PlacesViewModel::class)
-    abstract fun bindPlacesViewModel(viewModel: PlacesViewModel): ViewModel
+    @ViewModelKey(SchedulesViewModel::class)
+    abstract fun bindPlacesViewModel(viewModel: SchedulesViewModel): ViewModel
 
     @Binds
     @IntoMap

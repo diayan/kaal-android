@@ -4,8 +4,8 @@ import com.diayan.kaal.ui.ar.ArFragment
 import com.diayan.kaal.ui.authentication.AuthPreviewFragment
 import com.diayan.kaal.ui.authentication.RegistrationFragment
 import com.diayan.kaal.ui.authentication.SignInFragment
-import com.diayan.kaal.ui.home.EventsFragment
-import com.diayan.kaal.ui.places.PlacesFragment
+import com.diayan.kaal.ui.home.RegionsFragment
+import com.diayan.kaal.ui.places.SchedulesFragment
 import com.diayan.kaal.ui.stores.StoresFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -14,10 +14,10 @@ import dagger.android.ContributesAndroidInjector
 abstract class FragmentModule {
 
     @ContributesAndroidInjector
-    abstract fun contributeHomeFragment(): EventsFragment
+    abstract fun contributeHomeFragment(): RegionsFragment
 
     @ContributesAndroidInjector
-    abstract fun contributePlacesFragment(): PlacesFragment
+    abstract fun contributePlacesFragment(): SchedulesFragment
 
     @ContributesAndroidInjector
     abstract fun contributeStoresFragment(): StoresFragment

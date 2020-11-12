@@ -6,11 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.diayan.kaal.app.AppConfig.DATABASE_NAME
-import com.diayan.kaal.data.dao.EventDao
-import com.diayan.kaal.data.dao.PlaceDao
+import com.diayan.kaal.data.dao.RegionsDao
+import com.diayan.kaal.data.dao.SchedulesDao
 import com.diayan.kaal.data.dao.StoreDao
-import com.diayan.kaal.data.model.Event
-import com.diayan.kaal.data.model.Place
+import com.diayan.kaal.data.model.Regions
+import com.diayan.kaal.data.model.Schedules
 import com.diayan.kaal.data.model.Store
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.internal.synchronized
@@ -19,16 +19,16 @@ import kotlinx.coroutines.internal.synchronized
  * The Room database for this app
  */
 @Database(
-    entities = [Place::class, Event::class, Store::class],
+    entities = [Schedules::class, Regions::class, Store::class],
     version = 1, exportSchema = false
 )
 
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun placesDao(): PlaceDao
+    abstract fun placesDao(): SchedulesDao
 
-    abstract fun eventsDao(): EventDao
+    abstract fun eventsDao(): RegionsDao
 
     abstract fun storesDao(): StoreDao
 
