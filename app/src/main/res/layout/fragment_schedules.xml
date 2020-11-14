@@ -8,21 +8,21 @@
     android:layout_marginEnd="4dp"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+<!--    <TextView
         android:id="@+id/welcomeTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
-        android:paddingBottom="16dp"
+        android:layout_marginTop="4dp"
+        android:paddingBottom="8dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:maxLines="2"
-        tools:text="Hey Diayan! Here are your scheduled visits"
+        android:text="Hi Diayan! Here are your scheduled trips"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/schedulesRecyclerView"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
         tools:listitem="@layout/item_schedules"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
         tools:itemCount="20"
@@ -49,6 +49,6 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcomeTextView"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

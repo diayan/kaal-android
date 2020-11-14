@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
-            name="shedules"
+            name="trip"
             type="com.diayan.kaal.data.model.firebasemodels.FirebaseSchedules" />
 
-        <!--TODO: create click listener in the adapter and replace this
         <variable
             name="clickListener"
-            type="com.diayan.kaal.ui.home.EventClickListener" />
-            -->
+            type="com.diayan.kaal.ui.schedules.SchedulesAdapter.TripClickListener" />
     </data>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
-        android:orientation="horizontal">
+        android:layout_marginEnd="4dp">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/album_title_textView"
+                android:id="@+id/destinationTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
@@ -48,7 +48,7 @@
                 tools:text="Visit Cape Coast Castle" />
 
             <TextView
-                android:id="@+id/album_artist_textView"
+                android:id="@+id/tripDateTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -57,3 +57,4 @@
         </LinearLayout>
     </LinearLayout>
 </layout>
+

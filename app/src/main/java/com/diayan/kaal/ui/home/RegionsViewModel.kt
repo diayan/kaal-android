@@ -19,11 +19,10 @@ class RegionsViewModel @Inject constructor(
     private val coroutineScope: CoroutineScope
 ) : ViewModel() {
 
+    var eventId: Int? = null
+    var connectivityAvailable: Boolean = false
     private val _eventsLiveData = MutableLiveData<List<FirebaseRegions>>()
     val regionsLiveData: LiveData<List<FirebaseRegions>> get() = _eventsLiveData
-
-//    var connectivityAvailable: Boolean = false
-//    var eventId: Int? = null
 
     fun getEvents() {
         viewModelScope.launch {

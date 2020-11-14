@@ -6,21 +6,26 @@ import com.diayan.kaal.data.model.Schedules
 import com.diayan.kaal.data.model.firebasemodels.FirebaseSchedules
 import com.diayan.kaal.extensions.awaitTaskResult
 import com.diayan.kaal.extensions.toPlaces
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class SchedulesRepository @Inject constructor(
     private val dao: SchedulesDao,
-    private val firebaseFirestore: FirebaseFirestore
+    private val firebaseFireStore: FirebaseFirestore
 ) {
+
+    suspend fun getScheduledTrips(): MutableList<DocumentSnapshot> = firebaseFireStore.collection("trips").get().await().documents
+
 
     suspend fun getAllPlaces(): Result<Exception, List<Schedules>> {
         return try {
             val task = awaitTaskResult(
-                firebaseFirestore.collection("places")
+                firebaseFireStore.collection("places")
                     .get()
             )
             resultToPlacesList(task)
@@ -28,10 +33,6 @@ class SchedulesRepository @Inject constructor(
             Result.build { throw exception }
         }
     }
-
-    fun getPlaceByType() {}
-
-    fun getPlaceById() {}
 
     private fun resultToPlacesList(result: QuerySnapshot?): Result<Exception, List<Schedules>> {
         val placeList = mutableListOf<Schedules>()

@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:background="@color/colorImagePlaceholder"
-                android:contentDescription="@string/event_cover_image"
+                android:contentDescription="@string/trip_thumbnail_image"
                 imageFromUrl="@{regions.imageUrl}"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_mole_national" />
