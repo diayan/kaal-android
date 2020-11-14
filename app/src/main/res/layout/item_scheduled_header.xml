@@ -3,26 +3,20 @@
 <layout xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
-        <!--TODO: This should be schedules not Firebase regions-->
-
         <variable
-            name="event"
-            type="com.diayan.kaal.data.model.firebasemodels.FirebaseRegions" />
+            name="trip"
+            type="com.diayan.kaal.data.model.firebasemodels.FirebaseSchedules" />
 
-        <!--TODO: create click listener in the adapter and replace this-->
         <variable
             name="clickListener"
-            type="com.diayan.kaal.ui.home.EventClickListener"/>
+            type="com.diayan.kaal.ui.schedules.SchedulesAdapter.TripClickListener"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp">
-
+        android:layout_marginBottom="4dp">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/imageCardView"
@@ -36,28 +30,28 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:onClick="@{() -> clickListener.onClick(event)}">
+            android:onClick="@{() -> clickListener.onClick(trip)}">
 
             <ImageView
-                android:id="@+id/region_cover_imageView"
+                android:id="@+id/destinationImageView"
                 android:layout_width="match_parent"
                 android:layout_height="246dp"
                 android:background="@color/colorImagePlaceholder"
-                android:contentDescription="@string/event_cover_image"
-                imageFromUrl="@{event.imageUrl}"
+                android:contentDescription="@string/trip_thumbnail_image"
+                imageFromUrl="@{trip.image}"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_mole_national" />
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/nextScheduleTextView"
+            android:id="@+id/destinationTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:paddingStart="4dp"
             android:paddingTop="@dimen/margin_small"
             android:paddingEnd="4dp"
-            android:text="@{event.name.toString()}"
+            android:text="@{trip.destination.toString()}"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -73,12 +67,12 @@
             android:layout_marginBottom="8dp"
             android:paddingStart="4dp"
             android:paddingEnd="4dp"
-            android:text="@{event.name.toString()}"
+            android:text="@{trip.destination.toString()}"
             android:textColor="@android:color/darker_gray"
             android:textSize="16sp"
             tools:text="4 days remaining"
-            app:layout_constraintEnd_toEndOf="@id/nextScheduleTextView"
-            app:layout_constraintStart_toStartOf="@id/nextScheduleTextView"
-            app:layout_constraintTop_toBottomOf="@id/nextScheduleTextView" />
+            app:layout_constraintEnd_toEndOf="@id/destinationTextView"
+            app:layout_constraintStart_toStartOf="@id/destinationTextView"
+            app:layout_constraintTop_toBottomOf="@id/destinationTextView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

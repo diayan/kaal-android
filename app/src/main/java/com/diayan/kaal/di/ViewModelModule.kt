@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.diayan.kaal.ui.ar.ArViewModel
 import com.diayan.kaal.ui.authentication.AuthViewModel
 import com.diayan.kaal.ui.home.RegionsViewModel
-import com.diayan.kaal.ui.places.SchedulesViewModel
+import com.diayan.kaal.ui.schedules.SchedulesViewModel
 import com.diayan.kaal.ui.stores.StoresViewModel
 import dagger.Binds
 import dagger.Module

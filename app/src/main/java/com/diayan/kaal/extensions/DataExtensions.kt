@@ -24,12 +24,10 @@ internal suspend fun <T> awaitTaskResult(task: Task<T>): T = suspendCoroutine { 
 internal val FirebaseSchedules.toPlaces: Schedules
     get() = Schedules(
         this.id ?: 0,
-        this.name ?: "",
-        this.ratings ?: 0,
-        this.description ?: "",
-        this.imageUrl ?: "",
-        this.imageUrl ?: "",
-        this.externalLinkUrl ?: ""
+        this.destination ?: "",
+        //this.date,
+        this.image ?: "",
+        this.region ?: ""
     )
 
 internal val FirebaseRegions.toEvents: Regions

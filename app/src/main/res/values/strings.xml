@@ -5,7 +5,7 @@
     <string name="title_stores">Stores</string>
     <string name="title_augmented_reality">AR</string>
     <string name="travel_destination">image of a travel destination</string>
-    <string name="event_cover_image">event cover image</string>
+    <string name="trip_thumbnail_image">event cover image</string>
     <string name="local_store_image">local store image</string>
     <string name="detail_image">detail image</string>
     <string name="chat_bubble">chat bubble</string>

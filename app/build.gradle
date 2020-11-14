@@ -37,10 +37,13 @@ android {
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
     }
-    
-    dataBinding {
-        enabled = true
+
+    buildFeatures {
+        dataBinding = true
+
+        viewBinding = true
     }
+
 
     packagingOptions {
         exclude 'META-INF/navigation-runtime-ktx_release.kotlin_module'

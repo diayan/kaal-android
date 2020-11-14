@@ -24,8 +24,9 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
 
         val binding: ActivityMainBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
-
+        supportActionBar?.title = "Regions"
         val navController = findNavController(R.id.nav_host_fragment)
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         /*val appBarConfiguration = AppBarConfiguration(
@@ -36,6 +37,4 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
         setupActionBarWithNavController(navController, appBarConfiguration)*/
         binding.navView.setupWithNavController(navController)
     }
-
-
 }
