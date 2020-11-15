@@ -8,7 +8,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 @IgnoreExtraProperties
 data class FirebaseSchedules (
-    val id: Long = 0,
+    val id: Int = 0,
     val destination: String = "",
     //val date: Timestamp,
     val image: String? = "",
