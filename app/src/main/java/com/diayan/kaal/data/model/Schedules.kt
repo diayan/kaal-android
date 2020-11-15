@@ -8,7 +8,7 @@ import com.google.firebase.Timestamp
 data class Schedules(
 
     @PrimaryKey
-    val id: Long,
+    val id: Int,
     val destination: String,
     //val date:Timestamp,
     val image: String?,

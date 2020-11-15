@@ -41,7 +41,7 @@ class SchedulesAdapter(val clickListener: TripClickListener) :
             is ScheduleHeaderViewHolder -> {
                 val scheduleHeader = getItem(position) as DataItem.Header
                 holder.apply {
-                    //bind(clickListener, scheduleHeader.id)
+                    bind(clickListener, scheduleHeader.schedule)
                 }
             }
         }
@@ -52,6 +52,8 @@ class SchedulesAdapter(val clickListener: TripClickListener) :
 
         fun bind(clickListener: TripClickListener, item: FirebaseSchedules) {
             binding.trip = item
+            binding.destinationTextView.text = item.destination
+            binding.timeRemainingTextView.text = item.destination
             binding.clickListener = clickListener
             binding.executePendingBindings()
         }
@@ -69,10 +71,13 @@ class SchedulesAdapter(val clickListener: TripClickListener) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(clickListener: TripClickListener, item: FirebaseSchedules) {
             binding.trip = item
-            binding.destinationTextView.text = item.destination
-            binding.tripDateTextView.text = item.destination
-            binding.clickListener = clickListener
-            binding.executePendingBindings()
+            binding.apply {
+                invalidateAll()
+                destinationTextView.text = item.destination
+                tripDateTextView.text = item.destination
+                itemClickListener = clickListener
+                binding.executePendingBindings()
+            }
         }
 
         companion object {
@@ -96,19 +101,14 @@ class SchedulesAdapter(val clickListener: TripClickListener) :
 
     sealed class DataItem {
         data class ScheduleItem(val schedule: FirebaseSchedules) : DataItem() {
-            override val id: Long = schedule.id
+            override val id: Int = schedule.id
         }
 
-        object Header : DataItem() {
-            override val id = Long.MIN_VALUE
-        }
-
-        /*
         data class Header(val schedule: FirebaseSchedules) : DataItem() {
             override val id = schedule.id
-        }*/
+        }
 
-        abstract val id: Long
+        abstract val id: Int
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -121,19 +121,24 @@ class SchedulesAdapter(val clickListener: TripClickListener) :
 
     //convert schedule list to DataItem in the adapter
     fun addHeaderAndSubmitList(list: List<FirebaseSchedules>?) {
-        adapterScope.launch {
-            val items = when (list) {
-                null -> listOf(DataItem.Header)
-                else -> listOf(DataItem.Header) + list.map { DataItem.ScheduleItem(it) }
+        val headerList =
+            mutableListOf<FirebaseSchedules>() //this list takes the header items, in this case just one item!
+        list?.forEach {
+            if (it.id == 1) {
+                headerList.add(it)
             }
+        }
 
+        adapterScope.launch {
+            val items =
+                headerList.map { DataItem.Header(it) } + list!!.map { DataItem.ScheduleItem(it) }
             withContext(Dispatchers.Main) {
                 submitList(items)
             }
         }
     }
 
-    class TripClickListener(val clickListener: (tripId: Long) -> Unit) {
+    class TripClickListener(val clickListener: (tripId: Int) -> Unit) {
         fun onClick(trip: FirebaseSchedules) = clickListener(trip.id)
     }
 }
