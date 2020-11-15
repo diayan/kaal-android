@@ -121,17 +121,19 @@ class SchedulesAdapter(val clickListener: TripClickListener) :
 
     //convert schedule list to DataItem in the adapter
     fun addHeaderAndSubmitList(list: List<FirebaseSchedules>?) {
-        val headerList =
-            mutableListOf<FirebaseSchedules>() //this list takes the header items, in this case just one item!
+        val headerList = mutableListOf<FirebaseSchedules>() //this list takes the header items, in this case just one item!
+        val mainList = mutableListOf<FirebaseSchedules>()
         list?.forEach {
             if (it.id == 1) {
                 headerList.add(it)
+            }else {
+                mainList.add(it)
             }
         }
 
         adapterScope.launch {
             val items =
-                headerList.map { DataItem.Header(it) } + list!!.map { DataItem.ScheduleItem(it) }
+                headerList.map { DataItem.Header(it) } + mainList.map { DataItem.ScheduleItem(it) }
             withContext(Dispatchers.Main) {
                 submitList(items)
             }
