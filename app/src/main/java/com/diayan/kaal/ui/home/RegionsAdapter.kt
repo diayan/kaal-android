@@ -1,113 +1,159 @@
 package com.diayan.kaal.ui.home
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.paging.PagedList
-import androidx.paging.PagedListAdapter
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.diayan.kaal.R
 import com.diayan.kaal.data.model.firebasemodels.FirebaseRegions
 import com.diayan.kaal.databinding.ItemRegionsBinding
+import com.diayan.kaal.databinding.ItemRegionsHeaderBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-
 private const val ITEM_VIEW_TYPE_HEADER = 0
 private const val ITEM_VIEW_TYPE_ITEM = 1
 
-class EventsAdapter(private val clickListener: EventClickListener) :
-    PagedListAdapter<DataItem, RecyclerView.ViewHolder>(EventsDiffCallback()) {
+class EventsAdapter(val clickListener: RegionsClickListener) :
+    ListAdapter<EventsAdapter.DataItem, RecyclerView.ViewHolder>(RegionsDiffCallback()) {
 
     private val adapterScope = CoroutineScope(Dispatchers.Default)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
-            ITEM_VIEW_TYPE_HEADER -> HeaderViewHolder.from(parent)
-            ITEM_VIEW_TYPE_ITEM -> ViewHolder.from(parent)
+            ITEM_VIEW_TYPE_HEADER -> RegionsHeaderViewHolder.from(parent)
+            ITEM_VIEW_TYPE_ITEM -> RegionsViewHolder.from(parent)
             else -> throw ClassCastException("Unknown viewType $viewType")
         }
     }
 
-    fun addHeaderAndSubmitList(list: PagedList<FirebaseRegions>?) {
-        adapterScope.launch {
-            val items = when (list) {
-                null -> listOf(DataItem.Header)
-                else -> listOf(DataItem.Header) + list.map { DataItem.EventsDataItem(it) }
-            } as PagedList //note this!
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (holder) {
+            is RegionsViewHolder -> {
+                val region = getItem(position) as DataItem.RegionsItem
+                holder.apply {
+                    bind(clickListener, region.region)
+                }
+            }
 
+            is RegionsHeaderViewHolder -> {
+                val regionsHeader = getItem(position) as DataItem.Header
+                holder.apply {
+                    bind(clickListener, regionsHeader.region)
+                }
+            }
+        }
+    }
+
+    class RegionsHeaderViewHolder private constructor(var binding: ItemRegionsHeaderBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(clickListener: RegionsClickListener, item: FirebaseRegions) {
+            binding.region = item
+            binding.regionNameTextView.text = item.name
+            binding.clickListener = clickListener
+            binding.executePendingBindings()
+        }
+
+        companion object {
+            fun from(parent: ViewGroup): RegionsHeaderViewHolder {
+                val layoutInflater = LayoutInflater.from(parent.context)
+                val binding = ItemRegionsHeaderBinding.inflate(layoutInflater, parent, false)
+                return RegionsHeaderViewHolder(binding)
+            }
+        }
+    }
+
+    class RegionsViewHolder private constructor(var binding: ItemRegionsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(clickListener: RegionsClickListener, item: FirebaseRegions) {
+            binding.regions = item
+            val imgUri = item.imageUrl.toUri().buildUpon().scheme("https").build()
+            binding.apply {
+                invalidateAll()
+                binding.regionNameTextView.text = item.name
+                binding.regionCoverImageView
+                Glide.with(binding.regionCoverImageView.context)
+                    .load(imgUri)
+                    .apply(
+                        RequestOptions()
+                            .placeholder(R.drawable.loading_animation)
+                    )
+                    .into(binding.regionCoverImageView)
+                binding.clickListener = clickListener
+                binding.executePendingBindings()
+            }
+        }
+
+        companion object {
+            fun from(parent: ViewGroup): RegionsViewHolder {
+                val layoutInflater = LayoutInflater.from((parent.context))
+                val binding = ItemRegionsBinding.inflate(layoutInflater, parent, false)
+                return RegionsViewHolder(binding)
+            }
+        }
+    }
+
+    private class RegionsDiffCallback : DiffUtil.ItemCallback<DataItem>() {
+        override fun areItemsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
+            return oldItem == newItem
+        }
+    }
+
+    sealed class DataItem {
+        data class RegionsItem(val region: FirebaseRegions) : DataItem() {
+            override val id: Int = region.id
+        }
+
+        data class Header(val region: FirebaseRegions) : DataItem() {
+            override val id = region.id
+        }
+
+        abstract val id: Int
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return when (getItem(position)) {
+            is DataItem.Header -> ITEM_VIEW_TYPE_HEADER
+            is DataItem.RegionsItem -> ITEM_VIEW_TYPE_ITEM
+            else -> throw IndexOutOfBoundsException() //I added this so it just says something useful in case
+        }
+    }
+
+    //convert regions list to DataItem in the adapter
+    fun addHeaderAndSubmitList(list: List<FirebaseRegions>?) {
+        val headerList =
+            mutableListOf<FirebaseRegions>() //this list takes the header items, in this case just one item!
+        val mainList = mutableListOf<FirebaseRegions>()
+        list?.forEach {
+            if (it.id == 1) {
+                headerList.add(it)
+            } else {
+                mainList.add(it)
+            }
+        }
+
+        adapterScope.launch {
+            val items =
+                headerList.map { DataItem.Header(it) } + mainList.map { DataItem.RegionsItem(it) }
             withContext(Dispatchers.Main) {
                 submitList(items)
             }
         }
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when (holder) {
-            is ViewHolder -> {
-                val eventItem = getItem(position) as DataItem.EventsDataItem
-                holder.bind(clickListener, eventItem.event)
-            }
-        }
+    class RegionsClickListener(val clickListener: (tripId: Int) -> Unit) {
+        fun onClick(region: FirebaseRegions) = clickListener(region.id)
     }
 }
 
-class HeaderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    companion object {
-        fun from(parent: ViewGroup): HeaderViewHolder {
-            val layoutInflater = LayoutInflater.from(parent.context)
-            val view = layoutInflater.inflate(R.layout.item_regions_header, parent, false)
-            return HeaderViewHolder(view)
-        }
-    }
-}
-
-class ViewHolder private constructor(private val binding: ItemRegionsBinding) :
-    RecyclerView.ViewHolder(binding.root) {
-
-    fun bind(clickListener: EventClickListener, eventItem: FirebaseRegions) {
-        binding.regions = eventItem
-        binding.executePendingBindings()
-    }
-
-    companion object {
-        fun from(parent: ViewGroup): ViewHolder {
-            val layoutInflater = LayoutInflater.from(parent.context)
-            val binding = ItemRegionsBinding.inflate(layoutInflater, parent, false)
-
-            return ViewHolder(binding)
-        }
-    }
-}
-
-private class EventsDiffCallback : DiffUtil.ItemCallback<DataItem>() {
-
-    override fun areItemsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
-        return oldItem.id == newItem.id
-    }
-
-    override fun areContentsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
-        return oldItem.id == newItem.id
-    }
-}
-
-class EventClickListener(val clickListener: (event: FirebaseRegions) -> Unit) {
-    fun onClick(event: FirebaseRegions) = clickListener(event)
-}
-
-sealed class DataItem {
-    data class EventsDataItem(val event: FirebaseRegions) : DataItem() {
-        override val id = event.id.toLong()
-    }
-
-    object Header : DataItem() {
-        override val id: Long
-            get() = Long.MIN_VALUE
-
-    }
-
-    abstract val id: Long
-}

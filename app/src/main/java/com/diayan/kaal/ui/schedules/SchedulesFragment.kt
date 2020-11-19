@@ -1,6 +1,5 @@
 package com.diayan.kaal.ui.schedules
 
-import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +13,6 @@ import com.diayan.kaal.databinding.FragmentSchedulesBinding
 import com.diayan.kaal.di.Injectable
 import com.diayan.kaal.di.injectViewModel
 import javax.inject.Inject
-
 
 class SchedulesFragment : Fragment(), Injectable {
 
