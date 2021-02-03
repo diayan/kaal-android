@@ -104,6 +104,4 @@
         <item name="cornerRadius">30dp</item>
         <item name="android:textColor">@color/colorBlack</item>
     </style>
-
-
 </resources>

@@ -9,7 +9,7 @@
 
         <variable
             name="clickListener"
-            type="com.diayan.kaal.ui.home.EventClickListener"/>
+            type="com.diayan.kaal.ui.home.EventsAdapter.RegionsClickListener"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -57,6 +57,7 @@
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:maxLines="1"
             tools:text="@string/elephant"
             app:layout_constraintEnd_toEndOf="@id/image_cardView"
             app:layout_constraintStart_toStartOf="@id/image_cardView"

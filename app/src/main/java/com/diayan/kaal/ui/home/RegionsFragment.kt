@@ -1,6 +1,7 @@
 package com.diayan.kaal.ui.home
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,7 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.diayan.kaal.databinding.FragmentRegionsBinding
 import com.diayan.kaal.di.Injectable
 import com.diayan.kaal.di.injectViewModel
-import kotlinx.android.synthetic.main.fragment_regions.*
+import com.diayan.kaal.ui.detail.DetailActivity
 import javax.inject.Inject
 
 class RegionsFragment : Fragment(), Injectable {
@@ -31,7 +32,7 @@ class RegionsFragment : Fragment(), Injectable {
         regionsViewModel = injectViewModel(viewModelFactory)
         val binding = FragmentRegionsBinding.inflate(inflater)
 
-        val header: View = LayoutInflater.from(context).inflate(
+  /*      val header: View = LayoutInflater.from(context).inflate(
             com.diayan.kaal.R.layout.item_regions_header,
             events_recyclerView,
             false
@@ -51,28 +52,34 @@ class RegionsFragment : Fragment(), Injectable {
                 }
                 events_recyclerView.adapter = adapter
             })
-        }
+        }*/
 
 
-/*
         val manager = GridLayoutManager(activity, 2)
         binding.eventsRecyclerView.layoutManager = manager
         manager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int) = when (position) {
-                0 -> 1
-                else -> 2
+                0 -> 2
+                else -> 1
             }
         }
 
-        val adapter = EventsAdapter(EventClickListener { eventId ->
-            if (eventId.id == 1) {
-            }
+        val adapter = EventsAdapter(EventsAdapter.RegionsClickListener { regionId ->
+            val intent = Intent(context, DetailActivity::class.java)
+            startActivity(intent)
         })
-        regionsViewModel.regionsLiveData.observe(viewLifecycleOwner, Observer {
-            it?.let {
-               // adapter.addHeaderAndSubmitList(it)
-            }
-        })*/
+
+        with(regionsViewModel) {
+            getEvents()
+            regionsViewModel.regionsLiveData.observe(viewLifecycleOwner, Observer {
+                it?.let {
+                    Log.e("Firebase Regions:::", it.toString())
+                    adapter.addHeaderAndSubmitList(it)
+                }
+            })
+            binding.eventsRecyclerView.adapter = adapter
+        }
+
         return binding.root
     }
 
