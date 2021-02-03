@@ -78,7 +78,7 @@ class EventsAdapter(val clickListener: RegionsClickListener) :
             binding.apply {
                 invalidateAll()
                 binding.regionNameTextView.text = item.name
-                binding.regionCoverImageView
+                //binding.regionCoverImageView
                 Glide.with(binding.regionCoverImageView.context)
                     .load(imgUri)
                     .apply(
@@ -132,13 +132,12 @@ class EventsAdapter(val clickListener: RegionsClickListener) :
 
     //convert regions list to DataItem in the adapter
     fun addHeaderAndSubmitList(list: List<FirebaseRegions>?) {
-        val headerList =
-            mutableListOf<FirebaseRegions>() //this list takes the header items, in this case just one item!
+        val headerList = mutableListOf<FirebaseRegions>() //this list takes the header items, in this case just one item!
         val mainList = mutableListOf<FirebaseRegions>()
         list?.forEach {
             if (it.id == 1) {
                 headerList.add(it)
-            } else {
+            } else if(it.id != 1){
                 mainList.add(it)
             }
         }

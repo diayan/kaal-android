@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.detail.DetailActivity">
 
+    <include
+        android:id="@+id/detail_toolbar"
+        layout="@layout/toolbar_detail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="100dp"
+        android:translationZ="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
     <ImageView
         android:id="@+id/item_detail_imageView"
         android:layout_width="match_parent"
@@ -39,6 +51,7 @@
             tools:text="Mole National Park"/>
 
         <TextView
+            android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
@@ -72,19 +85,6 @@
             android:src="@drawable/ic_location"
             android:layout_marginEnd="@dimen/margin_small"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_small"
-            android:src="@drawable/ic_chat_bubble_black_24dp"
-            android:contentDescription="@string/chat_bubble"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_normal"
-            android:src="@drawable/ic_share_black_24dp"
-            android:contentDescription="@string/share_info"/>
     </LinearLayout>
 
     <TextView
@@ -95,10 +95,10 @@
         android:paddingTop="@dimen/margin_normal"
         android:paddingStart="@dimen/margin_normal"
         android:paddingEnd="@dimen/margin_normal"
-        tools:text="@string/details_description"
+        android:text="@string/details_description"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/icons_wrapper_layout"/>
+        app:layout_constraintTop_toBottomOf="@id/name_wrapper_layout"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

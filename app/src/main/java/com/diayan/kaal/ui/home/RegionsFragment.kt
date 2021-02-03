@@ -1,6 +1,7 @@
 package com.diayan.kaal.ui.home
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,7 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.diayan.kaal.databinding.FragmentRegionsBinding
 import com.diayan.kaal.di.Injectable
 import com.diayan.kaal.di.injectViewModel
-import kotlinx.android.synthetic.main.fragment_regions.*
+import com.diayan.kaal.ui.detail.DetailActivity
 import javax.inject.Inject
 
 class RegionsFragment : Fragment(), Injectable {
@@ -64,6 +65,8 @@ class RegionsFragment : Fragment(), Injectable {
         }
 
         val adapter = EventsAdapter(EventsAdapter.RegionsClickListener { regionId ->
+            val intent = Intent(context, DetailActivity::class.java)
+            startActivity(intent)
         })
 
         with(regionsViewModel) {

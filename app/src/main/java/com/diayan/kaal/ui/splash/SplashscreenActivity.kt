@@ -9,7 +9,6 @@ import com.diayan.kaal.R
 import com.diayan.kaal.helper.SharedPrefManager
 import com.diayan.kaal.ui.authentication.AuthenticationActivity
 import com.diayan.kaal.ui.boarding.OnBoardingActivity
-import com.diayan.kaal.util.IntentUtil
 import com.diayan.kaal.util.launchActivity
 
 class SplashscreenActivity : AppCompatActivity() {
@@ -24,11 +23,8 @@ class SplashscreenActivity : AppCompatActivity() {
         checkIfUserIsOnBoardedOrLoggedIn()
     }
 
-
     private fun checkIfUserIsOnBoardedOrLoggedIn() {
-
         if(sharedPreferencesManager.isLoggedIn() && sharedPreferencesManager.isOnBoarded()) {
-            //Log.d("ISLoggedIn", sharedPreferencesManager.isLoggedIn().toString())
             launchActivity<MainActivity> {
                 finish()
             }
