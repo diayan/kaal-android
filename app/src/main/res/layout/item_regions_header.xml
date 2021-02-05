@@ -33,6 +33,9 @@
             app:layout_constraintTop_toTopOf="parent"
             android:onClick="@{() -> clickListener.onClick(region)}">
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/region_cover_imageView"
                 android:layout_width="match_parent"
@@ -42,6 +45,7 @@
                 imageFromUrl="@{region.imageUrl}"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_mole_national" />
+            </FrameLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.textview.MaterialTextView
