@@ -47,7 +47,6 @@
                 android:textAllCaps="false"
                 android:textColor="@color/colorWhite"
                 android:textSize="18sp"
-                app:backgroundTint="@color/greenLight"
                 app:cornerRadius="24dp" />
 
             <com.google.android.material.button.MaterialButton

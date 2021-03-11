@@ -4,7 +4,7 @@
     <data>
 
         <variable
-            name="region"
+            name="touristSite"
             type="com.diayan.kaal.data.model.firebasemodels.FirebaseRegions" />
 
         <variable
@@ -19,8 +19,9 @@
         android:layout_marginBottom="4dp"
         android:layout_marginTop="4dp">
 
+
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/image_cardView"
+            android:id="@+id/imageCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -31,39 +32,38 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:onClick="@{() -> clickListener.onClick(region)}">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            android:onClick="@{() -> clickListener.onClick(touristSite)}">
             <ImageView
-                android:id="@+id/region_cover_imageView"
+                android:id="@+id/touristSiteImageView"
                 android:layout_width="match_parent"
-                android:layout_height="246dp"
+                android:layout_height="90dp"
                 android:background="@color/colorImagePlaceholder"
                 android:contentDescription="@string/trip_thumbnail_image"
-                imageFromUrl="@{region.imageUrl}"
+                imageFromUrl="@{touristSite.imageUrl}"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_mole_national" />
-            </FrameLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/region_name_textView"
+            android:id="@+id/touristSiteTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:paddingStart="4dp"
             android:paddingTop="@dimen/margin_small"
             android:paddingEnd="4dp"
-            android:text="@{region.name.toString()}"
+            android:text="@{touristSite.name.toString()}"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-            tools:text="Ghana"
-            app:layout_constraintEnd_toEndOf="@id/image_cardView"
-            app:layout_constraintStart_toStartOf="@id/image_cardView"
-            app:layout_constraintTop_toBottomOf="@id/image_cardView" />
+            android:maxLines="1"
+            android:textAlignment="center"
+            tools:text="Mole National Park"
+            app:layout_constraintEnd_toEndOf="@id/imageCardView"
+            app:layout_constraintStart_toStartOf="@id/imageCardView"
+            app:layout_constraintTop_toBottomOf="@id/imageCardView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
+

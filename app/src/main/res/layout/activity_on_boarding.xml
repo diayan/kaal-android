@@ -128,9 +128,16 @@
         android:layout_height="@dimen/tiny_size"
         android:background="@drawable/background_indicator_enabled_bottom" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/finishButton"
-        style="@style/ButtonColored" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/twelve_size"
+        android:text="@string/title_button"
+        app:cornerRadius="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:paddingTop="@dimen/twelve_size" />
 
     <ImageView
         android:id="@+id/diskView"
