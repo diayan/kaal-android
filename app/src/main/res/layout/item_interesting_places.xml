@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginTop="36dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/image_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_mole_national"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/placeNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mole National park"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/primaryTextColor"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@id/image_cardView"
+        app:layout_constraintTop_toBottomOf="@id/image_cardView"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_favorite"
+        android:backgroundTint="@color/colorTransparent"
+        app:layout_constraintStart_toEndOf="@id/placeNameTextView"
+        app:layout_constraintTop_toBottomOf="@id/placeNameTextView"
+        app:layout_constraintBottom_toTopOf="@id/placeNameTextView"/>
+
+
+    <TextView
+        android:id="@+id/locationLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        app:layout_constraintStart_toStartOf="@id/placeNameTextView"
+        app:layout_constraintTop_toBottomOf="@id/placeNameTextView"/>
+
+    <TextView
+        android:id="@+id/locationNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Damongo"
+        android:textStyle="bold"
+        android:textColor="@color/primaryTextColor"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@id/locationLabelTextView"
+        app:layout_constraintTop_toBottomOf="@id/locationLabelTextView"/>
+
+    <TextView
+        android:id="@+id/routeLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Route"
+        android:textAlignment="textStart"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="@id/routesTextView"
+        app:layout_constraintBottom_toTopOf="@id/locationLabelTextView"
+        app:layout_constraintTop_toBottomOf="@id/locationLabelTextView" />
+
+    <TextView
+        android:id="@+id/routesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12 Places"
+        android:gravity="start"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/primaryTextColor"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/locationNameTextView"
+        app:layout_constraintStart_toStartOf="@+id/estimatedTimeLabelTextView"
+        app:layout_constraintTop_toBottomOf="@id/locationNameTextView" />
+
+    <TextView
+        android:id="@+id/distanceLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distance"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        app:layout_constraintStart_toStartOf="@id/locationNameTextView"
+        app:layout_constraintTop_toBottomOf="@id/locationNameTextView"/>
+
+    <TextView
+        android:id="@+id/distanceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15.6km"
+        android:textStyle="bold"
+        android:textColor="@color/primaryTextColor"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@id/distanceLabelTextView"
+        app:layout_constraintTop_toBottomOf="@id/distanceLabelTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/estimatedTimeLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Travel Time From City"
+        android:layout_marginEnd="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        app:layout_constraintEnd_toEndOf="@id/image_cardView"
+        app:layout_constraintTop_toBottomOf="@id/distanceLabelTextView"
+        app:layout_constraintBottom_toTopOf="@id/distanceLabelTextView"/>
+
+    <TextView
+        android:id="@+id/estimatedTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12 hours"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/primaryTextColor"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/distanceTextView"
+        app:layout_constraintStart_toStartOf="@+id/estimatedTimeLabelTextView"
+        app:layout_constraintTop_toBottomOf="@id/distanceTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

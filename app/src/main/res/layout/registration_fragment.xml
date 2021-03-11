@@ -109,7 +109,6 @@
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
-            app:backgroundTint="@color/greenLight"
             app:cornerRadius="24dp"
             app:layout_constraintEnd_toEndOf="@id/password_container"
             app:layout_constraintStart_toStartOf="@id/password_container"

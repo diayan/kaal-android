@@ -1,20 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar.Bridge">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#212121</item>
-        <item name="colorPrimaryVariant">#000000</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryLight</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorSecondary">#2962FF</item>
-        <item name="colorSecondaryVariant">#0039CB</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryLight</item>
         <item name="colorOnSecondary">#FFFFFF</item>
         <item name="colorError">#F44336</item>
         <item name="colorOnError">#FFFFFF</item>
         <item name="colorSurface">#FFFFFF</item>
-        <item name="colorOnSurface">#212121</item>
+        <item name="colorOnSurface">@color/colorPrimary</item>
         <item name="android:colorBackground">@color/background</item>
-        <item name="colorOnBackground">#212121</item>
+        <item name="colorOnBackground">@color/colorAccent</item>
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="android:fontFamily">@font/roboto_regular</item>
 
@@ -22,6 +23,7 @@
               requires api 21 and higher
                <item name="android:navigationBarColor">#</item>
        -->
+        <item name="toolbarStyle">@style/CustomToolBarStyle</item>
         <item name="android:fitsSystemWindows">true</item>
         <item name="android:actionMenuTextColor">@color/colorAccent</item>
         <item name="android:autofilledHighlight" tools:targetApi="o">@android:color/transparent</item>
@@ -34,13 +36,8 @@
         </item>
     </style>
 
-    <style name="AppTheme.Transparent" parent="AppTheme">
-        <item name="windowActionBarOverlay">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
-    </style>
-
-    <style name="AppTheme.Launcher" parent="AppTheme.Transparent">
-        <item name="android:windowBackground">@drawable/ic_kaal</item>
+    <style name="CustomToolBarStyle" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="titleTextColor">@color/secondaryTextColor</item>
     </style>
 
     <style name="AppTheme.EditText" parent="android:Widget.EditText">
@@ -78,7 +75,6 @@
     <style name="ButtonColored" parent="Widget.MaterialComponents.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-
         <item name="android:paddingTop">@dimen/twelve_size</item>
         <item name="android:paddingBottom">@dimen/twelve_size</item>
         <item name="backgroundTint">@color/greenLight</item>
