@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Kaal</string>
-    <string name="title_events">Events</string>
-    <string name="title_places">places</string>
-    <string name="title_stores">Stores</string>
-    <string name="title_augmented_reality">AR</string>
+    <string name="title_regions">Regions</string>
+    <string name="title_explore">Explore</string>
+    <string name="title_lodge">Hotels</string>
+    <string name="title_favorites">Favorite</string>
+    <string name="title_schedule">Schedule</string>
     <string name="travel_destination">image of a travel destination</string>
     <string name="trip_thumbnail_image">event cover image</string>
     <string name="local_store_image">local store image</string>

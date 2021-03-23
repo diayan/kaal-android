@@ -3,29 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_events">
+    app:startDestination="@+id/navigation_regions">
 
     <fragment
-        android:id="@+id/navigation_events"
+        android:id="@+id/navigation_regions"
         android:name="com.diayan.kaal.ui.home.RegionsFragment"
-        android:label="@string/title_events"
+        android:label="@string/title_regions"
         tools:layout="@layout/fragment_regions" />
 
     <fragment
-        android:id="@+id/navigation_places"
+        android:id="@+id/navigation_schedule"
         android:name="com.diayan.kaal.ui.schedules.SchedulesFragment"
-        android:label="@string/title_places"
+        android:label="@string/title_schedule"
         tools:layout="@layout/fragment_schedules" />
 
     <fragment
-        android:id="@+id/navigation_stores"
+        android:id="@+id/navigation_explore"
         android:name="com.diayan.kaal.ui.stores.StoresFragment"
-        android:label="@string/title_stores"
+        android:label="@string/title_lodge"
         tools:layout="@layout/fragment_stores" />
 
     <fragment
-        android:id="@+id/augmented_reality"
-        android:name="com.diayan.kaal.ui.ar.ArFragment"
-        android:label="@string/title_augmented_reality"
-        tools:layout="@layout/fragment_ar" />
+        android:id="@+id/navigation_favorite"
+        android:name="com.diayan.kaal.ui.favorites.FavoriteFragment"
+        android:label="@string/title_favorites"
+        tools:layout="@layout/fragment_favorites" />
 </navigation>

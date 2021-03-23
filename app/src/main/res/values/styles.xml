@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar.Bridge">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryLight</item>
@@ -35,6 +35,44 @@
             @transition/grid_detail_transition
         </item>
     </style>
+
+
+    <style name="AppNoActionBarTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryLight</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryLight</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorError">#F44336</item>
+        <item name="colorOnError">#FFFFFF</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">@color/colorPrimary</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorOnBackground">@color/colorAccent</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+
+        <!--
+              requires api 21 and higher
+               <item name="android:navigationBarColor">#</item>
+       -->
+        <item name="toolbarStyle">@style/CustomToolBarStyle</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:actionMenuTextColor">@color/colorAccent</item>
+        <item name="android:autofilledHighlight" tools:targetApi="o">@android:color/transparent</item>
+
+        <item name="android:windowSharedElementEnterTransition" tools:ignore="NewApi">
+            @transition/grid_detail_transition
+        </item>
+        <item name="android:windowSharedElementExitTransition" tools:ignore="NewApi">
+            @transition/grid_detail_transition
+        </item>
+    </style>
+
+
 
     <style name="CustomToolBarStyle" parent="@style/Widget.AppCompat.Toolbar">
         <item name="titleTextColor">@color/secondaryTextColor</item>

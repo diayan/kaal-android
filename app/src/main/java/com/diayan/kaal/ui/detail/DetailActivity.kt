@@ -1,18 +1,22 @@
 package com.diayan.kaal.ui.detail
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.transition.Transition
+import android.view.MenuItem
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
+import com.diayan.kaal.MainActivity
 import com.diayan.kaal.R
-import com.squareup.picasso.Picasso
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import javax.inject.Inject
+
 
 class DetailActivity : AppCompatActivity(), HasAndroidInjector {
     companion object {
@@ -21,6 +25,7 @@ class DetailActivity : AppCompatActivity(), HasAndroidInjector {
     }
 
     private lateinit var itemDetailImageView: ImageView
+    private lateinit var detailToolbar: Toolbar
 
     @set:Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
@@ -29,8 +34,13 @@ class DetailActivity : AppCompatActivity(), HasAndroidInjector {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-        itemDetailImageView = findViewById(R.id.item_detail_imageView)
+        detailToolbar       = findViewById(R.id.detailToolbar)
+        setSupportActionBar(detailToolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar!!.title = ""
 
+        itemDetailImageView = findViewById(R.id.detailImageView)
         ViewCompat.setTransitionName(itemDetailImageView, VIEW_NAME_HEADER_IMAGE)
         loadItem()
     }
@@ -100,4 +110,15 @@ class DetailActivity : AppCompatActivity(), HasAndroidInjector {
         return false
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }

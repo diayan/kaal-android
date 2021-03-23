@@ -2,7 +2,7 @@ package com.diayan.kaal.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.diayan.kaal.ui.ar.ArViewModel
+import com.diayan.kaal.ui.favorites.FavoriteViewModel
 import com.diayan.kaal.ui.authentication.AuthViewModel
 import com.diayan.kaal.ui.home.RegionsViewModel
 import com.diayan.kaal.ui.schedules.SchedulesViewModel
@@ -31,8 +31,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(ArViewModel::class)
-    abstract fun bindArViewModel(viewModel: ArViewModel): ViewModel
+    @ViewModelKey(FavoriteViewModel::class)
+    abstract fun bindArViewModel(viewModel: FavoriteViewModel): ViewModel
 
     @Binds
     @IntoMap
