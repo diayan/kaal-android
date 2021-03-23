@@ -1,4 +1,4 @@
-package com.diayan.kaal.ui.ar
+package com.diayan.kaal.ui.favorites
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -12,22 +12,22 @@ import com.diayan.kaal.R
 import com.diayan.kaal.di.Injectable
 import com.diayan.kaal.di.injectViewModel
 
-class ArFragment : Fragment(), Injectable {
+class FavoriteFragment : Fragment(), Injectable {
 
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private lateinit var viewModel: ArViewModel
+    private lateinit var viewModel: FavoriteViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         viewModel = injectViewModel(viewModelFactory)
-        return inflater.inflate(R.layout.fragment_ar, container, false)
+        return inflater.inflate(R.layout.fragment_favorites, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(ArViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(FavoriteViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

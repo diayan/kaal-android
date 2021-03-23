@@ -1,34 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/activity_detail_scene"
-    tools:context=".ui.detail.DetailActivity">
+    tools:context=".ui.detail.DetailActivity"
+    tools:showPaths="true">
 
-    <include
-        android:id="@+id/detail_toolbar"
-        layout="@layout/toolbar_detail_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="100dp"
-        android:translationZ="100dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/detailRecyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/detailImageView" />
 
     <ImageView
-        android:id="@+id/item_detail_imageView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:id="@+id/detailImageView"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:adjustViewBounds="true"
+        android:background="@color/colorPrimary"
         android:contentDescription="@string/detail_image"
+        android:fitsSystemWindows="true"
         android:scaleType="centerCrop"
-        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_mole_national"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/detailToolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationZ="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back" />
 
     <TextView
         android:id="@+id/regionNameTextView"
@@ -37,11 +47,11 @@
         android:layout_marginBottom="4dp"
         android:fontFamily="sans-serif"
         android:text="Northern Region"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-        android:textColor="@android:color/holo_red_dark"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
         android:translationZ="1dp"
-        app:layout_constraintBottom_toTopOf="@id/cityNameTextView"
+        app:layout_constraintBottom_toTopOf="@id/detailImageView"
         app:layout_constraintStart_toStartOf="@+id/mapImageButton"
         tools:text="Northern Region" />
 
@@ -51,13 +61,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:fontFamily="sans-serif"
-        android:paddingEnd="@dimen/margin_normal"
-        android:text="Northern Region"
-        android:textColor="@android:color/holo_red_dark"
+        android:text="Tamale"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
         android:translationZ="1dp"
-        app:layout_constraintBottom_toBottomOf="@id/item_detail_imageView"
+        app:layout_constraintBottom_toBottomOf="@id/detailImageView"
         app:layout_constraintStart_toEndOf="@id/mapImageButton"
         tools:text="Tamale" />
 
@@ -66,29 +75,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="-8dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="@dimen/margin_small"
         android:backgroundTint="@android:color/transparent"
+        android:padding="-8dp"
         android:src="@drawable/ic_location"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/cityNameTextView"
+        app:layout_constraintStart_toStartOf="@id/detailImageView"
         app:layout_constraintTop_toBottomOf="@id/cityNameTextView" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/events_recyclerView"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:paddingBottom="16dp"
-        tools:itemCount="10"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="pa"
-        app:layout_constraintTop_toBottomOf="@id/item_detail_imageView"
-        tools:listitem="@layout/item_interesting_places" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailImageView"/>
+</androidx.constraintlayout.motion.widget.MotionLayout>

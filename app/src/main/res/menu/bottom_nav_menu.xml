@@ -3,23 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/navigation_events"
-        android:icon="@drawable/ic_event_24dp"
-        android:title="@string/title_events" />
+        android:id="@+id/navigation_regions"
+        android:icon="@drawable/ic_flag"
+        android:title="@string/title_regions" />
 
     <item
-        android:id="@+id/navigation_places"
-        android:icon="@drawable/ic_explore_black_24dp"
-        android:title="@string/title_places" />
+        android:id="@+id/navigation_explore"
+        android:icon="@drawable/ic_explore"
+        android:title="@string/title_explore" />
 
     <item
-        android:id="@+id/navigation_stores"
-        android:icon="@drawable/ic_store_24dp"
-        android:title="@string/title_stores" />
+        android:id="@+id/navigation_schedule"
+        android:icon="@drawable/ic_schedule"
+        android:title="@string/title_schedule" />
 
     <item
-        android:id="@+id/augmented_reality"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_augmented_reality"/>
-
+        android:id="@+id/navigation_favorite"
+        android:icon="@drawable/ic_favorite"
+        android:title="@string/title_favorites"/>
 </menu>

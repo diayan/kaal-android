@@ -23,6 +23,7 @@
     <color name="white">#ffffff</color>
     <color name="progress_textView">#ffffff</color>
     <color name="transparent_progress">#7904040f</color>
+    <color name="bottom_nav_icon_tint">#FFFF463F</color>
 
     <!--
         this line overrides the default auto filled background color

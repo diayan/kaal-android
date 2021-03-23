@@ -1,6 +1,6 @@
 package com.diayan.kaal.di
 
-import com.diayan.kaal.ui.ar.ArFragment
+import com.diayan.kaal.ui.favorites.FavoriteFragment
 import com.diayan.kaal.ui.authentication.AuthPreviewFragment
 import com.diayan.kaal.ui.authentication.RegistrationFragment
 import com.diayan.kaal.ui.authentication.SignInFragment
@@ -23,7 +23,7 @@ abstract class FragmentModule {
     abstract fun contributeStoresFragment(): StoresFragment
 
     @ContributesAndroidInjector
-    abstract fun contributeArFragment(): ArFragment
+    abstract fun contributeArFragment(): FavoriteFragment
 
     @ContributesAndroidInjector
     abstract fun contributeAuthPreviewFragment(): AuthPreviewFragment
