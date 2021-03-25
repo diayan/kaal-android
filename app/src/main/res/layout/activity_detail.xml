@@ -12,10 +12,13 @@
         android:id="@+id/detailRecyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_interesting_places" />
 
     <ImageView
         android:id="@+id/detailImageView"
@@ -72,24 +75,25 @@
 
     <ImageButton
         android:id="@+id/mapImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="@dimen/margin_small"
         android:backgroundTint="@android:color/transparent"
         android:padding="-8dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/ic_location"
         app:layout_constraintBottom_toTopOf="@id/cityNameTextView"
         app:layout_constraintStart_toStartOf="@id/detailImageView"
         app:layout_constraintTop_toBottomOf="@id/cityNameTextView" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/descriptionTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/detailImageView"/>
+        android:text="@string/detail_description"
+        app:layout_constraintEnd_toEndOf="@id/detailImageView"
+        app:layout_constraintStart_toStartOf="@id/detailImageView"
+        app:layout_constraintTop_toBottomOf="@id/detailImageView" />
 </androidx.constraintlayout.motion.widget.MotionLayout>
