@@ -32,7 +32,7 @@
             android:scaleX="1.0"
             android:scaleY="1.0"
             app:layout_constraintBottom_toBottomOf="@id/detailImageView"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
         <Constraint
             android:id="@id/cityNameTextView"
             android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
             android:scaleX="1.0"
             android:scaleY="1.0"
             app:layout_constraintBottom_toBottomOf="@id/detailImageView"
-            app:layout_constraintStart_toEndOf="@id/mapImageButton"/>
+            app:layout_constraintStart_toEndOf="@id/mapImageButton" />
 
         <Constraint
             android:id="@+id/mapImageButton"
@@ -55,9 +55,20 @@
             app:layout_constraintBottom_toTopOf="@id/cityNameTextView"
             app:layout_constraintStart_toStartOf="@id/detailImageView"
             app:layout_constraintTop_toBottomOf="@id/cityNameTextView" />
+
         <Constraint
-            app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/textView" />
+            android:id="@+id/descriptionTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:scaleX="1.0"
+            android:scaleY="1.0"
+            app:layout_constraintEnd_toEndOf="@id/detailImageView"
+            app:layout_constraintStart_toStartOf="@id/detailImageView"
+            app:layout_constraintTop_toBottomOf="@id/detailImageView" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/collapsed">
@@ -82,7 +93,7 @@
             app:layout_constraintBottom_toBottomOf="@id/detailImageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/detailImageView"/>
+            app:layout_constraintTop_toTopOf="@id/detailImageView" />
 
         <Constraint
             android:id="@id/cityNameTextView"
@@ -95,7 +106,7 @@
             app:layout_constraintBottom_toBottomOf="@id/detailImageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/detailImageView"/>
+            app:layout_constraintTop_toTopOf="@id/detailImageView" />
 
         <Constraint
             android:id="@+id/mapImageButton"
@@ -110,5 +121,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/detailImageView" />
+
+        <Constraint
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            app:layout_constraintStart_toStartOf="@id/detailImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailImageView"
+            />
     </ConstraintSet>
 </MotionScene>
