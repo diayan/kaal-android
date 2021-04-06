@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.diayan.kaal.ui.favorites.FavoriteViewModel
 import com.diayan.kaal.ui.authentication.AuthViewModel
+import com.diayan.kaal.ui.detail.DetailViewModel
 import com.diayan.kaal.ui.home.RegionsViewModel
 import com.diayan.kaal.ui.schedules.SchedulesViewModel
 import com.diayan.kaal.ui.stores.StoresViewModel
@@ -38,6 +39,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(AuthViewModel::class)
     abstract fun bindsAuthPreviewViewModel(viewModel: AuthViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(DetailViewModel::class)
+    abstract fun bindsDetailViewModel(viewModel: DetailViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

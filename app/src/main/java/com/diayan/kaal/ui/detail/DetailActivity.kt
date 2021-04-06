@@ -10,8 +10,11 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
+import androidx.lifecycle.ViewModelProvider
 import com.diayan.kaal.MainActivity
 import com.diayan.kaal.R
+import com.diayan.kaal.di.injectViewModel
+import com.diayan.kaal.ui.home.RegionsViewModel
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
@@ -31,9 +34,16 @@ class DetailActivity : AppCompatActivity(), HasAndroidInjector {
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
     override fun androidInjector(): AndroidInjector<Any> = dispatchingAndroidInjector
 
+    @set:Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var detailViewModel: DetailViewModel
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+        detailViewModel     = injectViewModel(viewModelFactory)
+
         detailToolbar       = findViewById(R.id.detailToolbar)
         setSupportActionBar(detailToolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)

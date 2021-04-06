@@ -126,7 +126,10 @@ dependencies {
     //page scroll indicator library
     implementation 'com.romandanylyk:pageindicatorview:1.0.3'
 
-
+    //Epoxy recycler view
+    implementation "com.airbnb.android:epoxy:4.4.4"
+    // Add the annotation processor if you are using Epoxy's annotations (recommended)
+    annotationProcessor "com.airbnb.android:epoxy-processor:4.4.4"
 
     //Testing
     testImplementation "junit:junit:4.12"
