@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
+        app:layout_constraintTop_toBottomOf="@+id/detailImageView"
         tools:itemCount="10"
         tools:listitem="@layout/item_interesting_places" />
 
@@ -87,13 +87,4 @@
         app:layout_constraintBottom_toTopOf="@id/cityNameTextView"
         app:layout_constraintStart_toStartOf="@id/detailImageView"
         app:layout_constraintTop_toBottomOf="@id/cityNameTextView" />
-
-    <TextView
-        android:id="@+id/descriptionTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_description"
-        app:layout_constraintEnd_toEndOf="@id/detailImageView"
-        app:layout_constraintStart_toStartOf="@id/detailImageView"
-        app:layout_constraintTop_toBottomOf="@id/detailImageView" />
 </androidx.constraintlayout.motion.widget.MotionLayout>

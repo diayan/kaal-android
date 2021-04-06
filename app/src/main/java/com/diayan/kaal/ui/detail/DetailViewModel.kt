@@ -1,4 +1,4 @@
-package com.diayan.kaal.ui.home
+package com.diayan.kaal.ui.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,19 +13,19 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class RegionsViewModel @Inject constructor(
+class DetailViewModel @Inject constructor(
     private val repository: RegionsRepository,
     @CoroutineScopeIO
     private val coroutineScope: CoroutineScope
-) : ViewModel() {
+) : ViewModel()  {
 
-    private val _eventsLiveData = MutableLiveData<List<FirebaseRegions>>()
-    val regionsLiveData: LiveData<List<FirebaseRegions>> get() = _eventsLiveData
+    private val _regionsLiveData = MutableLiveData<List<FirebaseRegions>>()
+    val regionsLiveData: LiveData<List<FirebaseRegions>> get() = _regionsLiveData
 
-    fun getEvents() {
+    fun getRegions() {
         viewModelScope.launch {
             repository.getEvents().let {
-                _eventsLiveData.postValue(it.map { event -> event.toObject<FirebaseRegions>() } as List<FirebaseRegions>?)
+                _regionsLiveData.postValue(it.map { event -> event.toObject<FirebaseRegions>() } as List<FirebaseRegions>?)
             }
         }
     }
@@ -33,6 +33,5 @@ class RegionsViewModel @Inject constructor(
     override fun onCleared() {
         super.onCleared()
         coroutineScope.cancel()
-
     }
 }

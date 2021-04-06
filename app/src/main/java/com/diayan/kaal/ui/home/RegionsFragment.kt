@@ -69,7 +69,7 @@ class RegionsFragment : Fragment(), Injectable {
                 }
             })
             binding.eventsRecyclerView.adapter = adapter
-        }
+        }   
         return binding.root
     }
 
