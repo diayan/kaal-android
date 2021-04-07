@@ -1,6 +1,6 @@
 package com.diayan.kaal.data.model.firebasemodels
 
-class FirebaseStores (
+class FirebaseStore (
     val id: Int = 0,
     val name: String = "",
     val description: String ="",

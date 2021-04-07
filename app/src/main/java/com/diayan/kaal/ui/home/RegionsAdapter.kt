@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.diayan.kaal.R
-import com.diayan.kaal.data.model.firebasemodels.FirebaseRegions
+import com.diayan.kaal.data.model.firebasemodels.FirebaseRegion
 import com.diayan.kaal.databinding.ItemRegionsBinding
 import com.diayan.kaal.databinding.ItemRegionsHeaderBinding
 import kotlinx.coroutines.CoroutineScope
@@ -54,7 +54,7 @@ class EventsAdapter(val clickListener: RegionsClickListener) :
     class RegionsHeaderViewHolder private constructor(var binding: ItemRegionsHeaderBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(clickListener: RegionsClickListener, item: FirebaseRegions) {
+        fun bind(clickListener: RegionsClickListener, item: FirebaseRegion) {
             binding.region = item
             binding.regionNameTextView.text = item.name
             binding.clickListener = clickListener
@@ -72,7 +72,7 @@ class EventsAdapter(val clickListener: RegionsClickListener) :
 
     class RegionsViewHolder private constructor(var binding: ItemRegionsBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(clickListener: RegionsClickListener, item: FirebaseRegions) {
+        fun bind(clickListener: RegionsClickListener, item: FirebaseRegion) {
             binding.regions = item
             val imgUri = item.imageUrl.toUri().buildUpon().scheme("https").build()
             binding.apply {
@@ -111,11 +111,11 @@ class EventsAdapter(val clickListener: RegionsClickListener) :
     }
 
     sealed class DataItem {
-        data class RegionsItem(val region: FirebaseRegions) : DataItem() {
+        data class RegionsItem(val region: FirebaseRegion) : DataItem() {
             override val id: Int = region.id
         }
 
-        data class Header(val region: FirebaseRegions) : DataItem() {
+        data class Header(val region: FirebaseRegion) : DataItem() {
             override val id = region.id
         }
 
@@ -131,9 +131,9 @@ class EventsAdapter(val clickListener: RegionsClickListener) :
     }
 
     //convert regions list to DataItem in the adapter
-    fun addHeaderAndSubmitList(list: List<FirebaseRegions>?) {
-        val headerList = mutableListOf<FirebaseRegions>() //this list takes the header items, in this case just one item!
-        val mainList = mutableListOf<FirebaseRegions>()
+    fun addHeaderAndSubmitList(list: List<FirebaseRegion>?) {
+        val headerList = mutableListOf<FirebaseRegion>() //this list takes the header items, in this case just one item!
+        val mainList = mutableListOf<FirebaseRegion>()
         list?.forEach {
             if (it.id == 1) {
                 headerList.add(it)
@@ -152,7 +152,7 @@ class EventsAdapter(val clickListener: RegionsClickListener) :
     }
 
     class RegionsClickListener(val clickListener: (tripId: Int) -> Unit) {
-        fun onClick(region: FirebaseRegions) = clickListener(region.id)
+        fun onClick(region: FirebaseRegion) = clickListener(region.id)
     }
 }
 

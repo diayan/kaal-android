@@ -5,7 +5,7 @@
 
         <variable
             name="region"
-            type="com.diayan.kaal.data.model.firebasemodels.FirebaseRegions" />
+            type="com.diayan.kaal.data.model.firebasemodels.FirebaseRegion" />
 
         <variable
             name="clickListener"

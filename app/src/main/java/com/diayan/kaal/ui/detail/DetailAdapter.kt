@@ -8,13 +8,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.diayan.kaal.R
-import com.diayan.kaal.data.model.firebasemodels.FirebaseRegions
+import com.diayan.kaal.data.model.firebasemodels.FirebaseRegion
 
-class DetailAdapter(private val context: Context, private val regionList: List<FirebaseRegions>) :
+class DetailAdapter(private val context: Context, private val regionList: List<FirebaseRegion>) :
     RecyclerView.Adapter<DetailAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_interesting_places, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_detail_sites, parent, false)
         return ViewHolder(view)
     }
 
@@ -32,7 +32,7 @@ class DetailAdapter(private val context: Context, private val regionList: List<F
         val distanceTextView  = itemView.findViewById<TextView>(R.id.distanceTextView)
         val estimatedTimeTextView = itemView.findViewById<TextView>(R.id.estimatedTimeTextView)
 
-        fun bind(region: FirebaseRegions) {
+        fun bind(region: FirebaseRegion) {
             placeNameTextView.text = region.name
             locationTextView.text  = region.location
         }

@@ -62,7 +62,7 @@ class RegionsFragment : Fragment(), Injectable {
 
         with(regionsViewModel) {
             getEvents()
-            regionsViewModel.regionsLiveData.observe(viewLifecycleOwner, Observer {
+            regionsViewModel.regionLiveData.observe(viewLifecycleOwner, Observer {
                 it?.let {
                     Log.e("Firebase Regions:::", it.toString())
                     adapter.addHeaderAndSubmitList(it)

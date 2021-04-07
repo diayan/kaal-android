@@ -29,7 +29,7 @@ class RegionsRepository @Inject constructor(
         val eventList = mutableListOf<Regions>()
 
         result?.forEach { documentSnapshot ->
-            eventList.add(documentSnapshot.toObject(FirebaseRegions::class.java).toEvents)
+            eventList.add(documentSnapshot.toObject(FirebaseRegion::class.java).toEvents)
         }
 
         return Result.build {

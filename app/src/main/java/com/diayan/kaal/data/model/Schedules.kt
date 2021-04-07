@@ -2,7 +2,6 @@ package com.diayan.kaal.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.firebase.Timestamp
 
 @Entity(tableName = "places")
 data class Schedules(

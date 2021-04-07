@@ -55,6 +55,10 @@ class DetailActivity : AppCompatActivity(), HasAndroidInjector {
         loadItem()
     }
 
+    private fun setupRecyclerView() {
+
+    }
+
     /**
      * Load the item's thumbnail image into our [ImageView].
      */
