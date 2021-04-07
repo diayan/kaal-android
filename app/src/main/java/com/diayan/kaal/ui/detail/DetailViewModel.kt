@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.diayan.kaal.data.model.firebasemodels.FirebaseRegions
+import com.diayan.kaal.data.model.firebasemodels.FirebaseRegion
 import com.diayan.kaal.data.repository.RegionsRepository
 import com.diayan.kaal.di.CoroutineScopeIO
 import com.google.firebase.firestore.ktx.toObject
@@ -19,13 +19,13 @@ class DetailViewModel @Inject constructor(
     private val coroutineScope: CoroutineScope
 ) : ViewModel()  {
 
-    private val _regionsLiveData = MutableLiveData<List<FirebaseRegions>>()
-    val regionsLiveData: LiveData<List<FirebaseRegions>> get() = _regionsLiveData
+    private val _regionsLiveData = MutableLiveData<List<FirebaseRegion>>()
+    val regionLiveData: LiveData<List<FirebaseRegion>> get() = _regionsLiveData
 
     fun getRegions() {
         viewModelScope.launch {
             repository.getEvents().let {
-                _regionsLiveData.postValue(it.map { event -> event.toObject<FirebaseRegions>() } as List<FirebaseRegions>?)
+                _regionsLiveData.postValue(it.map { event -> event.toObject<FirebaseRegion>() } as List<FirebaseRegion>?)
             }
         }
     }

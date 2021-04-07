@@ -5,11 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.diayan.kaal.R
-import com.diayan.kaal.data.model.firebasemodels.FirebaseRegions
+import com.diayan.kaal.data.model.firebasemodels.FirebaseRegion
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_regions.view.*
 
-class RegionsAdapter(private val eventList: List<FirebaseRegions>, private val header: View) :
+class RegionsAdapter(private val eventList: List<FirebaseRegion>, private val header: View) :
     RecyclerView.Adapter<RegionsAdapter.EventsViewHolder>() {
     private val ITEM_VIEW_TYPE_HEADER = 0
     private val ITEM_VIEW_TYPE_ITEM = 1
@@ -19,9 +19,9 @@ class RegionsAdapter(private val eventList: List<FirebaseRegions>, private val h
     }
 
     class EventsViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
-        var event: FirebaseRegions? = null
+        var event: FirebaseRegion? = null
 
-        fun bindEvents(event: FirebaseRegions) {
+        fun bindEvents(event: FirebaseRegion) {
             this.event = event
             itemView.region_name_textView.text = event.name
             if (event.imageUrl.isNotEmpty()) {

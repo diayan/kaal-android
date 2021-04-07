@@ -8,7 +8,7 @@
     tools:context=".ui.detail.DetailActivity"
     tools:showPaths="true">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.airbnb.epoxy.EpoxyRecyclerView
         android:id="@+id/detailRecyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailImageView"
         tools:itemCount="10"
-        tools:listitem="@layout/item_interesting_places" />
+        tools:listitem="@layout/item_detail_sites" />
 
     <ImageView
         android:id="@+id/detailImageView"

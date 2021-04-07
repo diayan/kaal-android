@@ -3,7 +3,7 @@ package com.diayan.kaal.data.repository
 import com.diayan.kaal.common.Result
 import com.diayan.kaal.data.dao.SchedulesDao
 import com.diayan.kaal.data.model.Schedules
-import com.diayan.kaal.data.model.firebasemodels.FirebaseSchedules
+import com.diayan.kaal.data.model.firebasemodels.FirebaseSchedule
 import com.diayan.kaal.extensions.awaitTaskResult
 import com.diayan.kaal.extensions.toPlaces
 import com.google.firebase.firestore.DocumentSnapshot
@@ -38,7 +38,7 @@ class SchedulesRepository @Inject constructor(
         val placeList = mutableListOf<Schedules>()
 
         result?.forEach { documentSnapshot ->
-            placeList.add(documentSnapshot.toObject(FirebaseSchedules::class.java).toPlaces)
+            placeList.add(documentSnapshot.toObject(FirebaseSchedule::class.java).toPlaces)
         }
 
         return Result.build {

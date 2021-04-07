@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <variable
+            name="touristItem"
+            type="com.diayan.kaal.data.model.firebasemodels.FirebaseRegion" />
+    </data>
+
 <com.google.android.material.card.MaterialCardView
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
@@ -106,7 +114,7 @@
         android:id="@+id/distanceLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Distance"
+        android:text="Distance From City"
         android:layout_marginTop="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintStart_toStartOf="@id/locationNameTextView"
@@ -149,3 +157,4 @@
         app:layout_constraintTop_toBottomOf="@id/distanceTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
+</layout>

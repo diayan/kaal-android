@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.diayan.kaal.data.model.firebasemodels.FirebaseSchedules
+import com.diayan.kaal.data.model.firebasemodels.FirebaseSchedule
 import com.diayan.kaal.databinding.ItemScheduledHeaderBinding
 import com.diayan.kaal.databinding.ItemSchedulesBinding
 import kotlinx.coroutines.CoroutineScope
@@ -50,7 +50,7 @@ class SchedulesAdapter(val clickListener: TripClickListener) :
     class ScheduleHeaderViewHolder private constructor(var binding: ItemScheduledHeaderBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(clickListener: TripClickListener, item: FirebaseSchedules) {
+        fun bind(clickListener: TripClickListener, item: FirebaseSchedule) {
             binding.trip = item
             binding.destinationTextView.text = item.destination
             binding.timeRemainingTextView.text = item.destination
@@ -69,7 +69,7 @@ class SchedulesAdapter(val clickListener: TripClickListener) :
 
     class ScheduleViewHolder private constructor(var binding: ItemSchedulesBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(clickListener: TripClickListener, item: FirebaseSchedules) {
+        fun bind(clickListener: TripClickListener, item: FirebaseSchedule) {
             binding.trip = item
             binding.apply {
                 invalidateAll()
@@ -100,11 +100,11 @@ class SchedulesAdapter(val clickListener: TripClickListener) :
     }
 
     sealed class DataItem {
-        data class ScheduleItem(val schedule: FirebaseSchedules) : DataItem() {
+        data class ScheduleItem(val schedule: FirebaseSchedule) : DataItem() {
             override val id: Int = schedule.id
         }
 
-        data class Header(val schedule: FirebaseSchedules) : DataItem() {
+        data class Header(val schedule: FirebaseSchedule) : DataItem() {
             override val id = schedule.id
         }
 
@@ -120,9 +120,9 @@ class SchedulesAdapter(val clickListener: TripClickListener) :
     }
 
     //convert schedule list to DataItem in the adapter
-    fun addHeaderAndSubmitList(list: List<FirebaseSchedules>?) {
-        val headerList = mutableListOf<FirebaseSchedules>() //this list takes the header items, in this case just one item!
-        val mainList = mutableListOf<FirebaseSchedules>()
+    fun addHeaderAndSubmitList(list: List<FirebaseSchedule>?) {
+        val headerList = mutableListOf<FirebaseSchedule>() //this list takes the header items, in this case just one item!
+        val mainList = mutableListOf<FirebaseSchedule>()
         list?.forEach {
             if (it.id == 1) {
                 headerList.add(it)
@@ -141,6 +141,6 @@ class SchedulesAdapter(val clickListener: TripClickListener) :
     }
 
     class TripClickListener(val clickListener: (tripId: Int) -> Unit) {
-        fun onClick(trip: FirebaseSchedules) = clickListener(trip.id)
+        fun onClick(trip: FirebaseSchedule) = clickListener(trip.id)
     }
 }

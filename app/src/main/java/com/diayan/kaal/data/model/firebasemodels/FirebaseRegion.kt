@@ -3,7 +3,7 @@ package com.diayan.kaal.data.model.firebasemodels
 import com.google.firebase.firestore.IgnoreExtraProperties
 
 @IgnoreExtraProperties
-data class FirebaseRegions(
+data class FirebaseRegion(
         val id: Int = 1,
         val name: String ="",
         val rates: Int = 0,

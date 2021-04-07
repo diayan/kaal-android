@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.diayan.kaal.data.model.firebasemodels.FirebaseSchedules
+import com.diayan.kaal.data.model.firebasemodels.FirebaseSchedule
 import com.diayan.kaal.data.repository.SchedulesRepository
 import com.diayan.kaal.di.CoroutineScopeIO
 import com.google.firebase.firestore.ktx.toObject
@@ -20,14 +20,14 @@ class SchedulesViewModel @Inject constructor(
 
     var tripId: Int? = null
     var connectivityAvailable: Boolean = false
-    private val _scheduledTripsLiveData = MutableLiveData<List<FirebaseSchedules>>()
-    val scheduledTripsLiveData: LiveData<List<FirebaseSchedules>> get() = _scheduledTripsLiveData
+    private val _scheduledTripsLiveData = MutableLiveData<List<FirebaseSchedule>>()
+    val scheduledTripsLiveData: LiveData<List<FirebaseSchedule>> get() = _scheduledTripsLiveData
 
 
     fun getScheduledTrips() {
         viewModelScope.launch {
             repository.getScheduledTrips().let {
-                _scheduledTripsLiveData.postValue(it.map { trip -> trip.toObject<FirebaseSchedules>() } as List<FirebaseSchedules>?)
+                _scheduledTripsLiveData.postValue(it.map { trip -> trip.toObject<FirebaseSchedule>() } as List<FirebaseSchedule>?)
             }
         }
     }

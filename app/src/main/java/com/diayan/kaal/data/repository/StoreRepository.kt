@@ -3,7 +3,7 @@ package com.diayan.kaal.data.repository
 import com.diayan.kaal.common.Result
 import com.diayan.kaal.data.dao.StoreDao
 import com.diayan.kaal.data.model.Store
-import com.diayan.kaal.data.model.firebasemodels.FirebaseStores
+import com.diayan.kaal.data.model.firebasemodels.FirebaseStore
 import com.diayan.kaal.extensions.awaitTaskResult
 import com.diayan.kaal.extensions.toStores
 import com.google.firebase.firestore.FirebaseFirestore
@@ -36,7 +36,7 @@ class StoreRepository @Inject constructor(
     private fun resultToStoreList(result: QuerySnapshot?): Result<Exception, List<Store>> {
         val storeList = mutableListOf<Store>()
         result?.forEach { documentSnapshot ->
-            storeList.add(documentSnapshot.toObject(FirebaseStores::class.java).toStores)
+            storeList.add(documentSnapshot.toObject(FirebaseStore::class.java).toStores)
         }
 
         return Result.build {

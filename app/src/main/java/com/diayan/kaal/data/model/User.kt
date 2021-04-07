@@ -15,4 +15,4 @@ data class User(
     var isNew: Boolean,
     @Exclude
     var isCreated: Boolean
-): Parcelable
+) : Parcelable
