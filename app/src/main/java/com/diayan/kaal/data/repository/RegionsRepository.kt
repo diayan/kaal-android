@@ -13,6 +13,8 @@ class RegionsRepository @Inject constructor(
     private val firebaseFirestore: FirebaseFirestore
 ) {
     suspend fun getEvents(): MutableList<DocumentSnapshot> = firebaseFirestore.collection("regions").get().await().documents
+        //suspend fun getEvents(): MutableList<DocumentSnapshot> = firebaseFirestore.collection("regions").document().collection("sites").get().await().documents
+    suspend fun getLandmarks(): MutableList<DocumentSnapshot> = firebaseFirestore.collection("sites").get().await().documents
 
 /*    suspend fun getAllEvents(): Result<Exception, List<Regions>> {
         return try {

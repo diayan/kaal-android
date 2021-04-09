@@ -12,5 +12,6 @@ data class FirebaseRegion(
         val link: String ="",
         val type: String ="",
         val favorite: Boolean = false,
-        val imageUrl:String = ""
+        val imageUrl:String = "",
+        val landmark: List<FirebaseLandmark> = listOf()
 )

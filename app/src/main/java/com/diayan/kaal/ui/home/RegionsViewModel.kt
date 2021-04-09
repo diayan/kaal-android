@@ -30,6 +30,14 @@ class RegionsViewModel @Inject constructor(
         }
     }
 
+    fun getLandmarks() {
+        viewModelScope.launch {
+            repository.getLandmarks().let {
+                //_eventsLiveData.postValue()
+            }
+        }
+    }
+
     override fun onCleared() {
         super.onCleared()
         coroutineScope.cancel()
